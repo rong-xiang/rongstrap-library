@@ -1,0 +1,95 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* Header, equal columns and footer – FLOATS */
+
+.float-header, .float-column, .float-footer {
+    padding: 20px;
+    background-color: lightgrey;
+    text-align: center;
+    font-family: Helvetica;
+    border: solid black 1px;
+}
+
+.float-header {
+    margin-bottom: 10px;
+}
+
+.float-column {
+    float: left;
+    width: 33.33%;
+    margin-bottom: 10px;
+}
+
+.float-footer {
+    clear: both; /* No floating elements will be on the left or right */
+}
+
+@media screen and (max-width: 992px) {
+    .float-column {
+        float: none;
+        width: 100%;
+    }
+}
+
+/* Header, equal columns and footer – FLEXBOX */
+
+.flex-header, .flex-column, .flex-footer {
+    padding: 20px;
+    background-color: lightpink;
+    text-align: center;
+    font-family: Helvetica;
+    border: solid black 1px;
+}
+
+.flex-header {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flex-column {
+    flex: 33.33%;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .flex-column {
+        flex: 100%;
+    }
+}
+
+/* Header, equal columns and footer – GRID */
+
+.grid-header, .grid-column, .grid-footer {
+    padding: 20px;
+    background-color: lightgoldenrodyellow;
+    text-align: Center;
+    font-family: Helvetica;
+    border: solid black 1px;
+}
+
+.grid-header {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}

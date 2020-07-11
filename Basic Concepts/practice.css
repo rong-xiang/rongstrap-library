@@ -1,0 +1,74 @@
+
+/* Responsive Columns using Multicol */
+.multicol-container {
+    column-count: 4;
+    column-gap: 20px;
+    margin: 0px 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .multicol-container {
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .multicol-container {
+        column-count: 1;
+    }
+}
+
+.multicol-item {
+    background-color: green;
+    color: white;
+    margin-bottom: 10px;
+}
+
+
+/* Responsive Columns using Flexbox */
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    /*justify-content: space-between;*/
+}
+
+.column {
+    flex: 20%; /* If you want padding to flex, change flex property to width property. */
+    padding: 0 10px; /*If you want padding to flex, delete this line and add justify-content: space-between in .row. */
+}
+
+@media screen and (max-width: 992px) {
+    .column {
+        flex: 45%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .row {
+        flex-direction: column;
+    }
+
+    /*  .column { flex: 100%; } */
+
+}
+
+.element {
+    background-color: blue;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Responsive Columns using CSS Grid (No media queries necessary.) */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 10px 20px;
+    margin: 10px;
+}
+
+.grid-item {
+    background-color: red;
+    color: white;
+}
