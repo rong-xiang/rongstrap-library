@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+
+/* GLITCH DROPDOWN */
+
+.dropdown {
+    margin-top: 40px;
+    margin-right: 60px;
+    float: right;
+    position: relative;
+}
+
+.dropdown-label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: black;
+    padding: 4px 6px;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+.dropdown-label:hover {
+    background-color: #ebebeb;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 3px #ebebeb;
+    z-index: -1;
+    padding: 0 10px;
+}
+
+
+.flex-container {
+    display: flex;
+    align-items: start;
+    padding: 15px 0 15px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #ebebeb;
+}
+
+
+.dropdown-content .text {
+    width: 170px;
+}
+
+.dropdown-content .title {
+    font-family: 'Roboto Mono', monospace;
+    color: blue;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.dropdown-content .description {
+    font-family: 'Roboto Mono', monospace;
+    color: #2e2e2e;
+    font-size: 12px;
+}
+
+.dropdown-content .description:hover {
+    color: blue;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+img {
+    width: 30px;
+    margin-right: 10px;
+}

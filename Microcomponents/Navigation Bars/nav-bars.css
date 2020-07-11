@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    font-weight: 300;
+}
+
+
+/* APPLE NAV BAR */
+
+.apple-nav {
+    background-color: rgba(0,0,0,.8);
+}
+
+/* separate the background from the content allows you to keep the background width fixed,
+while setting a max-width on the container so that the elements only start flexing after
+you've scaled down past the max-width.*/
+
+.apple-nav .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 15px 25px; /* adding left-right padding allows you to scale down while keeping some padding*/
+    max-width: 1000px;
+}
+
+.apple-nav .nav-item {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.apple-nav .nav-item:hover {
+    color:  rgba(255, 255, 255);
+    transition-duration: 0.1s;
+}
+
+/* EVERLANE NAV BAR */
+
+.everlane-nav {
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px auto 0px;
+    background-color: white;
+    box-shadow: 0px 1px 3px #d1d1d1;
+}
+
+.everlane-nav .nav-left {
+    display: flex;
+    align-items: center;
+    margin-left: 40px; /*instead of specifying fixed left-right padding, you can specify fixed margins on nav-right and nav-left*/
+    min-width: 380px;
+    justify-content: flex-start;
+
+}
+
+.nav-left .nav-item {
+    margin-right: 30px;
+}
+
+
+
+.everlane-nav .nav-right {
+    display: flex;
+    align-items: center;
+    margin-right: 40px; /*instead of specifying fixed left-right padding, you can specify fixed margins on nav-right and nav-left*/
+    min-width: 380px;
+    justify-content: flex-end;
+}
+
+.nav-right .nav-item {
+    margin-left: 30px;
+}
+
+.everlane-nav .nav-item {
+    padding: 20px 0; 
+    color: rgba(66, 66, 66, 0.5);
+}
+
+.everlane-nav .nav-right .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.everlane-nav .nav-center {
+    justify-content: center;
+    align-items: center;
+    min-width: 180px;
+}
+
+.everlane-nav h4 {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.everlane-nav .search-text {
+    font-size: 13px;
+    font-weight: 400;
+    color: inherit;
+    margin-left: 5px;
+}
+
+.everlane-nav h3 {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    color: rgba(66, 66, 66, 0.9);
+}
+
+.everlane-nav svg {
+    font-size: 11px;
+    fill: currentColor;
+}
+
+.everlane-nav .bag-icon {
+    font-size: 14px;
+    fill: rgba(66, 66, 66, 0.5);
+    transform: translate(0, -2px);
+    margin-left: 30px;
+}
+
+.everlane-nav .nav-item:hover {
+    color: rgba(66, 66, 66, .9);
+    transition-duration: 0.1s;
+}
+
+.everlane-nav .bag-icon:hover {
+    fill: rgba(66, 66, 66, .9);
+    transition-duration: 0.1s;
+}
+
+.everlane-nav img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Dropdown functionality */
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0; /*Position absolutely to the closest positioned parent container, which is nav-bar at position: sticky*/
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #d1d1d1; /*Gets rid of nav drop shadow and adds light border*/
+    padding-top: 30px;
+    padding-left: 40px;
+    z-index: -1; /*Keeps dropdown content under the highlighted bottom tab border*/
+}
+
+.drop-flex-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.drop-flex-container .col {
+    margin-right: 50px;
+}
+
+.dropdown-content .label {
+    color: rgba(66, 66, 66, 0.9);
+    margin-bottom: 5px;
+}
+
+.dropdown-content h4 {
+    color: rgba(66, 66, 66, 0.5);
+    line-height: 2;
+}
+
+.dropdown-content .red {
+    color: rgba(240, 91, 65, .8);
+}
+
+.dropdown-content h4:hover {
+    color: rgba(66, 66, 66, 0.85);
+}
+
+.dropdown-content .red:hover {
+    color: rgba(240, 91, 65, 1);
+}
+
+h4.tread, h4.about {
+    color: rgba(66, 66, 66, 0.85);
+    margin-top: 5px;
+}
+
+/* Reveal dropdown content on hover */
+.women:hover .dropdown-content {
+    display: block;
+}
+
+.women:hover .label-women {
+    color: rgba(66, 66, 66, .9);
+    box-shadow: 0px 1px 0px rgba(66, 66, 66, 0.9); /*use box shadow instead of border-bottom to not shift content*/
+}
+
+.men:hover .dropdown-content{
+    display: block;
+}
+
+.men:hover .label-men {
+    color: rgba(66, 66, 66, .9);
+    box-shadow: 0px 1px 0px rgba(66, 66, 66, 0.9); /*use box shadow instead of border-bottom to not shift content*/
+}
+
+.denim:hover .dropdown-content {
+    display: block;
+}
+
+.denim:hover .label-denim {
+    color: rgba(66, 66, 66, .9);
+    box-shadow: 0px 1px 0px rgba(66, 66, 66, 0.9); /*use box shadow instead of border-bottom to not shift content*/
+}
+
+.tread:hover .dropdown-content {
+    display: block;
+}
+    
+.tread:hover .label-tread {
+    color: rgba(66, 66, 66, .9);
+    box-shadow: 0px 1px 0px rgba(66, 66, 66, 0.9); /*use box shadow instead of border-bottom to not shift content*/
+}
+
+.about:hover .dropdown-content {
+    display: block;
+}
+
+.about:hover .label-about {
+    color: rgba(66, 66, 66, .9);
+    box-shadow: 0px 1px 0px rgba(66, 66, 66, 0.9); /*use box shadow instead of border-bottom to not shift content*/
+}
+
+.tread img:hover, .about img:hover {
+    opacity: 0.8;
+    transition-duration: 0.1s;
+}
+
+

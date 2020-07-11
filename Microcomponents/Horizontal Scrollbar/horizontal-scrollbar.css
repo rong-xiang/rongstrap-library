@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 60px 50px 0;
+}
+
+.item {
+    font-family: Helvetica;
+    font-weight: normal;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 1px solid black;
+    min-width: 130px;
+    padding: 15px;
+    opacity: 0.5;
+    transition: 0.1s;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.item:hover {
+    opacity: 1;
+}
+
+.scrollbar {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 40px 0;
+    overflow: scroll;
+    /* Don't align items*/
+    
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* FADE ON SCROLL CONTAINER */
+
+.fade-container {
+    position: relative;
+}
+
+.fade-container::after {
+    content: '';
+    height: 100%;
+    width: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+.empty {
+    padding-right: 80px;
+}
+
+
+
+
+
+

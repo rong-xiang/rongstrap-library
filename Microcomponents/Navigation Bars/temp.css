@@ -1,0 +1,26 @@
+.dropdown-inner {
+    display: none;
+    background-color: blue;
+    height: 10px;
+    transition: background-color 1s 2s;
+}
+
+.dropdown:hover .dropdown-inner {
+    display: block;
+    animation: color-change 1s ease forwards;
+    
+}
+
+@keyframes color-change {
+    from {background-color: blue;}
+    to {background-color: red;}
+}
+
+
+
+.dropdown {
+    height: 200px;
+}
+
+
+

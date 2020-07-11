@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 60px;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+}
+
+/* unsplash hover */
+
+.unsplash.image-container {
+    max-width: 350px;
+    position: relative;
+}
+
+.unsplash img {
+    display: block; /*images are treated like inline elements (like text) so to get rid of extra space set to block*/
+    max-width: 100%;
+    height: auto;
+}
+
+.unsplash .overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(28, 28, 28, .3);
+    width: 100%;
+    transition: .3s ease;
+
+}
+
+.unsplash .icon-flex {
+    display: flex;
+    position: absolute;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%; /* this means this element takes up 100% the width of the parent container */
+    align-items: center; /* default is stretch */
+
+}
+
+.unsplash .top-flex {
+    top: 15px;
+    justify-content: flex-end;
+}
+
+.unsplash .bottom-flex {
+    bottom: 15px;
+    justify-content: space-between;
+}
+
+.unsplash .profile-flex {
+    display: flex;
+    align-items: center;
+}
+
+.unsplash .profile-flex img {
+    border-radius: 100%;
+    width: 50px;
+    margin-right: 15px;
+}
+
+.unsplash .profile-name {
+    font-family: Helvetica;
+    color: white;
+    opacity: 0.8;
+    transition: 0.3s ease;
+}
+
+.unsplash .profile-name:hover {
+    opacity: 1;
+}
+
+.unsplash .icon { 
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-left: 10px;
+    transition: .3s ease;
+}
+
+.unsplash .icon:hover {
+    opacity: 1;
+}
+
+.unsplash svg {
+    display: block; /*SVGs are treated like inline elements (like text) so to get rid of extra space set to block*/
+    font-size: 20px;
+    margin: auto;
+}
+
+
+.unsplash.image-container:hover .overlay {
+    opacity: 1;
+}
+
+/* pinterest hover */
+
+.dropdown-text, .save-button, .link-to-text {
+    font-family: Helvetica;
+    font-weight: 700;
+}
+
+.pinterest.image-container {
+    margin-top: 80px;
+    width: 350px;
+    position: relative;
+}
+
+.pinterest > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+
+.pinterest svg {
+    display: block;
+    font-size: 24px;
+}
+
+.pinterest .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(28, 28, 28, .1);
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+.pinterest .overlay:hover {
+    opacity: 1;
+}
+
+.pinterest .icon-flex {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.pinterest .top-flex {
+    top: 20px;
+    font-size: 12px;
+}
+
+
+.pinterest .dropdown {
+    display: flex;
+    overflow: hidden;
+    background-color: white;
+    opacity: 0.7;
+    padding: 15px;
+    align-items: center;
+    flex-basis: 80%;
+    justify-content: space-between;
+    transition: 0.3s ease;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.pinterest .dropdown-arrow {
+    font-size: 11px;
+}
+
+.pinterest .save-button {
+    background-color: rgba(255, 54, 54, 0.7);
+    padding: 15px;
+    color: white;
+    flex-basis: 20%;
+    transition: 0.3s ease;
+    text-align: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.pinterest .save-button:hover {
+    background-color: rgba(255, 54, 54, 1);
+}
+
+.pinterest .dropdown:hover {
+    opacity: 1;
+}
+
+.pinterest .bottom-flex {
+    justify-content: space-between;
+    bottom: 20px;
+    height: 48px;
+}
+
+.pinterest .icon-flex-container {
+    display: flex;
+}
+
+.pinterest .icon {
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 100%;
+    transition: 0.3s ease;
+    padding: 12px;
+    margin-left: 10px;
+}
+
+.pinterest .icon:hover {
+    opacity: 1;
+}
+
+.pinterest .link-to-flex {
+    display: flex;
+    border-radius: 24px;
+    background-color: white;
+    opacity: 0.7;
+    transition: 0.3s ease;
+    height: 100%;
+    align-items: center;
+    padding-left: 15px; /*don't use fractions of pixels, things will be off center */
+    padding-right: 15px;
+    transition: 0.3s ease;
+}
+
+.pinterest .link-to-flex:hover {
+    opacity: 1;
+}
+
+.pinterest .up-right-arrow {
+    font-size: 20px;
+    margin-right: 5px;
+}

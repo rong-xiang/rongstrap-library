@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Graphik Regular";
+}
+
+@font-face {
+    font-family: "Graphik Regular";
+    src: url("Navigation Bars/Fonts/Graphik Regular.otf") format(".otf");
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    display: block; /* Do this to not cause shifting in the nav. */
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/* WEBFLOW MEGAMENU */
+
+.megamenu {
+    background-color: #1a1a1a;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* LABELS */
+
+.label {
+    font-size: 14px;
+    padding: 20px 30px;
+    transition-duration: 0.1s;
+}
+
+.sign-up {
+    background-color: rgb(97, 54, 255)
+}
+
+.sign-up:hover {
+    background-color: rgb(89, 46, 243)
+}
+
+.log-in:hover, .logo:hover {
+    background-color: #292929;
+}
+
+.highlight-labels {
+    display: flex;
+}
+
+/* Dropdown labels */
+
+.dropdown-labels {
+    display: flex;
+}
+
+.highlight-labels:hover .label{
+    color: rgb(255, 255, 255, .6);
+}
+
+.highlight-labels .label:hover {
+    color: white;
+}
+
+.dropdown:hover .label {
+    color: white;
+}
+
+/* Dropdown functionality */
+
+.dropdown-background {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 55px;
+    left: 0;
+    background-color: #292929;
+    transition: height 0.3s;
+}
+
+.dropdown-labels-large:hover .dropdown-background {
+    height: 382px;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 382px;
+    left: 0;
+}
+
+.dropdown-inner {
+    width: 1200px;
+    margin: auto;
+}
+
+
+.section-header {
+    color: rgba(255, 255, 255, .6);
+    box-shadow: 0 0.4px rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+    padding-bottom: 10px;
+    margin: 30px 30px 0 30px;
+}
+
+.mini-flex-container {
+    display: flex;
+}
+
+.sub-section-title {
+    font-size: 14px;
+    color: white;
+}
+
+.icon-flex-container svg {
+    fill: white;
+    margin-right: 10px;
+    transform: translate(0, -2px);
+}
+
+.description {
+    font-size: 12px;
+    color: rgba(255, 255, 255, .6);
+    line-height: 1.5;
+}
+
+.sub-section:hover .description, .sub-section-tall:hover .description {
+    color: white;
+}
+
+
+/* FEATURES DROPDOWN */
+
+
+.features_flex-container {
+    display: flex;
+}
+
+
+.features_flex-container svg {
+    font-size: 24px;
+    margin-bottom: 160px;
+}
+
+.features_flex-container .sub-section {
+    padding: 30px;
+    transition-duration: 0.1s;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.features_flex-container .sub-section-title {
+    margin-bottom: 10px;
+}
+
+
+.designer:hover {
+    background-color: #ff5c7f;
+}
+
+.interactions:hover {
+    background-color: #fa66d5;
+}
+
+.cms:hover {
+    background-color: #e28aff;
+}
+
+.ecommerce:hover {
+    background-color: #44db8f;
+}
+
+.editor:hover {
+    background-color: #49c9e3;
+}
+
+.hosting:hover {
+    background-color: #ffa58f;
+}
+
+/* WHY WEBFLOW DROPDOWN */
+
+.why-webflow_container {
+    display: flex;
+}
+
+
+.icon-flex-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.why-webflow_container .sub-section {
+    padding: 41.5px 30px 50px 30px;
+    transition-duration: 0.1s;
+    width: 300px;
+}
+
+.why-webflow_container .sub-section-tall {
+    padding: 30px;
+    transition-duration: 0.1s;
+    width: 200px;
+}
+
+.why-webflow_container .sub-section:hover, .sub-section-tall:hover {
+    background-color: rgb(97, 54, 255);
+}
+
+.sub-section-tall svg {
+    fill: white;
+    font-size: 24px;
+    margin-bottom: 185px;
+}
+
+/* RESOURCES DROPDOWN */
+
+.resources_container {
+    display: flex;
+}
+
+.resources_container .sub-section {
+    padding: 41.5px 30px 50px 30px;
+    transition-duration: 0.1s;
+    width: 240px;
+    height: 163.5px;
+}
+
+.resources_container .sub-section:hover {
+    background-color: rgb(97, 54, 255);
+}
+
+/* ANIMATION FUNCTIONALITY */
+
+.dropdown-inner {
+    transform: translate(10px, 0);
+    opacity: 0;
+}
+
+.dropdown:hover .dropdown-inner {
+    /* Can't use transition, because can't animate between display. Use animation to separate */
+    animation: slide ease-out .2s forwards; 
+}
+
+@keyframes slide {
+
+    from {
+        transform: translate(10px,0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}

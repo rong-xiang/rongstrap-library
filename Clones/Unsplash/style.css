@@ -1,0 +1,374 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin-top: 30px;
+    padding: 40px 60px;
+}
+
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+h2, h3, h4, .profile-name {
+    font-family: Helvetica, Arial, sans-serif;
+    opacity: 0.45;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    display: inline-block;
+    background-color: #D1D3D4;
+    border-radius: 2px;
+    padding: 5px 7px;
+    margin: 0px 3px 6px 0px;
+    transition: opacity .1s;
+}
+
+h3:hover {
+    opacity: 0.75;
+}
+
+h4, .profile-name {
+    font-size: 15px;
+    color: white;
+    opacity: 0.8;
+    margin: 0;
+    transition: 0.2s;
+}
+
+.profile-name {
+    padding-top: 10px; /* this is a shortcut for the hovering in between*/
+    padding-bottom: 10px;
+}
+
+.profile-name:hover {
+    opacity: 1;
+}
+
+/* TAG CONTAINER */
+
+.fade-container {
+    position: relative;
+}
+
+/* Add fade out effect. Put on the outside container so that fade is fixed. */
+.fade-container::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-image: linear-gradient(to right, transparent, white);
+}
+
+.tag-container {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+}
+
+.item {
+    opacity: 0.45;
+    display: inline-block;
+    box-sizing: content-box;
+    min-width: 110px;
+    text-decoration: none;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: black;
+    padding: 12px;
+    margin-right: 12px;
+    border: solid black 1px;
+    border-radius: 5px;
+    transition: opacity .3s;
+}
+
+.item:hover {
+    opacity: 1;
+
+}
+
+.empty {
+    padding-right: 80px; /* empty div so fade doesn't go over last item */
+}
+
+::-webkit-scrollbar { 
+    display: none; /* makes scrollbar invisible but retains functionality */
+}
+
+/* GALLERY */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.column {
+    flex: 30%;
+    padding: 0 15px;
+}
+
+.gallery-item {
+    margin-bottom: 40px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* OVERLAY */
+
+.image-container {
+    display: block;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(3, 3, 3, 0.2);
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+
+.overlay:hover {
+    opacity: 1; /* Fade-in effect */
+    
+}
+
+.icon-flex {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+}
+
+.icon-flex.top {
+    justify-content: flex-end;
+    top: 20px;
+}
+
+.icon-flex.bottom {
+    justify-content: space-between;
+    bottom: 20px;
+}
+
+.profile-flex {
+    display: flex;
+    align-items: center;
+}
+
+.headshot {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-right: 10px;
+}
+
+button {
+    opacity: .8;
+    height: 35px;
+    width: 45px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+    margin-left: 10px;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+svg {
+    display: block;
+    margin: auto;
+    font-size: 20px;
+    text-align: center;
+}
+
+.heart svg {
+    font-size: 15px;
+}
+
+/* TOOLTIP */
+
+.headshot-tooltip {
+    position: relative;
+}
+
+.tooltip {
+    opacity: 0; /* you need opacity for the transition */
+    visibility: hidden; /* display will not cause the transition for some reason */
+    padding: 20px;
+    position: absolute;
+    z-index: 1;
+    bottom: 45px;
+    background-color: white;
+    width: 350px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* tooltip positioning adjustment */
+.tooltip-1 {
+    left: -7px;
+}
+
+.tooltip-2 {
+    left: 55px;
+}
+
+.profile-flex .profile-name:hover .tooltip {
+    opacity: 1; /* you need opacity for the transition */
+    visibility: visible; /* display will not cause the transition for some reason */
+    transform: translate(0, -5px);
+}
+
+.profile-flex .headshot-tooltip:hover .tooltip {
+    opacity: 1; /* you need opacity for the transition */
+    visibility: visible; /* display will not cause the transition for some reason */
+    transform: translate(0, -5px);
+}
+
+
+/* making a triangle for the tooltip arrow */
+.tooltip::after {
+    content:'';
+    position: absolute;
+    top: 100%;
+    left: 15px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+.tooltip .profile {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.tooltip-headshot {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+}
+
+.tooltip-name {
+    margin-left: 15px;
+    align-content: center;
+}
+
+.tooltip-name .username {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+}
+
+.tooltip-name .instaname {
+    font-family: Helvetica;
+    color: black;
+    opacity: .5;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.tooltip .gallery {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 15px 0;
+}
+
+.tooltip-photo {
+    width: 98px;
+    height: 75px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin: 0;
+}
+
+.tooltip .follow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 120px;
+    padding-left: 120px;
+    background-color: rgb(3, 133, 255);
+    opacity: 1;
+    border-radius: 4px;
+    margin: 0;
+    transition-duration: 0.2s;
+}
+
+.tooltip .follow:hover {
+    background-color: rgb(0, 106, 255);
+}
+
+.tooltip .follow h4 {
+    color: white;
+    opacity: 1;
+}
+
+
+.tooltip .follow svg {
+    fill: white;
+    font-size: 14px;
+}
+
+
+/* MEDIA QUERIES */
+
+/* Responsive Design – 2 columns */
+@media screen and (max-width: 992px) {
+    .column {
+        flex: 45%;
+    }
+}
+
+/* Responsive Design – 1 column */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+    }
+
+    .tag-container {
+        display: none;
+    }
+}
