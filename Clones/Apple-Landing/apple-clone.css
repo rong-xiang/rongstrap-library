@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+svg {
+  display: block;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+}
+
+nav .nav-outside {
+  background-color: #000000;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  opacity: 0.8;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+nav .nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1000px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+nav .nav-container .nav-item {
+  color: white;
+  opacity: 0.8;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  -webkit-transition-duration: 0.5s ease;
+          transition-duration: 0.5s ease;
+}
+
+nav .nav-container .nav-item:hover {
+  opacity: 1;
+}
+
+nav .nav-container .icon {
+  font-size: 16px;
+}
+/*# sourceMappingURL=apple-clone.css.map */

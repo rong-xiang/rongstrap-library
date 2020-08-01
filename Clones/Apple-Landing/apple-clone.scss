@@ -1,0 +1,65 @@
+
+// Getting rid of default styling
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+svg {
+    display: block;
+}
+
+// Variables
+
+$main-font: Helvetica, sans-serif;
+
+// Nav styling
+
+nav {
+
+    position: fixed;
+    width: 100%;
+
+    .nav-outside {
+        background-color: #000000;
+        backdrop-filter: blur(10px);
+        opacity: 0.8;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .nav-container {
+        display: flex;
+        max-width: 1000px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto; 
+        padding-top: 15px;
+        padding-bottom: 15px;
+        
+        .nav-item {
+            color: white;
+            opacity: 0.8;
+            font-family: $main-font;
+            font-weight: 300;
+            font-size: 14px;
+            transition-duration: 0.5s ease;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .icon {
+            font-size: 16px;
+        }
+
+    }
+}
