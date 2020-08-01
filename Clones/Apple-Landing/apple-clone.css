@@ -17,9 +17,7 @@ svg {
 nav {
   position: fixed;
   width: 100%;
-}
-
-nav .nav-outside {
+  z-index: 1;
   background-color: #000000;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -60,5 +58,25 @@ nav .nav-container .nav-item:hover {
 
 nav .nav-container .icon {
   font-size: 16px;
+}
+
+.alert-banner {
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  -webkit-transform: translateY(45px);
+          transform: translateY(45px);
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.alert-banner a {
+  color: #4343fc;
 }
 /*# sourceMappingURL=apple-clone.css.map */
