@@ -15,7 +15,7 @@ svg {
   display: block;
 }
 
-main .full .card-container .cta-container, main .half .card-container .cta-container {
+.full .card-container .cta-container, .half .card-container .cta-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,31 +29,25 @@ main .full .card-container .cta-container, main .half .card-container .cta-conta
           align-items: center;
 }
 
-main .full .card-container .cta-container .cta, main .half .card-container .cta {
+.full .card-container .cta-container .cta, .half .card-container .cta {
   color: #0d8eff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-main .full .card-container .cta-container .cta .text, main .half .card-container .cta .text {
+.full .card-container .cta-container .cta .text, .half .card-container .cta .text {
   margin-right: 3px;
 }
 
-main .full .card-container .cta-container .cta .text:hover, main .half .card-container .cta .text:hover {
+.full .card-container .cta-container .cta .text:hover, .half .card-container .cta .text:hover {
   text-decoration: underline;
-}
-
-main .full .card-container .cta-container .cta .chevron-right, main .half .card-container .cta .chevron-right {
-  -webkit-transform: translateY(1px);
-          transform: translateY(1px);
-  font-size: 0.8em;
 }
 
 nav {
@@ -124,28 +118,28 @@ nav .nav-container .icon {
   text-decoration: underline;
 }
 
-main .card {
+.card {
   margin-bottom: 10px;
   text-align: center;
   color: white;
 }
 
-main .card.reverse {
+.card.reverse {
   color: black;
 }
 
-main .full {
+.full {
   position: relative;
 }
 
-main .full img {
+.full img {
   width: 100%;
   height: 600px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-main .full .card-container {
+.full .card-container {
   position: absolute;
   width: 600px;
   top: 60px;
@@ -155,32 +149,38 @@ main .full .card-container {
   margin: 0 auto;
 }
 
-main .full .card-container .headline {
+.full .card-container .headline {
   font-size: 52px;
   margin-bottom: 10px;
 }
 
-main .full .card-container .subline {
+.full .card-container .subline {
   font-size: 26px;
   font-weight: 300;
   margin-bottom: 20px;
 }
 
-main .full .card-container .pricing {
+.full .card-container .pricing {
   color: #aaaaaa;
   font-weight: 300;
   margin-bottom: 20px;
 }
 
-main .full .card-container .pricing sup {
+.full .card-container .pricing sup {
   font-size: 0.7em;
 }
 
-main .full .card-container .cta-container .cta .text {
+.full .card-container .cta-container .cta .text {
   font-size: 18px;
 }
 
-main .card-flex {
+.full .card-container .cta-container .cta .chevron-right {
+  font-size: 0.8em;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.card-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -194,21 +194,21 @@ main .card-flex {
           align-items: center;
 }
 
-main .half {
+.half {
   width: calc(calc(100% - 12px) / 2);
   position: relative;
 }
 
-main .half img {
+.half img {
   width: 100%;
   height: 600px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-main .half .card-container {
+.half .card-container {
   position: absolute;
-  top: 50px;
+  top: 10%;
   right: 0;
   bottom: 0;
   left: 0;
@@ -216,17 +216,55 @@ main .half .card-container {
   margin: 0 auto;
 }
 
-main .half .card-container.reverse {
+.half .card-container.reverse {
   color: black;
 }
 
-main .half .card-container .headline {
+.half .card-container .headline {
   font-size: 36px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-main .half .card-container .subline {
-  font-size: 24px;
-  margin-bottom: 8px;
+.half .card-container .subline {
+  font-size: 22px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.half .card-container .cta .chevron-right {
+  font-size: 10px;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+
+.lightning-watch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.lightning-watch .watch {
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.lightning-watch svg {
+  font-size: 30px;
+}
+
+.series {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #c91f08;
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
 /*# sourceMappingURL=apple-clone.css.map */
