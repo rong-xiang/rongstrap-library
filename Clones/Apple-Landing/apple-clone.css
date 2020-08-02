@@ -15,6 +15,10 @@ svg {
   display: block;
 }
 
+sup {
+  font-size: 0.6em;
+}
+
 .full .card-container .cta-container, .half .card-container .cta-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,12 +46,20 @@ svg {
           align-items: center;
 }
 
+.full .card-container .cta-container .link-white.cta, .half .card-container .link-white.cta {
+  color: white;
+}
+
 .full .card-container .cta-container .cta .text, .half .card-container .cta .text {
   margin-right: 3px;
 }
 
 .full .card-container .cta-container .cta .text:hover, .half .card-container .cta .text:hover {
   text-decoration: underline;
+}
+
+.full .card-container .cta-container .cta .text sup, .half .card-container .cta .text sup {
+  text-decoration: none;
 }
 
 nav {
@@ -166,10 +178,6 @@ nav .nav-container .icon {
   margin-bottom: 20px;
 }
 
-.full .card-container .pricing sup {
-  font-size: 0.7em;
-}
-
 .full .card-container .cta-container .cta .text {
   font-size: 18px;
 }
@@ -226,7 +234,7 @@ nav .nav-container .icon {
 }
 
 .half .card-container .subline {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 300;
   margin-bottom: 10px;
   line-height: 1.3;
@@ -238,7 +246,11 @@ nav .nav-container .icon {
           transform: translateY(1px);
 }
 
-.lightning-watch {
+.half .card-container .watch-now {
+  margin-top: 400px;
+}
+
+.lockup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,12 +263,12 @@ nav .nav-container .icon {
   margin-bottom: 10px;
 }
 
-.lightning-watch .watch {
+.lockup .watch {
   font-weight: 600;
   font-size: 28px;
 }
 
-.lightning-watch svg {
+.lockup svg {
   font-size: 30px;
 }
 
