@@ -1,0 +1,29 @@
+
+
+.parent {
+    background-color: blue;
+    width: 600px;
+    height: 200px;
+    position: relative;
+}
+
+
+.child {
+    width: 300px; 
+    margin: 0 auto;
+    background-color: red;
+    position: absolute; /*when you position something absolutely, margin 0 auto will work only when you've set all the top, right, left, and bottom parameters)*/
+    top: 40px;
+    right: 0; 
+    left: 0;
+    bottom: 0;
+}
+
+
+img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    z-index: -1;
+}
+

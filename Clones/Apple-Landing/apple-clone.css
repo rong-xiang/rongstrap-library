@@ -15,13 +15,55 @@ svg {
   display: block;
 }
 
+main .full .card-container .cta-container, main .half .card-container .cta-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 190px;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .full .card-container .cta-container .cta, main .half .card-container .cta {
+  color: #0d8eff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .full .card-container .cta-container .cta .text, main .half .card-container .cta .text {
+  margin-right: 3px;
+}
+
+main .full .card-container .cta-container .cta .text:hover, main .half .card-container .cta .text:hover {
+  text-decoration: underline;
+}
+
+main .full .card-container .cta-container .cta .chevron-right, main .half .card-container .cta .chevron-right {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  font-size: 0.8em;
+}
+
 nav {
   position: fixed;
+  z-index: 1;
   top: 0;
   width: 100%;
   background-color: #000000;
-  -webkit-backdrop-filter: blur(800px);
-          backdrop-filter: blur(800px);
+  -webkit-backdrop-filter: blur(10000px);
+          backdrop-filter: blur(10000px);
   opacity: 0.85;
   padding-left: 20px;
   padding-right: 20px;
@@ -83,14 +125,13 @@ nav .nav-container .icon {
 }
 
 main .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   margin-bottom: 10px;
   text-align: center;
+  color: white;
+}
+
+main .card.reverse {
+  color: black;
 }
 
 main .full {
@@ -106,65 +147,86 @@ main .full img {
 
 main .full .card-container {
   position: absolute;
-  top: 40px;
+  width: 600px;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
 }
 
 main .full .card-container .headline {
-  color: white;
   font-size: 52px;
   margin-bottom: 10px;
 }
 
 main .full .card-container .subline {
-  color: white;
   font-size: 26px;
   font-weight: 300;
   margin-bottom: 20px;
 }
 
 main .full .card-container .pricing {
-  color: #c2c2c2;
+  color: #aaaaaa;
   font-weight: 300;
   margin-bottom: 20px;
 }
 
-main .full .card-container .cta-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 190px;
-  margin: 0 auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-main .full .card-container .cta-container .cta {
-  color: #0d8eff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+main .full .card-container .pricing sup {
+  font-size: 0.7em;
 }
 
 main .full .card-container .cta-container .cta .text {
-  margin-right: 3px;
   font-size: 18px;
 }
 
-main .full .card-container .cta-container .cta .text:hover {
-  text-decoration: underline;
+main .card-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: row wrap;
+      flex-wrap: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-main .full .card-container .cta-container .cta .chevron-right {
-  font-size: 0.8em;
+main .half {
+  width: calc(calc(100% - 12px) / 2);
+  position: relative;
+}
+
+main .half img {
+  width: 100%;
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .half .card-container {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  margin: 0 auto;
+}
+
+main .half .card-container.reverse {
+  color: black;
+}
+
+main .half .card-container .headline {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+main .half .card-container .subline {
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 /*# sourceMappingURL=apple-clone.css.map */
