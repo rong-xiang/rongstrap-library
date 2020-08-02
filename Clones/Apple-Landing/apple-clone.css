@@ -75,7 +75,7 @@ nav {
   padding-right: 20px;
 }
 
-nav .nav-container {
+.nav-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,7 +89,7 @@ nav .nav-container {
   margin: 0 auto;
 }
 
-nav .nav-container .nav-item {
+.nav-container .nav-item {
   color: white;
   opacity: 0.8;
   font-weight: 300;
@@ -100,11 +100,11 @@ nav .nav-container .nav-item {
   height: 100%;
 }
 
-nav .nav-container .nav-item:hover {
+.nav-container .nav-item:hover {
   opacity: 1;
 }
 
-nav .nav-container .icon {
+.nav-container .icon {
   font-size: 16px;
   padding: 15px 0;
 }
@@ -278,5 +278,95 @@ nav .nav-container .icon {
   color: #c91f08;
   font-weight: 600;
   letter-spacing: 0.1em;
+}
+
+/* Footer styling */
+.footer-wrapper {
+  width: 100%;
+  background-color: #f7f7f7;
+}
+
+.footer-inner {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.fine-print p, .sub-label, .label, .bottom-print {
+  font-size: 11.5px;
+  margin-bottom: 10px;
+}
+
+.fine-print p, .bottom-print {
+  color: #b4b4b4;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.fine-print {
+  padding-bottom: 10px;
+}
+
+.site-map {
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #424242;
+  border-top: solid 0.5px rgba(180, 180, 180, 0.5);
+}
+
+.site-map .label {
+  font-weight: bold;
+}
+
+.site-map .section {
+  margin-bottom: 30px;
+}
+
+.bottom-print .contact {
+  padding-bottom: 10px;
+  border-bottom: solid 0.5px rgba(180, 180, 180, 0.5);
+}
+
+.bottom-print a {
+  color: #0d8eff;
+}
+
+.bottom-print a:hover {
+  text-decoration: underline;
+}
+
+.bottom-print .copyright-container, .bottom-print .copyright-flex, .bottom-print .us {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bottom-print .copyright-container {
+  margin-top: 10px;
+  padding-bottom: 40px;
+}
+
+.bottom-print .item {
+  padding: 0 10px;
+  border-right: solid 0.5px rgba(180, 180, 180, 0.5);
+}
+
+.bottom-print .item.last {
+  border-right: none;
+}
+
+.bottom-print .us p {
+  margin-left: 5px;
 }
 /*# sourceMappingURL=apple-clone.css.map */

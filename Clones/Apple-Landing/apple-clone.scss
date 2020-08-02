@@ -24,6 +24,7 @@ sup {
 
 $card-height: 600px;
 $link-color: #0d8eff;
+$inner-width: 1000px;
 
 // Extends
 
@@ -73,35 +74,35 @@ nav {
     padding-left: 20px;
     padding-right: 20px;
 
+}
 
-    .nav-container {
-        display: flex;
-        max-width: 1000px;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 auto; 
-        
-        
-        .nav-item {
-            color: white;
-            opacity: 0.8;
-            font-weight: 300;
-            font-size: 14px;
-            transition-duration: 0.5s;
-            padding: 15px;
-            height: 100%;
+.nav-container {
+    display: flex;
+    max-width: $inner-width;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto; 
+    
+    
+    .nav-item {
+        color: white;
+        opacity: 0.8;
+        font-weight: 300;
+        font-size: 14px;
+        transition-duration: 0.5s;
+        padding: 15px;
+        height: 100%;
 
-            &:hover {
-                opacity: 1;
-            }
+        &:hover {
+            opacity: 1;
         }
-
-        .icon {
-            font-size: 16px;
-            padding: 15px 0;
-        }
-
     }
+
+    .icon {
+        font-size: 16px;
+        padding: 15px 0;
+    }
+
 }
 
 // Alert banner styling
@@ -129,30 +130,24 @@ nav {
 
 // Cards styling
 
-
 .card {
-    
+
     margin-bottom: 10px;
     text-align: center;
     color: white;
-
-    
 
     &.reverse {
         color: black;
     }
 }
 
-
 .full {
-
     position: relative;
     
     img {
         width: 100%;
         height: $card-height;
         object-fit: cover;
-        
     }
 
     .card-container {
@@ -180,12 +175,10 @@ nav {
             font-weight: 300;
             margin-bottom: 20px;
         }
-
             
         .cta-container {
             @extend %cta-container;
 
-            
             .cta {
                 @extend %cta;
                 .text {
@@ -196,10 +189,8 @@ nav {
                     transform: translateY(2px);
                 }
             }
-        }
-            
+        }  
     }
-
 }
 
 .card-flex {
@@ -285,8 +276,94 @@ nav {
     color: rgb(201, 31, 8);
     font-weight: 600;
     letter-spacing: 0.1em;
-
 }
 
+/* Footer styling */
+
+.footer-wrapper {
+    width: 100%;
+    background-color: #f7f7f7;
+}
+
+.footer-inner {
+    width: $inner-width;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.fine-print p, .sub-label, .label, .bottom-print {
+    font-size: 11.5px;
+    margin-bottom: 10px;
+}
+
+.fine-print p, .bottom-print {
+    color: #b4b4b4;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.fine-print {
+    padding-bottom: 10px;
+}
+
+.site-map {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    color: #424242;
+    border-top: solid 0.5px rgba(180, 180, 180, 0.5);
+
+
+    .label {
+        font-weight: bold;
+    }
+
+    .section {
+        margin-bottom: 30px;
+    }
+    
+}
+
+.bottom-print {
+
+
+    .contact {
+        padding-bottom: 10px;
+        border-bottom: solid 0.5px rgba(180, 180, 180, 0.5);
+    }
+
+    a {
+        color: $link-color;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .copyright-container, .copyright-flex, .us {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .copyright-container {
+        margin-top: 10px;
+        padding-bottom: 40px;
+    }
+
+    .item {
+        padding: 0 10px;
+        border-right: solid 0.5px rgba(180, 180, 180, 0.5);
+
+        &.last {
+            border-right: none;
+        }
+    }
+
+    .us p {
+        margin-left: 5px;
+    }
+
+
+}
 
     
