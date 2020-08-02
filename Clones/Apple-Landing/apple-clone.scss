@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
 }
 
 a {
@@ -18,18 +19,19 @@ svg {
 
 // Variables
 
-$main-font: Helvetica, sans-serif;
+$card-height: 600px;
+$link-color: #0d8eff;
 
 // Nav styling
 
 nav {
 
     position: fixed;
+    top: 0;
     width: 100%;
-    z-index: 1;
     background-color: #000000;
-    backdrop-filter: blur(10px);
-    opacity: 0.8;
+    backdrop-filter: blur(800px);
+    opacity: 0.85;
     padding-left: 20px;
     padding-right: 20px;
 
@@ -40,16 +42,16 @@ nav {
         justify-content: space-between;
         align-items: center;
         margin: 0 auto; 
-        padding-top: 15px;
-        padding-bottom: 15px;
+        
         
         .nav-item {
             color: white;
             opacity: 0.8;
-            font-family: $main-font;
             font-weight: 300;
             font-size: 14px;
-            transition-duration: 0.5s ease;
+            transition-duration: 0.5s;
+            padding: 15px;
+            height: 100%;
 
             &:hover {
                 opacity: 1;
@@ -58,27 +60,108 @@ nav {
 
         .icon {
             font-size: 16px;
+            padding: 15px 0;
         }
 
     }
 }
 
+// Alert banner styling
 .alert-banner {
-    font-family: $main-font;
-    font-weight: 300;
+  
+    font-weight: 400;
     font-size: 14px;
-    transform: translateY(45px);
     text-align: center;
     width: 100%;
-    margin: 0 auto;
+    margin: 45px auto 0 auto;
     background-color: white;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
 
-
     a {
-        color: rgb(67, 67, 252);
+        color: $link-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
+}
+
+// Cards styling
+main {
+
+    .card {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .full {
+        position: relative;
+        
+        img {
+            width: 100%;
+            height: $card-height;
+            object-fit: cover;
+          
+        }
+
+        .card-container {
+            position: absolute;
+            top: 40px;
+            
+               .headline {
+                   color: white;
+                   font-size: 52px;
+                   margin-bottom: 10px;
+               }
+   
+               .subline {
+                   color: white;
+                   font-size: 26px;
+                   font-weight: 300;
+                   margin-bottom: 20px;
+               }
+   
+               .pricing {
+                   color: #c2c2c2;
+                   font-weight: 300;
+                   margin-bottom: 20px;
+               }
+   
+               .cta-container {
+                   display: flex;
+                   justify-content: space-between;
+                   width: 190px;
+                   margin: 0 auto;
+                   align-items: center;
+   
+                   .cta {
+                       color: $link-color;
+                       display: flex;
+                       justify-content: space-between;
+                       align-items: center;
+   
+                       .text {
+                           margin-right: 3px;
+                           font-size: 18px;
+                           &:hover {
+                               text-decoration: underline;
+                           }
+                       }
+
+                       .chevron-right {
+                           font-size: 0.8em;
+                       }
+                   }
+               }
+               
+       }
+
+    }
+
+    
 }
