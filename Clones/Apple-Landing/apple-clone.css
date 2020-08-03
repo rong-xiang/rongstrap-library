@@ -1,6 +1,8 @@
-/* After Javascript
-- Add collapsible function to footer (dropdown on click)
-- Flyout menu on click, not hover
+/* 
+- Javascript: Add collapsible function to footer (dropdown on click)
+- Javascript: Flyout menu on click, not hover
+- Change flexboxes to grid
+- Search bar functionality
 */
 * {
   padding: 0;
@@ -415,6 +417,33 @@ nav {
 
 .site-map-narrow {
   display: none;
+}
+
+.site-map-narrow .section {
+  border-bottom: solid 0.5px rgba(180, 180, 180, 0.5);
+}
+
+.site-map-narrow .footer-dropdown-content {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.site-map-narrow .dropdown-tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 10px;
+}
+
+.site-map-narrow .dropdown-tab:hover + .footer-dropdown-content {
+  display: block;
+}
+
+.site-map-narrow .plus {
+  font-size: 0.8em;
 }
 
 .contact {
