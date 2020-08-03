@@ -53,6 +53,18 @@ img {
 
 
 /* real example */
+.contact {
+    padding-bottom: 10px;
+    border-bottom: solid 0.5px rgba(180, 180, 180, 0.5);
+}
+
+a {
+    color: $link-color;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .copyright-container, .copyright-flex, .us {
     display: flex;
     justify-content: space-between;
@@ -73,9 +85,18 @@ img {
     padding: 0 10px;
     border-right: solid 0.5px rgba(180, 180, 180, 0.5);
 
+    &.last {
+        border-right: none;
+    }
 }
 
-@media screen and (max-width: 900px){
+.us p {
+    margin-left: 5px;
+}
+
+/* media queries */
+
+@media screen and (max-width: 900px) {
     .flex-container {
         display: block;
     }

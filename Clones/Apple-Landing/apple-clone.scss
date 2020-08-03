@@ -1,3 +1,8 @@
+/* After Javascript
+- Add collapsible function to footer (dropdown on click)
+- Flyout menu on click, not hover
+*/
+
 // Resetting defaults
 
 * {
@@ -60,49 +65,128 @@ $inner-width: 1000px;
 
 }
 
+%nav {
+    max-width: $inner-width;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+%sitemap {
+    padding: 20px 0;
+    color: #424242;
+    border-top: solid 0.5px rgba(180, 180, 180, 0.5);
+
+    .label {
+        font-weight: bold;
+    }
+
+
+}
+
 // Nav styling
 
 nav {
-
     position: fixed;
     z-index: 1;
     top: 0;
     width: 100%;
-    background-color: #000000;
-    backdrop-filter: blur(10000px);
-    opacity: 0.85;
+    background-color: black;
+    /*backdrop-filter: blur(10000px);
+    opacity: 0.85;*/
     padding-left: 20px;
     padding-right: 20px;
-
 }
 
-.nav-container {
+.nav-wide {
+    @extend %nav;
     display: flex;
-    max-width: $inner-width;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto; 
-    
-    
-    .nav-item {
-        color: white;
-        opacity: 0.8;
-        font-weight: 300;
-        font-size: 14px;
-        transition-duration: 0.5s;
-        padding: 15px;
-        height: 100%;
+}
 
-        &:hover {
+.nav-narrow {
+    @extend %nav;
+    display: none;
+}
+
+.dropdown {
+    .dropdown-background {
+        position: absolute;
+        left: 0;
+        height: 0;
+        width: 100%;
+        background-color: black;
+        transition: height 0.4s;
+    }
+
+    &:hover .dropdown-background {
+        height: 100vh;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        color: white;
+    }
+
+    &:hover .dropdown-content{
+        display: block;
+    }
+
+    .dropdown-inner {
+        position: absolute;
+        width: 100%;
+        padding: 40px;
+        z-index: 3;
+        color: white;
+
+        .item {
+            font-weight: 300;
+            width: 100%;
+            padding: 15px 0;
+            opacity: 0.7;
+            border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+            transition: opacity 0.3s ease;
+        }
+
+        .item:hover {
             opacity: 1;
         }
     }
 
-    .icon {
-        font-size: 16px;
-        padding: 15px 0;
+    @keyframes appear {
+        from {opacity: 0;}
+        to {opacity: 1;}
     }
 
+    &:hover .dropdown-inner {
+        animation: appear ease 0.5s forwards;
+    }
+
+    
+
+   
+}
+    
+.nav-item {
+    color: white;
+    opacity: 0.8;
+    font-weight: 300;
+    font-size: 14px;
+    transition-duration: 0.5s;
+    padding: 15px;
+    height: 100%;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.icon {
+    font-size: 16px;
+    padding: 15px 0;
 }
 
 // Alert banner styling
@@ -128,8 +212,7 @@ nav {
     }
 }
 
-// Cards styling
-// Should have used display: grid
+// Cards styling...should have used display: grid
 
 .card {
 
@@ -308,17 +391,10 @@ nav {
     padding-bottom: 10px;
 }
 
-.site-map {
-    padding: 20px 0;
+.site-map-wide {
+    @extend %sitemap;
     display: flex;
     justify-content: space-between;
-    color: #424242;
-    border-top: solid 0.5px rgba(180, 180, 180, 0.5);
-
-
-    .label {
-        font-weight: bold;
-    }
 
     .section {
         margin-bottom: 30px;
@@ -326,66 +402,57 @@ nav {
     
 }
 
-.bottom-print {
+.site-map-narrow {
+    @extend %sitemap;
+    display: none;
+}
 
-
-    .contact {
-        padding-bottom: 10px;
-        border-bottom: solid 0.5px rgba(180, 180, 180, 0.5);
-    }
-
+.contact {
+    padding-bottom: 10px;
+    border-bottom: solid 0.5px rgba(180, 180, 180, 0.5);
     a {
         color: $link-color;
         &:hover {
             text-decoration: underline;
         }
     }
+}
 
-    .copyright-container, .copyright-flex, .us {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .copyright-container {
-        margin-top: 10px;
-        padding-bottom: 40px;
-    }
-    
-    .copyright-container-mini {
-        display: flex;
-        max-width: 700px;
-    }
-    
+.copyright-container, .copyright-flex, .us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-container {
+    margin-top: 10px;
+    padding-bottom: 40px;
+}
+
+.copyright-container-mini {
+    display: flex;
+    max-width: 700px;
     .item {
         padding: 0 10px;
         border-right: solid 0.5px rgba(180, 180, 180, 0.5);
     
-    }
-    
-
-    .item {
-        padding: 0 10px;
-        border-right: solid 0.5px rgba(180, 180, 180, 0.5);
-
         &.last {
             border-right: none;
         }
     }
-
-    .us p {
-        margin-left: 5px;
-    }
-
 }
 
-// Media queries
+
+
+.us p {
+    margin-left: 5px;
+}
+
+// Media queries must be siblings to the targeted selector in SASS
 
 @media screen and (max-width: 900px) {
-    .copyright-container-mini, .copyright-container {
-        display: block;
-    }
     
+    // main
     .full .card-container {
         .headline {font-size: 44px;}
         .subline {font-size: 20px; }
@@ -397,12 +464,39 @@ nav {
         .headline {font-size: 28px;}
         .subline {font-size: 16px;}
     }
+
+    // footer
+    .copyright-container-mini {
+        display: block;
+        .first {
+            padding-left: 0;
+        }
+
+        .copyright-flex {
+            justify-content: start;
+        }
+    }
     
 }
 
 @media screen and (max-width: 700px) {
-    .half {
-       min-width: 100%;
+    
+    //nav 
+    .nav-wide {display: none;}
+    .nav-narrow {display: flex;}
+
+    // main
+    .half {min-width: 100%;}
+
+    // footer
+    .copyright-container {
+        display: block;
+
+        .us {
+            justify-content: flex-start;
+        }
     }
+    .site-map-wide {display: none;}
+    .site-map-narrow {display: block;}
 }
 
