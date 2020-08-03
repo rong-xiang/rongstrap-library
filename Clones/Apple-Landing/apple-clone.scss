@@ -33,6 +33,22 @@ $card-height: 600px;
 $link-color: #0d8eff;
 $inner-width: 1000px;
 
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes appear-translate {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 // Extends
 
 %cta-container {
@@ -85,6 +101,16 @@ $inner-width: 1000px;
 
 
 }
+
+%appear {
+    animation: appear ease 0.5s forwards;
+}
+
+%appear-translate {
+    animation: appear-translate ease 0.2s forwards;
+}
+
+
 
 // Nav styling
 
@@ -158,17 +184,9 @@ nav {
         }
     }
 
-    @keyframes appear {
-        from {opacity: 0;}
-        to {opacity: 1;}
-    }
-
     &:hover .dropdown-inner {
-        animation: appear ease 0.5s forwards;
+        @extend %appear;
     }
-
-    
-
    
 }
     
@@ -408,25 +426,40 @@ nav {
     @extend %sitemap;
     display: none;
 
-    .section {
-        border-bottom: solid 0.5px rgba(180, 180, 180, 0.5);
-    }
-
     .footer-dropdown-content {
+        position: relative;
         display: none;
+        padding-left: 10px;
         margin-bottom: 20px;
     }
+
+    .footer-dropdown-text {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    .section {
+        position: relative;
+        border-bottom: solid 0.5px rgba(180, 180, 180, 0.5);
+
+        &:hover {
+            .footer-dropdown-content {
+                display: block;   
+            }
+
+            .footer-dropdown-text {
+                @extend %appear-translate;
+            }
+        }
+    }
+
+    
 
     .dropdown-tab {
         display: flex;
         justify-content: space-between;
         padding-top: 10px;
-        
     }
 
-    .dropdown-tab:hover + .footer-dropdown-content {
-        display: block;
-    }
    
     .plus {
         font-size: 0.8em;

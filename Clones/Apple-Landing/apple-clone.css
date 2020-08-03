@@ -25,6 +25,50 @@ sup {
   font-size: 0.6em;
 }
 
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes appear-translate {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes appear-translate {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .full .card-container .cta-container, .half .card-container .cta-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -87,6 +131,16 @@ sup {
 
 .site-map-wide .label, .site-map-narrow .label {
   font-weight: bold;
+}
+
+.dropdown:hover .dropdown-inner {
+  -webkit-animation: appear ease 0.5s forwards;
+          animation: appear ease 0.5s forwards;
+}
+
+.site-map-narrow .section:hover .footer-dropdown-text {
+  -webkit-animation: appear-translate ease 0.2s forwards;
+          animation: appear-translate ease 0.2s forwards;
 }
 
 nav {
@@ -158,29 +212,6 @@ nav {
 
 .dropdown .dropdown-inner .item:hover {
   opacity: 1;
-}
-
-@-webkit-keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.dropdown:hover .dropdown-inner {
-  -webkit-animation: appear ease 0.5s forwards;
-          animation: appear ease 0.5s forwards;
 }
 
 .nav-item {
@@ -419,13 +450,26 @@ nav {
   display: none;
 }
 
+.site-map-narrow .footer-dropdown-content {
+  position: relative;
+  display: none;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.site-map-narrow .footer-dropdown-text {
+  opacity: 0;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+
 .site-map-narrow .section {
+  position: relative;
   border-bottom: solid 0.5px rgba(180, 180, 180, 0.5);
 }
 
-.site-map-narrow .footer-dropdown-content {
-  display: none;
-  margin-bottom: 20px;
+.site-map-narrow .section:hover .footer-dropdown-content {
+  display: block;
 }
 
 .site-map-narrow .dropdown-tab {
@@ -436,10 +480,6 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-top: 10px;
-}
-
-.site-map-narrow .dropdown-tab:hover + .footer-dropdown-content {
-  display: block;
 }
 
 .site-map-narrow .plus {
