@@ -153,7 +153,7 @@ nav {
 
 .full .card-container {
   position: absolute;
-  width: 600px;
+  max-width: 600px;
   top: 60px;
   right: 0;
   bottom: 0;
@@ -203,7 +203,7 @@ nav {
 }
 
 .half {
-  width: calc(calc(100% - 12px) / 2);
+  max-width: calc(calc(100% - 12px) / 2);
   position: relative;
 }
 
@@ -220,7 +220,7 @@ nav {
   right: 0;
   bottom: 0;
   left: 0;
-  width: 400px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -283,11 +283,12 @@ nav {
 /* Footer styling */
 .footer-wrapper {
   width: 100%;
+  padding: 0 20px;
   background-color: #f7f7f7;
 }
 
 .footer-inner {
-  width: 1000px;
+  max-width: 1000px;
   margin: 0 auto;
   padding-top: 20px;
 }
@@ -357,6 +358,18 @@ nav {
   padding-bottom: 40px;
 }
 
+.bottom-print .copyright-container-mini {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 700px;
+}
+
+.bottom-print .item {
+  padding: 0 10px;
+  border-right: solid 0.5px rgba(180, 180, 180, 0.5);
+}
+
 .bottom-print .item {
   padding: 0 10px;
   border-right: solid 0.5px rgba(180, 180, 180, 0.5);
@@ -368,5 +381,35 @@ nav {
 
 .bottom-print .us p {
   margin-left: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .copyright-container-mini, .copyright-container {
+    display: block;
+  }
+  .full .card-container .headline {
+    font-size: 44px;
+  }
+  .full .card-container .subline {
+    font-size: 20px;
+  }
+  .full .card-container .pricing {
+    font-size: 14px;
+  }
+  .half .card-container {
+    max-width: 300px;
+  }
+  .half .card-container .headline {
+    font-size: 28px;
+  }
+  .half .card-container .subline {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .half {
+    min-width: 100%;
+  }
 }
 /*# sourceMappingURL=apple-clone.css.map */

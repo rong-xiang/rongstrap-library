@@ -1,5 +1,4 @@
-
-
+/* Centering a div that is absolutely positioned*/
 .parent {
     background-color: blue;
     width: 600px;
@@ -27,3 +26,61 @@ img {
     z-index: -1;
 }
 
+/* Responsive Design test */
+
+.big-container {
+    display: flex;
+}
+
+.flex-container {
+    display: flex;
+    max-width: 700px;
+}
+
+.box, .other-item {
+    background-color: red;
+    padding: 30px;
+    border: 1px solid white;
+    margin: 20px;
+
+    
+}
+
+.two {
+    display: flex;
+    width: 700px;
+}
+
+
+/* real example */
+.copyright-container, .copyright-flex, .us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-container {
+    margin-top: 10px;
+    padding-bottom: 40px;
+}
+
+.copyright-container-mini {
+    display: flex;
+    max-width: 700px;
+}
+
+.item {
+    padding: 0 10px;
+    border-right: solid 0.5px rgba(180, 180, 180, 0.5);
+
+}
+
+@media screen and (max-width: 900px){
+    .flex-container {
+        display: block;
+    }
+
+    .copyright-container-mini {
+        display: block;
+    }
+}
