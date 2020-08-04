@@ -31,7 +31,7 @@ sup {
 $card-height: 600px;
 $link-color: #0d8eff;
 $inner-width: 1000px;
-$half-width: (calc(calc(100% - 12px) / 2));
+$columns: 2;
 
 @keyframes appear {
     from {opacity: 0;}
@@ -241,6 +241,7 @@ nav {
 .card {
     text-align: center;
     color: white;
+    height: $card-height;
 
     &.reverse {
         color: black;
@@ -250,13 +251,13 @@ nav {
 .card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, $card-height);
+    grid-auto-rows: $card-height;
     grid-gap: 10px;
 }
 
 .full {
     position: relative;
-    grid-column: 1 / 3;
+    margin-bottom: 10px;
     
     img {@extend %responsive-img;}
 
@@ -307,7 +308,7 @@ nav {
 .half {
     position: relative;
 
-    img { @extend %responsive-img}
+    img { @extend %responsive-img;}
 
     .card-container {
         position: absolute;
@@ -532,10 +533,14 @@ nav {
     .nav-wide {display: none;}
     .nav-narrow {display: flex;}
 
+    //main
+    .card-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     // footer
     .copyright-container {
         display: block;
-
         .us {
             justify-content: flex-start;
         }

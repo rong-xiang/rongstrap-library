@@ -18,90 +18,24 @@
     bottom: 0;
 }
 
-
-img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    z-index: -1;
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 100px;
+    grid-gap: 10px;
 }
 
-/* Responsive Design test */
-
-.big-container {
-    display: flex;
-}
-
-.flex-container {
-    display: flex;
-    max-width: 700px;
-}
-
-.box, .other-item {
+.full {
+    grid-column: 1 / 3;
     background-color: red;
-    padding: 30px;
-    border: 1px solid white;
-    margin: 20px;
-
-    
 }
 
-.two {
-    display: flex;
-    width: 700px;
+.half {
+    background-color: green;
 }
 
-
-/* real example */
-.contact {
-    padding-bottom: 10px;
-    border-bottom: solid 0.5px rgba(180, 180, 180, 0.5);
-}
-
-a {
-    color: $link-color;
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-.copyright-container, .copyright-flex, .us {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.copyright-container {
-    margin-top: 10px;
-    padding-bottom: 40px;
-}
-
-.copyright-container-mini {
-    display: flex;
-    max-width: 700px;
-}
-
-.item {
-    padding: 0 10px;
-    border-right: solid 0.5px rgba(180, 180, 180, 0.5);
-
-    &.last {
-        border-right: none;
-    }
-}
-
-.us p {
-    margin-left: 5px;
-}
-
-/* media queries */
-
-@media screen and (max-width: 900px) {
-    .flex-container {
-        display: block;
-    }
-
-    .copyright-container-mini {
-        display: block;
+@media screen and (max-width: 700px) {
+    .grid {
+        
     }
 }
