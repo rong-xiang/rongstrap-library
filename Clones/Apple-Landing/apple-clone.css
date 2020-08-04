@@ -1,6 +1,7 @@
 /* 
 - Javascript: Add collapsible function to footer (dropdown on click)
 - Javascript: Flyout menu on click, not hover
+- Javascript: Refine search bar functionality
 - Search bar functionality
 */
 * {
@@ -204,6 +205,43 @@ nav {
   padding: 40px;
   z-index: 3;
   color: white;
+}
+
+.dropdown .dropdown-inner input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  background-color: black;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.dropdown .dropdown-inner input::-webkit-input-placeholder {
+  color: white;
+  font-weight: 300;
+}
+
+.dropdown .dropdown-inner input:-ms-input-placeholder {
+  color: white;
+  font-weight: 300;
+}
+
+.dropdown .dropdown-inner input::-ms-input-placeholder {
+  color: white;
+  font-weight: 300;
+}
+
+.dropdown .dropdown-inner input::placeholder {
+  color: white;
+  font-weight: 300;
+}
+
+.dropdown .dropdown-inner input:hover {
+  opacity: 1;
 }
 
 .dropdown .dropdown-inner .item {

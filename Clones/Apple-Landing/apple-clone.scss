@@ -1,6 +1,7 @@
 /* 
 - Javascript: Add collapsible function to footer (dropdown on click)
 - Javascript: Flyout menu on click, not hover
+- Javascript: Refine search bar functionality
 - Search bar functionality
 */
 
@@ -114,8 +115,6 @@ $columns: 2;
     object-fit: cover;
 }
 
-
-
 // Nav styling
 
 nav {
@@ -174,6 +173,26 @@ nav {
         z-index: 3;
         color: white;
 
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 0.5px solid rgba(255, 255, 255, 0.5);
+            border-radius: 2px;
+            background-color: black;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+
+            &::placeholder {
+                color: white;
+                font-weight: 300;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
         .item {
             font-weight: 300;
             width: 100%;
