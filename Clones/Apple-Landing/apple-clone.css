@@ -1,7 +1,6 @@
 /* 
 - Javascript: Add collapsible function to footer (dropdown on click)
 - Javascript: Flyout menu on click, not hover
-- Change flexboxes to grid
 - Search bar functionality
 */
 * {
@@ -143,6 +142,13 @@ sup {
           animation: appear-translate ease 0.2s forwards;
 }
 
+.full img, .half img {
+  height: 600px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 nav {
   position: fixed;
   z-index: 1;
@@ -256,7 +262,6 @@ nav {
 }
 
 .card {
-  margin-bottom: 10px;
   text-align: center;
   color: white;
 }
@@ -265,15 +270,21 @@ nav {
   color: black;
 }
 
-.full {
-  position: relative;
+.card-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (600px)[6];
+      grid-template-rows: repeat(6, 600px);
+  grid-gap: 10px;
 }
 
-.full img {
-  width: 100%;
-  height: 600px;
-  -o-object-fit: cover;
-     object-fit: cover;
+.full {
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
 }
 
 .full .card-container {
@@ -313,30 +324,8 @@ nav {
           transform: translateY(2px);
 }
 
-.card-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: row wrap;
-      flex-wrap: row wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .half {
-  max-width: calc(calc(100% - 12px) / 2);
   position: relative;
-}
-
-.half img {
-  width: 100%;
-  height: 600px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .half .card-container {
@@ -576,9 +565,6 @@ nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-  .half {
-    min-width: 100%;
   }
   .copyright-container {
     display: block;

@@ -1,7 +1,6 @@
 /* 
 - Javascript: Add collapsible function to footer (dropdown on click)
 - Javascript: Flyout menu on click, not hover
-- Change flexboxes to grid
 - Search bar functionality
 */
 
@@ -32,6 +31,7 @@ sup {
 $card-height: 600px;
 $link-color: #0d8eff;
 $inner-width: 1000px;
+$half-width: (calc(calc(100% - 12px) / 2));
 
 @keyframes appear {
     from {opacity: 0;}
@@ -98,8 +98,6 @@ $inner-width: 1000px;
     .label {
         font-weight: bold;
     }
-
-
 }
 
 %appear {
@@ -108,6 +106,12 @@ $inner-width: 1000px;
 
 %appear-translate {
     animation: appear-translate ease 0.2s forwards;
+}
+
+%responsive-img {
+    height: $card-height;
+    width: 100%;
+    object-fit: cover;
 }
 
 
@@ -235,7 +239,6 @@ nav {
 // Cards styling...should have used display: grid
 
 .card {
-    margin-bottom: 10px;
     text-align: center;
     color: white;
 
@@ -244,14 +247,18 @@ nav {
     }
 }
 
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, $card-height);
+    grid-gap: 10px;
+}
+
 .full {
     position: relative;
+    grid-column: 1 / 3;
     
-    img {
-        width: 100%;
-        height: $card-height;
-        object-fit: cover;
-    }
+    img {@extend %responsive-img;}
 
     .card-container {
         position: absolute;
@@ -296,23 +303,11 @@ nav {
     }
 }
 
-.card-flex {
-    display: flex;
-    flex-wrap: row wrap;
-    justify-content: space-between;
-    align-items: center;
-
-}
 
 .half {
-    max-width: calc(calc(100% - 12px) / 2);
     position: relative;
 
-    img {
-        width: 100%;
-        height: $card-height;
-        object-fit: cover;
-    }
+    img { @extend %responsive-img}
 
     .card-container {
         position: absolute;
@@ -451,21 +446,16 @@ nav {
         }
     }
 
-    
-
     .dropdown-tab {
         display: flex;
         justify-content: space-between;
         padding-top: 10px;
     }
 
-   
     .plus {
         font-size: 0.8em;
     }
 }
-
-
 
 .contact {
     padding-bottom: 10px;
@@ -502,8 +492,6 @@ nav {
     }
 }
 
-
-
 .us p {
     margin-left: 5px;
 }
@@ -536,7 +524,6 @@ nav {
             justify-content: start;
         }
     }
-    
 }
 
 @media screen and (max-width: 700px) {
@@ -544,9 +531,6 @@ nav {
     //nav 
     .nav-wide {display: none;}
     .nav-narrow {display: flex;}
-
-    // main
-    .half {min-width: 100%;}
 
     // footer
     .copyright-container {
