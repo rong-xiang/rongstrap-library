@@ -33,9 +33,3 @@
 .half {
     background-color: green;
 }
-
-@media screen and (max-width: 700px) {
-    .grid {
-        
-    }
-}
