@@ -16,6 +16,11 @@
 a {
     color: inherit;
     text-decoration: inherit;
+    
+    &:active {
+        color: inherit;
+        text-decoration: inherit;
+    }
 }
 
 svg {
@@ -254,7 +259,7 @@ nav {
     }
 }
 
-// Cards styling...should have used display: grid
+// Cards styling
 
 .card {
     text-align: center;
