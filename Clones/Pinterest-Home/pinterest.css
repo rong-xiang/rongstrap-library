@@ -32,26 +32,36 @@ nav:last-child {
   margin-right: 0;
 }
 
-nav .wrapper {
+nav .wrapper, nav .chevron-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: lightgray;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
-nav .svg-wrapper {
-  margin: 0 auto;
+nav .wrapper:hover, nav .chevron-wrapper:hover {
+  background-color: #ededed;
+}
+
+nav .wrapper {
+  width: 50px;
+  height: 50px;
+}
+
+nav .chevron-wrapper {
+  width: 30px;
+  height: 30px;
 }
 
 nav svg {
   display: block;
   font-size: 20px;
+  margin: 0 auto;
 }
 
 nav .chevron-down {
@@ -59,8 +69,9 @@ nav .chevron-down {
 }
 
 nav img {
-  width: 35px;
-  height: 35px;
+  display: block;
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   margin: 0 auto;
 }
@@ -85,7 +96,12 @@ input.nav-item {
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
+  min-width: 400px;
   font-weight: normal;
+  font-size: 16px;
+  border-radius: 30px;
+  padding: 15px 20px;
+  border: 1px solid #1c1c1c;
 }
 
 input.nav-item:focus {
@@ -96,9 +112,19 @@ input.nav-item:focus {
 .nav-text {
   color: #1c1c1c;
   font-size: 16px;
-  border: 1px solid #1c1c1c;
   border-radius: 30px;
-  padding: 15px 25px;
+  padding: 15px 20px;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.nav-text.current {
+  color: white;
+  background-color: #1c1c1c;
+}
+
+.nav-text:hover {
+  background-color: #ededed;
 }
 
 .nav-container {

@@ -12,6 +12,7 @@ a {
 }
 
 $black: #1c1c1c;
+$light-grey: #ededed;
 $purple: #a305ff;
 
 img {
@@ -33,24 +34,34 @@ nav {
         margin-right: 0;
     }
 
-    .wrapper {
+    %wrapper {
         display: flex;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: lightgray;
         align-items: center;
+        border-radius: 50%;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: $light-grey;
+        }
+        
     }
 
-    .svg-wrapper {
-        margin: 0 auto;
+    .wrapper {
+        @extend %wrapper;
+        width: 50px; 
+        height: 50px;
     }
-    
+
+    .chevron-wrapper {
+        @extend %wrapper;
+        width: 30px;
+        height: 30px;
+    }
+   
     svg {
-
         display: block;
         font-size: 20px;
-
+        margin: 0 auto;
     }
         
     .chevron-down {
@@ -58,12 +69,11 @@ nav {
     }
 
     img {
-        
-        width: 35px;
-        height: 35px;
+        display: block;
+        width: 30px;
+        height: 30px;
         border-radius: 100%;
         margin: 0 auto;
-  
     }
 }
 
@@ -86,7 +96,12 @@ nav {
 
 input.nav-item {
     flex-grow: 2;
+    min-width: 400px;
     font-weight: normal;
+    font-size: 16px;
+    border-radius: 30px;
+    padding: 15px 20px;
+    border: 1px solid $black;
 
     &:focus {
         color: inherit;
@@ -97,9 +112,18 @@ input.nav-item {
 .nav-text {
     color: $black;
     font-size: 16px;
-    border: 1px solid $black;
     border-radius: 30px;
-    padding: 15px 25px;
+    padding: 15px 20px;
+    transition: background-color 0.2s ease;
+
+    &.current {
+        color: white;
+        background-color: $black;
+    }
+
+    &:hover {
+        background-color: $light-grey;
+    }
 }
 
 .nav-container {
