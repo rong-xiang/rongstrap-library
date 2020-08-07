@@ -14,18 +14,20 @@ a {
 $black: #1c1c1c;
 $light-grey: #ededed;
 $purple: #a305ff;
+$hover: background-color 0.2s ease;
 
 img {
     object-fit: cover;
 }
 
+/* Nav styling */
 nav {
     background-color: white;
     position: fixed;
+    top: 0;
+    z-index: 1;
     width: 100%;
-    border-bottom: 0.5px solid $black;
 
-    
     .nav-item {
         margin-right: 5px;
     }
@@ -34,28 +36,23 @@ nav {
         margin-right: 0;
     }
 
-    %wrapper {
-        display: flex;
-        align-items: center;
-        border-radius: 50%;
-        transition: background-color 0.2s ease;
+    %icon{
+        border-radius: 100%;
+        transition: $hover;
 
         &:hover {
             background-color: $light-grey;
         }
-        
     }
 
-    .wrapper {
-        @extend %wrapper;
-        width: 50px; 
-        height: 50px;
+    .icon {
+        @extend %icon;
+        padding: 13px;
     }
 
-    .chevron-wrapper {
-        @extend %wrapper;
-        width: 30px;
-        height: 30px;
+    .chevron-icon {
+        @extend %icon;
+        padding: 5px;
     }
    
     svg {
@@ -79,49 +76,55 @@ nav {
 
 .notifications {
     position: relative;
+
     .notif-number {
-        font-size: 13px;
+        font-size: 12px;
         position: absolute;
         text-align: center;
         right: 0;
         top: 0;
         color: white;
         background-color: $purple;
-        padding: 5px;
+        padding: 3px;
         border-radius: 50%;
-        
     }
 }
-
 
 input.nav-item {
     flex-grow: 2;
     min-width: 400px;
     font-weight: normal;
-    font-size: 16px;
-    border-radius: 30px;
-    padding: 15px 20px;
-    border: 1px solid $black;
+    border: none;
+    background-color: $light-grey;
+    transition: $hover;
 
     &:focus {
         color: inherit;
         outline: none;
     }
+
+    &:hover, &:focus {
+        background-color: #d9d9d9;
+    }
+}
+
+.nav-text, input.nav-item {
+    font-size: 16px;
+    border-radius: 30px;
+    padding: 15px 20px;
 }
 
 .nav-text {
     color: $black;
-    font-size: 16px;
-    border-radius: 30px;
-    padding: 15px 20px;
-    transition: background-color 0.2s ease;
+    transition: $hover;
 
     &.current {
         color: white;
         background-color: $black;
     }
 
-    &:hover {
+    /* Applies when you hover on classes that are not the current page */
+    &:not(.current):hover {
         background-color: $light-grey;
     }
 }
@@ -131,6 +134,63 @@ input.nav-item {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+}
+
+/* Main styling */
+
+.fixed-icons{
+    z-index: 1;
+    position: fixed;
+    bottom: 15px;
+    right: 8px;
+
+    .icon {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 100%;
+        background-color: white;
+        box-shadow: 0 1px 3px 2px $light-grey;
+        transition: $hover;
+
+        &:hover {
+            background-color: $light-grey;
+        }
+
+        svg {       
+            display: block;     
+            font-size: 24px;
+        }
+    }
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    margin: 90px 70px 20px 70px;
+
+    .column {
+        flex-basis: 28%;
+        padding: 0 10px;
+
+        .gallery-item {
+            margin-bottom: 40px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-weight: bold;
+            font-size: 14px;
+        }
+      
+    }
+    
 }
 
 

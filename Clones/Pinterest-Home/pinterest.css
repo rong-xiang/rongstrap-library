@@ -17,11 +17,13 @@ img {
      object-fit: cover;
 }
 
+/* Nav styling */
 nav {
   background-color: white;
   position: fixed;
+  top: 0;
+  z-index: 1;
   width: 100%;
-  border-bottom: 0.5px solid #1c1c1c;
 }
 
 nav .nav-item {
@@ -32,30 +34,22 @@ nav:last-child {
   margin-right: 0;
 }
 
-nav .wrapper, nav .chevron-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 50%;
+nav .icon, nav .chevron-icon {
+  border-radius: 100%;
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
 }
 
-nav .wrapper:hover, nav .chevron-wrapper:hover {
+nav .icon:hover, nav .chevron-icon:hover {
   background-color: #ededed;
 }
 
-nav .wrapper {
-  width: 50px;
-  height: 50px;
+nav .icon {
+  padding: 13px;
 }
 
-nav .chevron-wrapper {
-  width: 30px;
-  height: 30px;
+nav .chevron-icon {
+  padding: 5px;
 }
 
 nav svg {
@@ -81,14 +75,14 @@ nav img {
 }
 
 .notifications .notif-number {
-  font-size: 13px;
+  font-size: 12px;
   position: absolute;
   text-align: center;
   right: 0;
   top: 0;
   color: white;
   background-color: #a305ff;
-  padding: 5px;
+  padding: 3px;
   border-radius: 50%;
 }
 
@@ -98,10 +92,10 @@ input.nav-item {
           flex-grow: 2;
   min-width: 400px;
   font-weight: normal;
-  font-size: 16px;
-  border-radius: 30px;
-  padding: 15px 20px;
-  border: 1px solid #1c1c1c;
+  border: none;
+  background-color: #ededed;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 input.nav-item:focus {
@@ -109,13 +103,21 @@ input.nav-item:focus {
   outline: none;
 }
 
-.nav-text {
-  color: #1c1c1c;
+input.nav-item:hover, input.nav-item:focus {
+  background-color: #d9d9d9;
+}
+
+.nav-text, input.nav-item {
   font-size: 16px;
   border-radius: 30px;
   padding: 15px 20px;
+}
+
+.nav-text {
+  color: #1c1c1c;
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
+  /* Applies when you hover on classes that are not the current page */
 }
 
 .nav-text.current {
@@ -123,7 +125,7 @@ input.nav-item:focus {
   background-color: #1c1c1c;
 }
 
-.nav-text:hover {
+.nav-text:not(.current):hover {
   background-color: #ededed;
 }
 
@@ -138,5 +140,66 @@ input.nav-item:focus {
       -ms-flex-align: center;
           align-items: center;
   padding: 20px;
+}
+
+/* Main styling */
+.fixed-icons {
+  z-index: 1;
+  position: fixed;
+  bottom: 15px;
+  right: 8px;
+}
+
+.fixed-icons .icon {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 100%;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 3px 2px #ededed;
+          box-shadow: 0 1px 3px 2px #ededed;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.fixed-icons .icon:hover {
+  background-color: #ededed;
+}
+
+.fixed-icons .icon svg {
+  display: block;
+  font-size: 24px;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 90px 70px 20px 70px;
+}
+
+.gallery .column {
+  -ms-flex-preferred-size: 28%;
+      flex-basis: 28%;
+  padding: 0 10px;
+}
+
+.gallery .column .gallery-item {
+  margin-bottom: 40px;
+}
+
+.gallery .column img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.gallery .column .description {
+  font-weight: bold;
+  font-size: 14px;
 }
 /*# sourceMappingURL=pinterest.css.map */
