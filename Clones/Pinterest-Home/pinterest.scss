@@ -14,12 +14,17 @@ a {
 $black: #1c1c1c;
 $purple: #a305ff;
 
+img {
+    object-fit: cover;
+}
+
 nav {
     background-color: white;
     position: fixed;
     width: 100%;
     border-bottom: 0.5px solid $black;
 
+    
     .nav-item {
         margin-right: 5px;
     }
@@ -28,25 +33,44 @@ nav {
         margin-right: 0;
     }
 
-
-    .svg-wrapper {
-        width: 100px;
+    .wrapper {
+        display: flex;
+        width: 50px;
         height: 50px;
         border-radius: 50%;
         background-color: lightgray;
+        align-items: center;
+    }
+
+    .svg-wrapper {
+        margin: 0 auto;
     }
     
     svg {
+
         display: block;
-        font-size: 16px;
+        font-size: 20px;
+
+    }
+        
+    .chevron-down {
+        font-size: 14px;
+    }
+
+    img {
+        
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
         margin: 0 auto;
-        background-color: blue;
+  
     }
 }
 
 .notifications {
     position: relative;
     .notif-number {
+        font-size: 13px;
         position: absolute;
         text-align: center;
         right: 0;
@@ -54,14 +78,14 @@ nav {
         color: white;
         background-color: $purple;
         padding: 5px;
-        border-radius: 100%;
+        border-radius: 50%;
         
     }
 }
 
 
-input {
-    width: stretch;
+input.nav-item {
+    flex-grow: 2;
     font-weight: normal;
 
     &:focus {

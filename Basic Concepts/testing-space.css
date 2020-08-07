@@ -1,35 +1,39 @@
 /* Centering a div that is absolutely positioned*/
-.parent {
-    background-color: blue;
-    width: 600px;
-    height: 200px;
-    position: relative;
+/* When you position something absolutely, margin 0 auto 
+will work only when you've set all the top, right, left, 
+and bottom parameters)*/
+/* Spanning columns in grid will prevent media queries from 
+making collapsing properly.*/
+/* Buttons will center svgs inside but not divs*/
+/* To center SVGs inside a div, you can assign display: flex / align-itmes
+on the parent and margin: 0 auto on the svg. Or wrap the SVG in another div
+and assign margin: 0 auto on the wrapper.*/
+.circle {
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  background: lightgray;
+  margin-right: 10px;
 }
 
-
-.child {
-    width: 300px; 
-    margin: 0 auto;
-    background-color: red;
-    position: absolute; /*when you position something absolutely, margin 0 auto will work only when you've set all the top, right, left, and bottom parameters)*/
-    top: 40px;
-    right: 0; 
-    left: 0;
-    bottom: 0;
+svg {
+  display: block;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: 100px;
-    grid-gap: 10px;
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-
-.full {
-    grid-column: 1 / 3;
-    background-color: red;
-}
-
-.half {
-    background-color: green;
-}
+/*# sourceMappingURL=testing-space.css.map */

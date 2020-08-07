@@ -12,6 +12,11 @@ a {
   text-decoration: inherit;
 }
 
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 nav {
   background-color: white;
   position: fixed;
@@ -27,18 +32,37 @@ nav:last-child {
   margin-right: 0;
 }
 
-nav .svg-wrapper {
-  width: 100px;
+nav .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50px;
   height: 50px;
   border-radius: 50%;
   background-color: lightgray;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .svg-wrapper {
+  margin: 0 auto;
 }
 
 nav svg {
   display: block;
-  font-size: 16px;
+  font-size: 20px;
+}
+
+nav .chevron-down {
+  font-size: 14px;
+}
+
+nav img {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
   margin: 0 auto;
-  background-color: blue;
 }
 
 .notifications {
@@ -46,6 +70,7 @@ nav svg {
 }
 
 .notifications .notif-number {
+  font-size: 13px;
   position: absolute;
   text-align: center;
   right: 0;
@@ -53,17 +78,17 @@ nav svg {
   color: white;
   background-color: #a305ff;
   padding: 5px;
-  border-radius: 100%;
+  border-radius: 50%;
 }
 
-input {
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: stretch;
+input.nav-item {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
   font-weight: normal;
 }
 
-input:focus {
+input.nav-item:focus {
   color: inherit;
   outline: none;
 }
