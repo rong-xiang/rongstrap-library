@@ -48,14 +48,14 @@ nav .icon {
   padding: 13px;
 }
 
-nav .chevron-icon {
-  padding: 5px;
-}
-
-nav svg {
+nav .icon svg {
   display: block;
   font-size: 20px;
   margin: 0 auto;
+}
+
+nav .chevron-icon {
+  padding: 5px;
 }
 
 nav .chevron-down {
@@ -86,37 +86,55 @@ nav img {
   border-radius: 50%;
 }
 
-input.nav-item {
+.search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
   min-width: 400px;
-  font-weight: normal;
-  border: none;
-  background-color: #ededed;
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
+  background-color: #ededed;
+  border-radius: 30px;
 }
 
-input.nav-item:focus {
-  color: inherit;
-  outline: none;
-}
-
-input.nav-item:hover, input.nav-item:focus {
+.search-bar:hover {
   background-color: #d9d9d9;
 }
 
-.nav-text, input.nav-item {
+.search-bar input {
   font-size: 16px;
-  border-radius: 30px;
-  padding: 15px 20px;
+  padding: 15px 0;
+  font-weight: normal;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+.search-bar input:focus {
+  background-color: transparent;
+  outline: none;
+}
+
+.search-bar svg {
+  font-size: 18px;
+  margin: 0 10px 0 15px;
 }
 
 .nav-text {
   color: #1c1c1c;
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
+  border-radius: 30px;
+  padding: 15px 20px;
   /* Applies when you hover on classes that are not the current page */
 }
 
