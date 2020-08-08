@@ -15,10 +15,13 @@ $black: #1c1c1c;
 $light-grey: #ededed;
 $purple: #a305ff;
 $hover: background-color 0.2s ease;
+$opacity: opacity 0.2s ease;
 
 img {
     object-fit: cover;
 }
+
+
 
 /* Nav styling */
 nav {
@@ -60,13 +63,14 @@ nav {
     .chevron-icon {
         @extend %icon;
         padding: 5px;
-    }
-   
-   
-    .chevron-down {
-        font-size: 14px;
-    }
 
+        .chevron-down {
+            display: block;
+            font-size: 14px;
+        }
+        
+    }
+   
     img {
         display: block;
         width: 30px;
@@ -183,7 +187,7 @@ nav {
 .gallery {
     display: flex;
     justify-content: space-between;
-    margin: 90px 70px 20px 70px;
+    margin: 100px 70px 20px 70px;
 
     .column {
         flex-basis: 28%;
@@ -210,4 +214,122 @@ nav {
     
 }
 
+.hover-parent {
+    position: relative;
+    cursor: zoom-in;
+
+    &:hover .hover-overlay{
+        display: block;
+    }
+    .hover-overlay {
+        display: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        position: absolute;
+        top: 0;
+        background-color: rgba(28, 28, 28, 0.15);
+        z-index: 1;
+    }
+
+    .top-flex, .bottom-flex {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    .top-flex {
+        position: absolute;
+        top: 15px;
+        font-size: 15px;
+
+        .save-to {
+            
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            flex-basis: 80%;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            opacity: 0.7;
+            transition: $opacity;
+
+            .flex-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px;
+             }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .save {
+            padding: 12px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            flex-basis: 20%;
+            color: white;
+            background-color: $purple;
+            opacity: 0.7;
+            transition: $opacity;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .bottom-flex {
+        position: absolute;
+        justify-content: space-between;
+        bottom: 15px;
+        
+        .source {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 20px;
+            background-color: white;
+            opacity: 0.7;
+            padding: 8px;
+            transition: $opacity;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            svg {
+                font-size: 18px;
+                margin-right: 5px;
+            }
+
+            .source-text {
+                font-size: 16px;
+            }
+        }
+
+        .icon {
+            background-color: white;
+            opacity: 0.7;
+            border-radius: 100%;
+            padding: 8px;
+            transition: $opacity;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            svg {
+                display: block;
+                font-size: 18px;
+            }
+        }
+    }
+
+
+}
 
