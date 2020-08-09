@@ -241,6 +241,7 @@ h3 {
 
 h3:hover {
     opacity: 0.75;
+    cursor: pointer;
 }
 
 h4, .profile-name {
@@ -254,6 +255,7 @@ h4, .profile-name {
 .profile-name {
     padding-top: 10px; /* this is a shortcut for the hovering in between*/
     padding-bottom: 10px;
+    cursor: pointer;
 }
 
 .profile-name:hover {
@@ -411,6 +413,7 @@ button {
 
 button:hover {
     opacity: 1;
+    cursor: pointer;
 }
 
 svg {
@@ -428,6 +431,7 @@ svg {
 
 .headshot-tooltip {
     position: relative;
+    cursor: pointer;
 }
 
 .tooltip {
