@@ -1,3 +1,6 @@
+/* Javascript: On-click interactions */
+/* Still to do: Responsive design */
+
 * {
     padding: 0;
     box-sizing: border-box;
@@ -24,7 +27,7 @@ nav {
     top: 0;
     z-index: 1;
     padding: 0 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 -1px rgb(187, 187, 187);
     background-color: white;
 }
 
@@ -151,6 +154,96 @@ nav {
             opacity: 1;
         }
     }
+
+    .dropdown {
+        position: relative;
+        
+        .dropdown-content {
+            display: none;
+            width: 260px;
+            z-index: 1;
+            background-color: black;
+            position: absolute;
+            top: 50px;
+            border-radius: 3px;
+
+            .tooltip-item {
+                margin-bottom: 20px;
+                
+                &.last {
+                    margin-bottom: 0;
+                }
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .tooltip-text {
+                font-size: 14px;
+                color: white;
+                opacity: 1;
+                transition: opacity 0.2s ease;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+
+            .social-flex {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                .social-icon {
+                    display: block;
+                    font-size: 20px;
+                    color: white;
+                    opacity: 1;
+                    margin-right: 20px;
+                    
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            .bottom-flex {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-top: 0.5px solid rgba(255, 255, 255, 0.3);
+
+                .bf-item {
+                    font-size: 12px;
+                    color: white;
+                }
+
+                .bf-text {
+                    opacity: 1;
+                    transition: opacity 0.2s ease;
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            /* making a triangle for the tooltip arrow */
+            &:before {
+                content:'';
+                position: absolute;
+                bottom: 100%;
+                left: 15px;
+                border-width: 6px;
+                border-style: solid;
+                border-color: transparent transparent black transparent;
+            }
+        }
+
+        &:hover .dropdown-content {
+            display: block;
+        }
+    }
 }
 
 .bottom-nav {
@@ -165,6 +258,141 @@ nav {
 
     .flex-container {
         display: flex;
+
+        .dropdown {
+            position: relative;
+
+            .dropdown-content {
+                width: 160px;
+                z-index: 2;
+                display: none;
+                position: absolute;
+                right: 30px;
+                top: 50px;
+                padding: 13px 0;
+                background-color: white;
+                border-radius: 3px;
+                border: solid 1px rgb(201, 201, 201);
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
+                .option-text {
+                    font-size: 14px;
+                    color: black;
+                    transition: opacity 0.2s ease;
+
+                    &.color {
+                        margin-left: 20px;
+                    }
+                }
+
+                .option {
+                    display: flex;
+                    justify-content: flex-start;
+                    padding: 10px 15px;
+                    align-items: center;
+                    background-color: transparent;
+                    transition: background-color 0.2s ease;
+
+                    &:not(.current) .option-text{
+                        opacity: 0.5;
+                        transition: opacity 0.1s ease;
+                    }
+            
+                    &:hover:not(.current):not(.tone) {
+                        background-color: rgb(235, 235, 235);
+                        
+                        .option-text {
+                            opacity: 1;
+                        }
+                    }
+
+                    &.tone {
+                        display: block;
+                    }
+                }
+                svg.check {
+                    font-size: 20px;
+                    margin-right: 2px;
+                }
+
+                .icon {
+                    margin-left: 20px;
+                    margin-right: 10px;
+                }
+
+                .color-grid {
+                    display: grid;
+                    grid-template: repeat(2, 1fr) / repeat(5, 1fr);
+                    grid-gap: 3px;
+                    margin-left: 15px;
+                    margin-top: 15px;
+
+                    .color-item {
+                        padding: 3px;
+                        border-radius: 100%;
+                        background-color: transparent;
+                        transition: background-color 0.2s ease;
+
+                        &:hover {
+                            background-color: rgb(235, 235, 235);
+                        }
+
+                        .color-inner {
+                            width: 14px;
+                            height: 14px;
+                            border-radius: 100%;
+
+                            &.white {
+                                background-color: white;
+                                border: solid 1px rgb(187, 187, 187);
+                            }
+
+                            &.black {
+                                background-color: #000000;
+                            }
+
+                            &.yellow {
+                                background-color: #ffcd03;
+                            }
+
+                            &.orange {
+                                background-color: #ff9b19;
+                            }
+
+                            &.red {
+                                background-color: #e83023;
+                            }
+
+                            &.green {
+                                background-color: #10c973;
+                            }
+
+                            &.purple {
+                                background-color: #9c23e8;
+                            }
+
+                            &.teal {
+                                background-color: #1fd5db;
+                            }
+
+                            &.magenta {
+                                background-color: #d914d9;
+                            }
+
+                            &.blue {
+                                background-color: #1354d6;
+                            }
+    
+                        }
+
+                    }
+                }
+            }
+
+            &:hover .dropdown-content {
+                display: block;
+            }
+        }
         
         .item-flex {
             display: flex;
@@ -191,7 +419,7 @@ nav {
             }
     
             .caret-down {
-                transform: translateY(1px);
+                transform: translateY(3px);
                 font-size: 12px;
                 margin-left: 5px;
             }
@@ -201,8 +429,6 @@ nav {
             }
         }
     }
-
-    
 }
 
 /* GALLERY STYLING */
@@ -323,6 +549,12 @@ h4, .profile-name {
     margin-top: 60px;
     margin-left: -15px;
     margin-right: -15px;
+
+    svg {
+        margin: auto;
+        font-size: 20px;
+        text-align: center;
+    }
 }
 
 .column {
@@ -416,13 +648,6 @@ button:hover {
     cursor: pointer;
 }
 
-svg {
-    display: block;
-    margin: auto;
-    font-size: 20px;
-    text-align: center;
-}
-
 .heart svg {
     font-size: 15px;
 }
@@ -445,6 +670,8 @@ svg {
     width: 350px;
     border-radius: 5px;
     transition: 0.3s;
+    border: solid 1px rgb(201, 201, 201);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 
     /* making a triangle for the tooltip arrow */
     &:after {

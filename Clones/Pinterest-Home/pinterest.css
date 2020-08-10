@@ -242,8 +242,8 @@ nav img {
   margin: 10px;
   border-radius: 100%;
   background-color: white;
-  -webkit-box-shadow: 0 1px 3px 2px rgba(255, 255, 255, 0.1);
-          box-shadow: 0 1px 3px 2px rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
 }

@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* Javascript: On-click interactions */
+/* Still to do: Responsive design */
 * {
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -25,7 +27,8 @@ nav {
   top: 0;
   z-index: 1;
   padding: 0 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 -1px #bbbbbb;
+          box-shadow: inset 0 -1px #bbbbbb;
   background-color: white;
 }
 
@@ -181,6 +184,111 @@ nav {
   opacity: 1;
 }
 
+.top-nav .dropdown {
+  position: relative;
+}
+
+.top-nav .dropdown .dropdown-content {
+  display: none;
+  width: 260px;
+  z-index: 1;
+  background-color: black;
+  position: absolute;
+  top: 50px;
+  border-radius: 3px;
+  /* making a triangle for the tooltip arrow */
+}
+
+.top-nav .dropdown .dropdown-content .tooltip-item {
+  margin-bottom: 20px;
+}
+
+.top-nav .dropdown .dropdown-content .tooltip-item.last {
+  margin-bottom: 0;
+}
+
+.top-nav .dropdown .dropdown-content .section {
+  padding: 20px;
+}
+
+.top-nav .dropdown .dropdown-content .tooltip-text {
+  font-size: 14px;
+  color: white;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.top-nav .dropdown .dropdown-content .tooltip-text:hover {
+  opacity: 0.5;
+}
+
+.top-nav .dropdown .dropdown-content .social-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-nav .dropdown .dropdown-content .social-flex .social-icon {
+  display: block;
+  font-size: 20px;
+  color: white;
+  opacity: 1;
+  margin-right: 20px;
+}
+
+.top-nav .dropdown .dropdown-content .social-flex .social-icon:hover {
+  opacity: 0.5;
+}
+
+.top-nav .dropdown .dropdown-content .bottom-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.top-nav .dropdown .dropdown-content .bottom-flex .bf-item {
+  font-size: 12px;
+  color: white;
+}
+
+.top-nav .dropdown .dropdown-content .bottom-flex .bf-text {
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.top-nav .dropdown .dropdown-content .bottom-flex .bf-text:hover {
+  opacity: 0.5;
+}
+
+.top-nav .dropdown .dropdown-content:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 15px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.top-nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .bottom-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -202,6 +310,154 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.bottom-nav .flex-container .dropdown {
+  position: relative;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content {
+  width: 160px;
+  z-index: 2;
+  display: none;
+  position: absolute;
+  right: 30px;
+  top: 50px;
+  padding: 13px 0;
+  background-color: white;
+  border-radius: 3px;
+  border: solid 1px #c9c9c9;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .option-text {
+  font-size: 14px;
+  color: black;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .option-text.color {
+  margin-left: 20px;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 10px 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .option:not(.current) .option-text {
+  opacity: 0.5;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .option:hover:not(.current):not(.tone) {
+  background-color: #ebebeb;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .option:hover:not(.current):not(.tone) .option-text {
+  opacity: 1;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .option.tone {
+  display: block;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content svg.check {
+  font-size: 20px;
+  margin-right: 2px;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .icon {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+  -ms-grid-columns: (1fr)[5];
+      grid-template: repeat(2, 1fr)/repeat(5, 1fr);
+  grid-gap: 3px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item {
+  padding: 3px;
+  border-radius: 100%;
+  background-color: transparent;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item:hover {
+  background-color: #ebebeb;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item .color-inner {
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item .color-inner.white {
+  background-color: white;
+  border: solid 1px #bbbbbb;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item .color-inner.black {
+  background-color: #000000;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item .color-inner.yellow {
+  background-color: #ffcd03;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item .color-inner.orange {
+  background-color: #ff9b19;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item .color-inner.red {
+  background-color: #e83023;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item .color-inner.green {
+  background-color: #10c973;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item .color-inner.purple {
+  background-color: #9c23e8;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item .color-inner.teal {
+  background-color: #1fd5db;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item .color-inner.magenta {
+  background-color: #d914d9;
+}
+
+.bottom-nav .flex-container .dropdown .dropdown-content .color-grid .color-item .color-inner.blue {
+  background-color: #1354d6;
+}
+
+.bottom-nav .flex-container .dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .bottom-nav .flex-container .item-flex {
@@ -234,8 +490,8 @@ nav {
 }
 
 .bottom-nav .flex-container .item-flex .caret-down {
-  -webkit-transform: translateY(1px);
-          transform: translateY(1px);
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
   font-size: 12px;
   margin-left: 5px;
 }
@@ -375,6 +631,12 @@ h4, .profile-name {
   margin-right: -15px;
 }
 
+.gallery svg {
+  margin: auto;
+  font-size: 20px;
+  text-align: center;
+}
+
 .column {
   -webkit-box-flex: 30%;
       -ms-flex: 30%;
@@ -481,13 +743,6 @@ button:hover {
   cursor: pointer;
 }
 
-svg {
-  display: block;
-  margin: auto;
-  font-size: 20px;
-  text-align: center;
-}
-
 .heart svg {
   font-size: 15px;
 }
@@ -512,6 +767,9 @@ svg {
   border-radius: 5px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  border: solid 1px #c9c9c9;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   /* making a triangle for the tooltip arrow */
 }
 
