@@ -464,12 +464,15 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: black;
-  opacity: 0.45;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
+  color: rgba(0, 0, 0, 0.45);
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
   padding: 15px 0;
   margin-right: 30px;
+}
+
+.bottom-nav .flex-container .item-flex .relevance {
+  color: black;
 }
 
 .bottom-nav .flex-container .item-flex.last {
@@ -477,7 +480,7 @@ nav {
 }
 
 .bottom-nav .flex-container .item-flex.first {
-  opacity: 1;
+  color: black;
   /*remember to use box-shadow instead of border, so it overlaps the nav border*/
   /*inset keeps the box-shadow inside*/
   -webkit-box-shadow: inset 0 -2px black;
@@ -497,7 +500,7 @@ nav {
 }
 
 .bottom-nav .flex-container .item-flex:hover {
-  opacity: 1;
+  color: black;
 }
 
 /* GALLERY STYLING */

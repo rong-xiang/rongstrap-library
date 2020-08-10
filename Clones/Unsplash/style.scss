@@ -396,18 +396,21 @@ nav {
         
         .item-flex {
             display: flex;
-            color: black;
-            opacity: 0.45;
-            transition: opacity 0.2s ease;
+            color: rgba(0, 0, 0, 0.45);
+            transition: color 0.2s ease;
             padding: 15px 0;
             margin-right: 30px;
+
+            .relevance {
+                color: black;
+            }
 
             &.last {
                 margin-right: 0;
             }
     
             &.first {
-                opacity: 1;
+                color: black;
                 /*remember to use box-shadow instead of border, so it overlaps the nav border*/
                 /*inset keeps the box-shadow inside*/
                 box-shadow: inset 0 -2px black;
@@ -425,7 +428,7 @@ nav {
             }
     
             &:hover {
-                opacity: 1;
+                color: black;
             }
         }
     }
