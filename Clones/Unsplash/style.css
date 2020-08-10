@@ -75,6 +75,10 @@ nav {
   font-size: 14px;
 }
 
+.top-nav .search-text.resp {
+  display: none;
+}
+
 .top-nav .search-text, .top-nav .wrapper {
   padding: 12px;
 }
@@ -115,6 +119,7 @@ nav {
       -ms-flex-positive: 2;
           flex-grow: 2;
   max-width: 800px;
+  margin: 7px 0;
   background-color: #f2f2f2;
   border: 1px solid transparent;
   border-radius: 30px;
@@ -167,6 +172,10 @@ nav {
   opacity: 1;
 }
 
+.top-nav .submit.resp {
+  display: none;
+}
+
 .top-nav .submit-wrapper {
   padding-right: 20px;
   border-right: solid 1px #bdbdbd;
@@ -181,6 +190,21 @@ nav {
 }
 
 .top-nav .join:hover {
+  opacity: 1;
+}
+
+.top-nav .menu {
+  display: none;
+  opacity: 0.45;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.top-nav .menu .menu-icon {
+  font-size: 24px;
+}
+
+.top-nav .menu:hover {
   opacity: 1;
 }
 
@@ -503,7 +527,22 @@ nav {
   color: black;
 }
 
-/* GALLERY STYLING */
+.bottom-nav .options-slider {
+  display: none;
+  opacity: 0.45;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.bottom-nav .options-slider:hover {
+  opacity: 1;
+}
+
+.bottom-nav .options-slider .slider {
+  font-size: 20px;
+}
+
+/* GENERAL STYLING */
 main {
   margin-top: 130px;
   padding: 40px 60px;
@@ -916,16 +955,52 @@ button:hover {
         -ms-flex: 45%;
             flex: 45%;
   }
+  /*nav*/
+  .top-nav .search-text {
+    display: none;
+  }
+  .top-nav .search-text.resp {
+    display: block;
+  }
+  .top-nav .submit {
+    display: none;
+  }
+  .top-nav .submit.resp {
+    display: block;
+  }
+  .bottom-nav .flex-container:last-child {
+    display: none;
+  }
+  .bottom-nav .options-slider {
+    display: block;
+  }
 }
 
 /* Responsive Design – 1 column */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 880px) {
   .column {
     -webkit-box-flex: 100%;
         -ms-flex: 100%;
             flex: 100%;
   }
   .tag-container {
+    display: none;
+  }
+  /*nav*/
+  .top-nav .flex-container {
+    display: none;
+  }
+  .top-nav .menu {
+    display: block;
+  }
+  .bottom-nav .item-flex .icon, .bottom-nav .item-flex .num {
+    display: none;
+  }
+}
+
+/* Responsive Design – nav */
+@media screen and (max-width: 1200px) {
+  .top-nav .lockup .text-stack {
     display: none;
   }
 }
