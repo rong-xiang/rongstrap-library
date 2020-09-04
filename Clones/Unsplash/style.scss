@@ -1,5 +1,4 @@
 /* Javascript: On-click interactions */
-/* Still to do: Responsive design */
 
 * {
     padding: 0;
@@ -16,6 +15,11 @@ a {
         color: inherit;
         text-decoration: inherit;
     }
+}
+
+svg {
+    display: block;
+
 }
 
 /* NAV STYLING */
@@ -689,6 +693,7 @@ button:hover {
 
 .heart svg {
     font-size: 15px;
+    transform: translateY(1px);
 }
 
 /* TOOLTIP */

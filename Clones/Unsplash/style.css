@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* Javascript: On-click interactions */
-/* Still to do: Responsive design */
 * {
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -17,6 +16,10 @@ a {
 a:visited, a:focus, a:active {
   color: inherit;
   text-decoration: inherit;
+}
+
+svg {
+  display: block;
 }
 
 /* NAV STYLING */
@@ -787,6 +790,8 @@ button:hover {
 
 .heart svg {
   font-size: 15px;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
 }
 
 /* TOOLTIP */
