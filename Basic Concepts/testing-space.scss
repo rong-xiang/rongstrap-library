@@ -26,4 +26,12 @@ on the parent and margin: 0 auto on the svg.*/
     margin: auto;
 }
 
-
+@font-face {
+    font-family: "GTAmerica";
+    src: url("Fonts/GT-America-Condensed-Regular.otf") format("otf");
+  }
+  
+.test {
+font-family: Arial, Helvetica, sans-serif;
+color: blue;
+}

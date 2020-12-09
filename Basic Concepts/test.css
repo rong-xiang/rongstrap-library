@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "GT Condensed";
+    src: url("/Users/rongxiang/Desktop/rongstrap-library/Basic Concepts/Fonts/GT-America-Condensed-Regular.otf") format("opentype");
+}
+
+
+.test {
+    font-family: "GT Condensed";
+    color: blue;
+}
