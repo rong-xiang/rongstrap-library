@@ -70,7 +70,7 @@ nav {
   transition: opacity 0.2s;
 }
 
-.top-nav .three-dots:hover {
+.top-nav .dropdown-three-dots:hover .three-dots {
   opacity: 1;
 }
 
@@ -82,7 +82,8 @@ nav {
   display: none;
 }
 
-.top-nav .search-text, .top-nav .wrapper {
+.top-nav .search-text,
+.top-nav .wrapper {
   padding: 12px;
 }
 
@@ -166,8 +167,8 @@ nav {
   opacity: 0.45;
   border: solid black 1px;
   border-radius: 5px;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
   padding: 10px 15px;
 }
 
@@ -218,7 +219,7 @@ nav {
 .top-nav .dropdown .dropdown-content {
   display: none;
   width: 260px;
-  z-index: 1;
+  z-index: 2;
   background-color: black;
   position: absolute;
   top: 50px;
@@ -312,10 +313,6 @@ nav {
   border-color: transparent transparent black transparent;
 }
 
-.top-nav .dropdown:hover .dropdown-content {
-  display: block;
-}
-
 .bottom-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -341,6 +338,11 @@ nav {
 
 .bottom-nav .flex-container .dropdown {
   position: relative;
+  /*
+      &:hover .dropdown-content {
+        display: block;
+      }
+      */
 }
 
 .bottom-nav .flex-container .dropdown .dropdown-content {
@@ -483,10 +485,6 @@ nav {
   background-color: #1354d6;
 }
 
-.bottom-nav .flex-container .dropdown:hover .dropdown-content {
-  display: block;
-}
-
 .bottom-nav .flex-container .item-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -557,7 +555,10 @@ h1 {
   margin-bottom: 40px;
 }
 
-h2, h3, h4, .profile-name {
+h2,
+h3,
+h4,
+.profile-name {
   font-family: Helvetica, Arial, sans-serif;
   opacity: 0.45;
   font-size: 14px;
@@ -571,12 +572,12 @@ h2 {
 
 h3 {
   display: inline-block;
-  background-color: #D1D3D4;
+  background-color: #d1d3d4;
   border-radius: 2px;
   padding: 5px 7px;
   margin: 0px 3px 6px 0px;
-  -webkit-transition: opacity .1s;
-  transition: opacity .1s;
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
 }
 
 h3:hover {
@@ -584,7 +585,8 @@ h3:hover {
   cursor: pointer;
 }
 
-h4, .profile-name {
+h4,
+.profile-name {
   font-size: 15px;
   color: white;
   opacity: 0.8;
@@ -607,18 +609,60 @@ h4, .profile-name {
 /* TAG CONTAINER */
 .fade-container {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /* Add fade out effect. Put on the outside container so that fade is fixed. */
 }
 
-.fade-container:after {
-  content: '';
+.fade-container .fade-right {
+  z-index: 1;
   position: absolute;
-  width: 100px;
+  width: 200px;
   height: 100%;
   top: 0;
   right: 0;
   background-image: -webkit-gradient(linear, left top, right top, from(transparent), to(white));
   background-image: linear-gradient(to right, transparent, white);
+}
+
+.fade-container .fade-left {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, right top, left top, from(transparent), to(white));
+  background-image: linear-gradient(to left, transparent, white);
+}
+
+.fade-container .tag-arrow {
+  position: absolute;
+  font-size: 18px;
+  z-index: 1;
+  opacity: 0.45;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.fade-container .tag-arrow:hover {
+  opacity: 1;
+}
+
+.fade-container .bi-chevron-right {
+  display: block;
+  right: 10px;
+}
+
+.fade-container .bi-chevron-left {
+  display: none;
+  left: 10px;
 }
 
 .tag-container {
@@ -646,8 +690,10 @@ h4, .profile-name {
   margin-right: 12px;
   border: solid black 1px;
   border-radius: 5px;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.7s;
+  transition: opacity 0.3s, -webkit-transform 0.7s;
+  transition: opacity 0.3s, transform 0.7s;
+  transition: opacity 0.3s, transform 0.7s, -webkit-transform 0.7s;
 }
 
 .item:hover {
@@ -772,7 +818,7 @@ img {
 }
 
 button {
-  opacity: .8;
+  opacity: 0.8;
   height: 35px;
   width: 45px;
   background-color: white;
@@ -807,13 +853,11 @@ button:hover {
   /* display will not cause the transition for some reason */
   padding: 20px;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   bottom: 45px;
   background-color: white;
   width: 350px;
   border-radius: 5px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   border: solid 1px #c9c9c9;
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
@@ -894,22 +938,44 @@ button:hover {
   left: 55px;
 }
 
+@-webkit-keyframes tooltipAppear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+@keyframes tooltipAppear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
 .profile-flex .profile-name:hover .tooltip {
-  opacity: 1;
-  /* you need opacity for the transition */
-  visibility: visible;
-  /* display will not cause the transition for some reason */
-  -webkit-transform: translate(0, -5px);
-          transform: translate(0, -5px);
+  -webkit-animation: tooltipAppear ease 0.3s forwards;
+          animation: tooltipAppear ease 0.3s forwards;
 }
 
 .profile-flex .headshot-tooltip:hover .tooltip {
-  opacity: 1;
-  /* you need opacity for the transition */
-  visibility: visible;
-  /* display will not cause the transition for some reason */
-  -webkit-transform: translate(0, -5px);
-          transform: translate(0, -5px);
+  -webkit-animation: tooltipAppear ease 0.3s forwards;
+          animation: tooltipAppear ease 0.3s forwards;
 }
 
 .tooltip-headshot {
@@ -938,7 +1004,7 @@ button:hover {
 .tooltip-name .instaname {
   font-family: Helvetica;
   color: black;
-  opacity: .5;
+  opacity: 0.5;
   font-size: 14px;
   margin: 0;
   padding: 0;
@@ -988,7 +1054,7 @@ button:hover {
         -ms-flex: 100%;
             flex: 100%;
   }
-  .tag-container {
+  .fade-container {
     display: none;
   }
   /*nav*/
@@ -998,7 +1064,8 @@ button:hover {
   .top-nav .menu {
     display: block;
   }
-  .bottom-nav .item-flex .icon, .bottom-nav .item-flex .num {
+  .bottom-nav .item-flex .icon,
+  .bottom-nav .item-flex .num {
     display: none;
   }
 }

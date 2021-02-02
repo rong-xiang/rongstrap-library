@@ -1,808 +1,1701 @@
 <!DOCTYPE html>
-    <html>
+<html>
+  <head>
+    <title>Ocean</title>
+    <link href="./style.css" type="text/css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-        <head>
-            <title>Ocean</title>
-            <link href="./style.css" type="text/css" rel="stylesheet">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        </head>
+  <body>
+    <nav>
+      <div class="top-nav">
+        <a href="">
+          <div class="lockup top-nav-item">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="logo"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683z"
+              />
+              <path
+                d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"
+              />
+            </svg>
+            <div class="text-stack">
+              <div class="rongsplash">Rongsplash</div>
+              <div class="logo-text">Photos for everyone</div>
+            </div>
+          </div>
+        </a>
 
-        <body>
-
-            <nav>
-                <div class="top-nav">
-                    <a href="">
-                        <div class="lockup top-nav-item">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="logo" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                <path fill-rule="evenodd" d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683z"/>
-                                <path d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
-                            </svg>
-                            <div class="text-stack">
-                                <div class="rongsplash">Rongsplash</div>
-                                <div class="logo-text">Photos for everyone</div>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <div class="searchbar top-nav-item">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                        </svg>
-                        <input class="search-text" type="text" placeholder="Search free high-resolution photos">
-                        <input class="search-text resp" type="text" placeholder="Search photos">
-                    </div>
-                    <div class="flex-container top-nav-item">
-                        <a href="">
-                            <div class="text">Topics</div>
-                        </a>
-                        <a href="">
-                            <div class="text">Explore</div>
-                        </a>
-                        <div class="dropdown">
-                            <a href="">
-                                <div class="wrapper">
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                                    </svg>
-                                </div>
-                            </a>
-                            <div class="dropdown-content">
-                                <div class="section">
-                                    <a href=""><div class="tooltip-item tooltip-text">About</div></a>
-                                    <a href=""><div class="tooltip-item tooltip-text">Wallpapers</div></a>
-                                    <a href=""><div class="tooltip-item tooltip-text">Blog</div></a>
-                                    <a href=""><div class="tooltip-item tooltip-text">Collections</div></a>
-                                    <a href=""><div class="tooltip-item tooltip-text">Community</div></a>
-                                    <a href=""><div class="tooltip-item tooltip-text">History</div></a>
-                                    <a href=""><div class="tooltip-item tooltip-text">Made with Unsplash</div></a>
-                                    <a href=""><div class="tooltip-item tooltip-text">API/Developers</div></a>
-                                    <a href=""><div class="tooltip-item tooltip-text">Official apps</div></a>
-                                    <div class="tooltip-item social-flex last">
-                                        <a href="">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="social-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/>
-                                                <path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-                                            </svg>
-                                        </a>
-                                        <a href="">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="social-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                                            </svg>
-                                        </a>
-                                        <a href="">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="social-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="section bottom-flex">
-                                    <a href=""><div class="bf-item bf-text">Help</div></a>
-                                    <div class="bf-item">•</div>
-                                    <a href=""><div class="bf-item bf-text">License</div></a>
-                                    <div class="bf-item">•</div>
-                                    <a href=""><div class="bf-item bf-text">Press</div></a>
-                                    <div class="bf-item">•</div>
-                                    <a href=""><div class="bf-item bf-text">Join the team</div></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="flex-container top-nav-item">
-                        <div class="submit-wrapper">
-                            <a href="">
-                                <div class="submit text">Submit a photo</div>
-                                <div class="submit text resp">Submit</div>
-                            </a>    
-                        </div>
-                        <a href="">
-                            <div class="text">Log in</div>
-                        </a>
-                        <a href="">
-                            <div class="join text">Join free</div>
-                        </a>
-                    </div>
-                    <div class="menu top-nav-item">
-                        <a href="">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="menu-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    
+        <div class="searchbar top-nav-item">
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="search"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
+            />
+          </svg>
+          <input
+            class="search-text"
+            type="text"
+            placeholder="Search free high-resolution photos"
+          />
+          <input
+            class="search-text resp"
+            type="text"
+            placeholder="Search photos"
+          />
+        </div>
+        <div class="flex-container top-nav-item">
+          <a href="">
+            <div class="text">Topics</div>
+          </a>
+          <a href="">
+            <div class="text">Explore</div>
+          </a>
+          <div class="dropdown dropdown-three-dots" data-num="3">
+            <a href="">
+              <div class="wrapper">
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  class="three-dots"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                  />
+                </svg>
+              </div>
+            </a>
+            <div class="dropdown-content">
+              <div class="section">
+                <a href=""
+                  ><div class="tooltip-item tooltip-text">About</div></a
+                >
+                <a href=""
+                  ><div class="tooltip-item tooltip-text">Wallpapers</div></a
+                >
+                <a href=""><div class="tooltip-item tooltip-text">Blog</div></a>
+                <a href=""
+                  ><div class="tooltip-item tooltip-text">Collections</div></a
+                >
+                <a href=""
+                  ><div class="tooltip-item tooltip-text">Community</div></a
+                >
+                <a href=""
+                  ><div class="tooltip-item tooltip-text">History</div></a
+                >
+                <a href=""
+                  ><div class="tooltip-item tooltip-text">
+                    Made with Unsplash
+                  </div></a
+                >
+                <a href=""
+                  ><div class="tooltip-item tooltip-text">
+                    API/Developers
+                  </div></a
+                >
+                <a href=""
+                  ><div class="tooltip-item tooltip-text">Official apps</div></a
+                >
+                <div class="tooltip-item social-flex last">
+                  <a href="">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      class="social-icon"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0z" />
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+                      />
+                    </svg>
+                  </a>
+                  <a href="">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      class="social-icon"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                      />
+                    </svg>
+                  </a>
+                  <a href="">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      class="social-icon"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
+                      />
+                    </svg>
+                  </a>
                 </div>
-                <div class="bottom-nav">
-                    <div class="flex-container">
-                        <a href="">
-                            <div class="item-flex first">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="photos icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                                </svg>
-                                <div class="text">Photos <span class="num">78.6k</span></div>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="item-flex">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="collections icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z"/>
-                                    <path fill-rule="evenodd" d="M2.125 8.567l-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l.418-.785-.419.785-5.169-2.756z"/>
-                                </svg>
-                                <div class="text">Collections <span class="num">25.5k</span></div>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="item-flex">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="users icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-                                </svg>
-                                <div class="text">Users <span class="num">342</span></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="options-slider">
-                        <a href="">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="slider" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M14 3.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM11.5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM7 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM4.5 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm9.5 3.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM11.5 15a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                                <path fill-rule="evenodd" d="M9.5 4H0V3h9.5v1zM16 4h-2.5V3H16v1zM9.5 14H0v-1h9.5v1zm6.5 0h-2.5v-1H16v1zM6.5 9H16V8H6.5v1zM0 9h2.5V8H0v1z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="flex-container">
-                        <a href="">
-                            <div class="dropdown">
-                                <div class="item-flex">
-                                    <div class="text">Any orientation</div>
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="caret-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                    </svg>
-                                </div>
+              </div>
+              <div class="section bottom-flex">
+                <a href=""><div class="bf-item bf-text">Help</div></a>
+                <div class="bf-item">•</div>
+                <a href=""><div class="bf-item bf-text">License</div></a>
+                <div class="bf-item">•</div>
+                <a href=""><div class="bf-item bf-text">Press</div></a>
+                <div class="bf-item">•</div>
+                <a href=""><div class="bf-item bf-text">Join the team</div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-container top-nav-item">
+          <div class="submit-wrapper">
+            <a href="">
+              <div class="submit text">Submit a photo</div>
+              <div class="submit text resp">Submit</div>
+            </a>
+          </div>
+          <a href="">
+            <div class="text">Log in</div>
+          </a>
+          <a href="">
+            <div class="join text">Join free</div>
+          </a>
+        </div>
+        <div class="menu top-nav-item">
+          <a href="">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="menu-icon"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="bottom-nav">
+        <div class="flex-container">
+          <a href="">
+            <div class="item-flex first">
+              <svg
+                width="1em"
+                height="1em"
+                viewBox="0 0 16 16"
+                class="photos icon"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
+                />
+              </svg>
+              <div class="text">Photos <span class="num">78.6k</span></div>
+            </div>
+          </a>
+          <a href="">
+            <div class="item-flex">
+              <svg
+                width="1em"
+                height="1em"
+                viewBox="0 0 16 16"
+                class="collections icon"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M2.125 8.567l-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l.418-.785-.419.785-5.169-2.756z"
+                />
+              </svg>
+              <div class="text">Collections <span class="num">25.5k</span></div>
+            </div>
+          </a>
+          <a href="">
+            <div class="item-flex">
+              <svg
+                width="1em"
+                height="1em"
+                viewBox="0 0 16 16"
+                class="users icon"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+                />
+              </svg>
+              <div class="text">Users <span class="num">342</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="options-slider">
+          <a href="">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="slider"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M14 3.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM11.5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM7 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM4.5 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm9.5 3.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM11.5 15a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M9.5 4H0V3h9.5v1zM16 4h-2.5V3H16v1zM9.5 14H0v-1h9.5v1zm6.5 0h-2.5v-1H16v1zM6.5 9H16V8H6.5v1zM0 9h2.5V8H0v1z"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="flex-container filter-container">
+          <a href="">
+            <div class="dropdown filter-dropdown" data-num="0">
+              <div class="item-flex">
+                <div class="text">Any orientation</div>
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  class="caret-down"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                  />
+                </svg>
+              </div>
 
-                                <div class="dropdown-content">
-                                    <div class="option current">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
-                                        </svg>
-                                        <div class="option-text">Any orientation</div>
-                                    </div>
-                                    <div class="option">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M1 4.5v6a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1zm-1 6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v6z"/>
-                                            <path fill-rule="evenodd" d="M14 7.5a1 1 0 1 0-2 0 1 1 0 0 0 2 0z"/>
-                                        </svg>
-                                        <div class="option-text">Landscape</div>
-                                    </div>
-                                    <div class="option">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M11 1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
-                                            <path fill-rule="evenodd" d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                                        </svg>
-                                        <div class="option-text">Portrait</div>
-                                    </div>
-                                    <div class="option">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                                        </svg>
-                                        <div class="option-text">Square</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </a>
-                        <a href="">
-                            <div class="dropdown">
-                                <div class="item-flex">
-                                    <div class="text">Any color</div>
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="caret-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                    </svg>
-                                </div>
-                                <div class="dropdown-content">
-                                    <div class="option current">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
-                                        </svg>
-                                        <div class="option-text">Any color</div>
-                                    </div>
-                                    <div class="option">
-                                        <div class="option-text color">Black and white</div>
-                                    </div>
-                                    <div class="option tone">        
-                                        <div class="option-text color">Tones</div>
-                                        <div class="color-grid">
-                                            <div class="color-item"><div class="color-inner white"></div></div>
-                                            <div class="color-item"><div class="color-inner black"></div></div>
-                                            <div class="color-item"><div class="color-inner yellow"></div></div>
-                                            <div class="color-item"><div class="color-inner orange"></div></div>
-                                            <div class="color-item"><div class="color-inner red"></div></div>
-                                            <div class="color-item"><div class="color-inner purple"></div></div>
-                                            <div class="color-item"><div class="color-inner magenta"></div></div>
-                                            <div class="color-item"><div class="color-inner green"></div></div>
-                                            <div class="color-item"><div class="color-inner teal"></div></div>
-                                            <div class="color-item"><div class="color-inner blue"></div></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>  
-                            
-                        </a>
-                        <a href="">
-                            <div class="dropdown">
-                                <div class="item-flex">
-                                    <div class="text">Sort by <span class="relevance">Relevance</span></div>
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="caret-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                    </svg>
-                                </div>
-                                <div class="dropdown-content">
-                                    <div class="option current">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
-                                        </svg>
-                                        <div class="option-text">Relevance</div>
-                                    </div>
-                                    <div class="option">
-                                        <div class="option-text color">Newest</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </a>
-                    </div>
+              <div class="dropdown-content">
+                <div class="option current">
+                  <svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="check"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"
+                    />
+                  </svg>
+                  <div class="option-text">Any orientation</div>
                 </div>
-            </nav>
-
-            <main>
-                <h1>Ocean</h1>
-                <div class="fade-container">
-                    <div class="tag-container">
-                        <a class="item" href="./beach.html">Beach</a>
-                        <a class="item" href="./underwater.html">Underwater</a>
-                        <a class="item" href="./ocean-life.html">Ocean Life</a>
-                        <a class="item" href="./sea.html">Sea</a>
-                        <a class="item" href="./tropical.html">Tropical</a>
-                        <a class="item" href="./boat.html">Boat</a>
-                        <a class="item" href="">Island</a>
-                        <a class="item" href="">Surf</a>
-                        <a class="item" href="">Fish</a>
-                        <a class="item" href="">Hawaii</a>
-                        <a class="item" href="">Jungle</a>
-                        <a class="item" href="">Calm</a>
-                        <a class="item" href="">Waves</a>
-                        <div class="empty"></div>
-                    </div>
+                <div class="option">
+                  <svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="icon"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 4.5v6a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1zm-1 6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v6z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M14 7.5a1 1 0 1 0-2 0 1 1 0 0 0 2 0z"
+                    />
+                  </svg>
+                  <div class="option-text">Landscape</div>
                 </div>
-                
-                <div class="gallery">
-
-                    <div class="column"> 
-                        <div class="gallery-item">
-                            <div class="image-container">
-                                <img src="images/silas-baisch-K785Da4A_JA-unsplash.jpg" alt="underwater view"/>
-                                <div class="overlay">
-                                    <div class="icon-flex top">
-                                        <button class="icon heart">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                        <button class="icon plus">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="icon-flex bottom">
-                                        <div class="profile-flex">
-                                            <div class="headshot-tooltip">
-                                                <img class="headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                <div class="tooltip tooltip-1" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-name">Rongalong
-                                                <div class="tooltip tooltip-2" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                    
-                                        </div>
-                                        <button class="icon download">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <h2>blue and clear body of water</h2>
-                            <div class="mini-tags">
-                                <h3>HD Water Wallpapers</h3>
-                                <h3>HD Ocean Wallpapers</h3>
-                                <h3>Nature Images</h3>                        
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="image-container">
-                                <img src="images/gatis-marcinkevics-a5uptAdUmjE-unsplash.jpg" alt="crashing waves"/>
-                                <div class="overlay">
-                                    <div class="icon-flex top">
-                                        <button class="icon heart">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                        <button class="icon plus">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="icon-flex bottom">
-                                        <div class="profile-flex">
-                                            <div class="headshot-tooltip">
-                                                <img class="headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                <div class="tooltip tooltip-1" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-name">Rongalong
-                                                <div class="tooltip tooltip-2" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="icon download">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <h2>seawaves wallpaper</h2>
-                            <div class="mini-tags">
-                                <h3>HD Water Wallpapers</h3>
-                                <h3>HD Ocean Wallpapers</h3>
-                                <h3>Sea</h3>                        
-                            </div>
-                        </div>
-                    </div>
-                    
-
-                    <div class="column">
-                        <div class="gallery-item">
-                            <div class="image-container">
-                                <img src="images/sean-o-KMn4VEeEPR8-unsplash.jpg" alt="sunset at beach"/>
-                                <div class="overlay">
-                                    <div class="icon-flex top">
-                                        <button class="icon heart">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                        <button class="icon plus">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="icon-flex bottom">
-                                        <div class="profile-flex">
-                                            <div class="headshot-tooltip">
-                                                <img class="headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                <div class="tooltip tooltip-1" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-name">Rongalong
-                                                <div class="tooltip tooltip-2" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="icon download">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <h2>seashore during golden hour</h2>
-                            <div class="mini-tags">
-                                <h3>HD Ocean Wallpapers</h3>
-                                <h3>Beach Images & Pictures</h3>
-                                <h3>Sea</h3>                        
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="image-container">
-                                <img src="images/shifaaz-shamoon-sLAk1guBG90-unsplash.jpg" alt="aerial view"/>
-                                <div class="overlay">
-                                    <div class="icon-flex top">
-                                        <button class="icon heart">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                        <button class="icon plus">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="icon-flex bottom">
-                                        <div class="profile-flex">
-                                            <div class="headshot-tooltip">
-                                                <img class="headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                <div class="tooltip tooltip-1" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-name">Rongalong
-                                                <div class="tooltip tooltip-2" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="icon download">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <h2>aerial photo of seashore</h2>
-                            <div class="mini-tags">
-                                <h3>HD Ocean Wallpapers</h3>
-                                <h3>Nature Images</h3>
-                                <h3>Beach Images & Pictures</h3>                        
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="column">
-                        <div class="gallery-item">
-                            <div class="image-container">
-                                <img src="images/matt-hardy-6ArTTluciuA-unsplash.jpg" alt="ocean surface"/>
-                                <div class="overlay">
-                                    <div class="icon-flex top">
-                                        <button class="icon heart">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                        <button class="icon plus">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="icon-flex bottom">
-                                        <div class="profile-flex">
-                                            <div class="headshot-tooltip">
-                                                <img class="headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                <div class="tooltip tooltip-1" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-name">Rongalong
-                                                <div class="tooltip tooltip-2" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="icon download">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <h2>body of water under sky</h2>
-                            <div class="mini-tags">
-                                <h3>HD Water Wallpapers</h3>
-                                <h3>HD Ocean Wallpapers</h3>
-                                <h3>Sea</h3>                        
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="image-container">
-                                <img src="images/ivan-bandura-5cwigXmGWTo-unsplash.jpg" alt="crashing waves"/>
-                                <div class="overlay">
-                                    <div class="icon-flex top">
-                                        <button class="icon heart">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                        <button class="icon plus">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div class="icon-flex bottom">
-                                        <div class="profile-flex">
-                                            <div class="headshot-tooltip">
-                                                <img class="headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                <div class="tooltip tooltip-1" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-name">Rongalong
-                                                <div class="tooltip tooltip-2" href="">
-                                                    <div class="profile">
-                                                        <img class="tooltip-headshot" src="images/headshot.jpg" alt="rongalong headshot"/>
-                                                        <div class="tooltip-name">
-                                                            <span class="username">Rongalong</span><br>
-                                                            <span class="instaname">heyrongalong</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gallery">
-                                                        <img class="tooltip-photo" src="images/tooltip 1.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 2.jpeg"/>
-                                                        <img class="tooltip-photo" src="images/tooltip 3.jpeg"/>
-                                                    </div>
-                                                    <button class="follow" href="">
-                                                        <svg class="follow-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                                                        </svg>
-                                                        <h4>Follow</h4>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="icon download">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
-                                                <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <h2>crashing waves</h2>
-                            <div class="mini-tags">
-                                <h3>HD Water Wallpapers</h3>
-                                <h3>HD Ocean Wallpapers</h3>
-                                <h3>Sea</h3>                        
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
+                <div class="option">
+                  <svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="icon"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M11 1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+                    />
+                  </svg>
+                  <div class="option-text">Portrait</div>
                 </div>
-       
-            </main>
-            
-        </body>
+                <div class="option">
+                  <svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="icon"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                    />
+                  </svg>
+                  <div class="option-text">Square</div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="">
+            <div class="dropdown filter-dropdown" data-num="1">
+              <div class="item-flex">
+                <div class="text">Any color</div>
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  class="caret-down"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                  />
+                </svg>
+              </div>
+              <div class="dropdown-content">
+                <div class="option current">
+                  <svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="check"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"
+                    />
+                  </svg>
+                  <div class="option-text">Any color</div>
+                </div>
+                <div class="option">
+                  <div class="option-text color">Black and white</div>
+                </div>
+                <div class="option tone">
+                  <div class="option-text color">Tones</div>
+                  <div class="color-grid">
+                    <div class="color-item">
+                      <div class="color-inner white"></div>
+                    </div>
+                    <div class="color-item">
+                      <div class="color-inner black"></div>
+                    </div>
+                    <div class="color-item">
+                      <div class="color-inner yellow"></div>
+                    </div>
+                    <div class="color-item">
+                      <div class="color-inner orange"></div>
+                    </div>
+                    <div class="color-item">
+                      <div class="color-inner red"></div>
+                    </div>
+                    <div class="color-item">
+                      <div class="color-inner purple"></div>
+                    </div>
+                    <div class="color-item">
+                      <div class="color-inner magenta"></div>
+                    </div>
+                    <div class="color-item">
+                      <div class="color-inner green"></div>
+                    </div>
+                    <div class="color-item">
+                      <div class="color-inner teal"></div>
+                    </div>
+                    <div class="color-item">
+                      <div class="color-inner blue"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="">
+            <div class="dropdown filter-dropdown" data-num="2">
+              <div class="item-flex">
+                <div class="text">
+                  Sort by <span class="relevance">Relevance</span>
+                </div>
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  class="caret-down"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                  />
+                </svg>
+              </div>
+              <div class="dropdown-content">
+                <div class="option current">
+                  <svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    class="check"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"
+                    />
+                  </svg>
+                  <div class="option-text">Relevance</div>
+                </div>
+                <div class="option">
+                  <div class="option-text color">Newest</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </nav>
 
-        <footer>
-            <script> </script>
-        </footer>
+    <main>
+      <h1>Ocean</h1>
 
-    </html>
+      <div class="fade-container">
+        <div class="fade-right"></div>
+        <div class="fade-left"></div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="currentColor"
+          class="bi bi-chevron-right tag-arrow"
+          data-dxn="right"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="currentColor"
+          class="bi bi-chevron-left tag-arrow"
+          data-dxn="left"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+          />
+        </svg>
+        <div class="tag-container">
+          <a class="item" href="./beach.html">Beach</a>
+          <a class="item" href="./underwater.html">Underwater</a>
+          <a class="item" href="./ocean-life.html">Ocean Life</a>
+          <a class="item" href="./sea.html">Sea</a>
+          <a class="item" href="./tropical.html">Tropical</a>
+          <a class="item" href="./boat.html">Boat</a>
+          <a class="item" href="">Island</a>
+          <a class="item" href="">Surf</a>
+          <a class="item" href="">Fish</a>
+          <a class="item" href="">Hawaii</a>
+          <a class="item" href="">Jungle</a>
+          <a class="item" href="">Calm</a>
+          <a class="item" href="">Waves</a>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="column">
+          <div class="gallery-item">
+            <div class="image-container">
+              <img
+                src="images/silas-baisch-K785Da4A_JA-unsplash.jpg"
+                alt="underwater view"
+              />
+              <div class="overlay">
+                <div class="icon-flex top">
+                  <button class="icon heart">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <button class="icon plus">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="icon-flex bottom">
+                  <div class="profile-flex">
+                    <div class="headshot-tooltip">
+                      <img
+                        class="headshot"
+                        src="images/headshot.jpg"
+                        alt="rongalong headshot"
+                      />
+                      <div class="tooltip tooltip-1" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="profile-name">
+                      Rongalong
+                      <div class="tooltip tooltip-2" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="icon download">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <h2>blue and clear body of water</h2>
+            <div class="mini-tags">
+              <h3>HD Water Wallpapers</h3>
+              <h3>HD Ocean Wallpapers</h3>
+              <h3>Nature Images</h3>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="image-container">
+              <img
+                src="images/gatis-marcinkevics-a5uptAdUmjE-unsplash.jpg"
+                alt="crashing waves"
+              />
+              <div class="overlay">
+                <div class="icon-flex top">
+                  <button class="icon heart">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <button class="icon plus">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="icon-flex bottom">
+                  <div class="profile-flex">
+                    <div class="headshot-tooltip">
+                      <img
+                        class="headshot"
+                        src="images/headshot.jpg"
+                        alt="rongalong headshot"
+                      />
+                      <div class="tooltip tooltip-1" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="profile-name">
+                      Rongalong
+                      <div class="tooltip tooltip-2" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="icon download">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <h2>seawaves wallpaper</h2>
+            <div class="mini-tags">
+              <h3>HD Water Wallpapers</h3>
+              <h3>HD Ocean Wallpapers</h3>
+              <h3>Sea</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="gallery-item">
+            <div class="image-container">
+              <img
+                src="images/sean-o-KMn4VEeEPR8-unsplash.jpg"
+                alt="sunset at beach"
+              />
+              <div class="overlay">
+                <div class="icon-flex top">
+                  <button class="icon heart">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <button class="icon plus">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="icon-flex bottom">
+                  <div class="profile-flex">
+                    <div class="headshot-tooltip">
+                      <img
+                        class="headshot"
+                        src="images/headshot.jpg"
+                        alt="rongalong headshot"
+                      />
+                      <div class="tooltip tooltip-1" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="profile-name">
+                      Rongalong
+                      <div class="tooltip tooltip-2" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="icon download">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <h2>seashore during golden hour</h2>
+            <div class="mini-tags">
+              <h3>HD Ocean Wallpapers</h3>
+              <h3>Beach Images & Pictures</h3>
+              <h3>Sea</h3>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="image-container">
+              <img
+                src="images/shifaaz-shamoon-sLAk1guBG90-unsplash.jpg"
+                alt="aerial view"
+              />
+              <div class="overlay">
+                <div class="icon-flex top">
+                  <button class="icon heart">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <button class="icon plus">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="icon-flex bottom">
+                  <div class="profile-flex">
+                    <div class="headshot-tooltip">
+                      <img
+                        class="headshot"
+                        src="images/headshot.jpg"
+                        alt="rongalong headshot"
+                      />
+                      <div class="tooltip tooltip-1" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="profile-name">
+                      Rongalong
+                      <div class="tooltip tooltip-2" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="icon download">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <h2>aerial photo of seashore</h2>
+            <div class="mini-tags">
+              <h3>HD Ocean Wallpapers</h3>
+              <h3>Nature Images</h3>
+              <h3>Beach Images & Pictures</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="gallery-item">
+            <div class="image-container">
+              <img
+                src="images/matt-hardy-6ArTTluciuA-unsplash.jpg"
+                alt="ocean surface"
+              />
+              <div class="overlay">
+                <div class="icon-flex top">
+                  <button class="icon heart">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <button class="icon plus">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="icon-flex bottom">
+                  <div class="profile-flex">
+                    <div class="headshot-tooltip">
+                      <img
+                        class="headshot"
+                        src="images/headshot.jpg"
+                        alt="rongalong headshot"
+                      />
+                      <div class="tooltip tooltip-1" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="profile-name">
+                      Rongalong
+                      <div class="tooltip tooltip-2" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="icon download">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <h2>body of water under sky</h2>
+            <div class="mini-tags">
+              <h3>HD Water Wallpapers</h3>
+              <h3>HD Ocean Wallpapers</h3>
+              <h3>Sea</h3>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="image-container">
+              <img
+                src="images/ivan-bandura-5cwigXmGWTo-unsplash.jpg"
+                alt="crashing waves"
+              />
+              <div class="overlay">
+                <div class="icon-flex top">
+                  <button class="icon heart">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  <button class="icon plus">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="icon-flex bottom">
+                  <div class="profile-flex">
+                    <div class="headshot-tooltip">
+                      <img
+                        class="headshot"
+                        src="images/headshot.jpg"
+                        alt="rongalong headshot"
+                      />
+                      <div class="tooltip tooltip-1" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="profile-name">
+                      Rongalong
+                      <div class="tooltip tooltip-2" href="">
+                        <div class="profile">
+                          <img
+                            class="tooltip-headshot"
+                            src="images/headshot.jpg"
+                            alt="rongalong headshot"
+                          />
+                          <div class="tooltip-name">
+                            <span class="username">Rongalong</span><br />
+                            <span class="instaname">heyrongalong</span>
+                          </div>
+                        </div>
+                        <div class="gallery">
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 1.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 2.jpeg"
+                          />
+                          <img
+                            class="tooltip-photo"
+                            src="images/tooltip 3.jpeg"
+                          />
+                        </div>
+                        <button class="follow" href="">
+                          <svg
+                            class="follow-icon"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z"
+                              clip-rule="evenodd"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <h4>Follow</h4>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="icon download">
+                    <svg
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.354 10.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 01.708-.708L8 12.793l2.646-2.647a.5.5 0 01.708 0z"
+                        clip-rule="evenodd"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 6a.5.5 0 01.5.5V13a.5.5 0 01-1 0V6.5A.5.5 0 018 6zM2 3.5a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <h2>crashing waves</h2>
+            <div class="mini-tags">
+              <h3>HD Water Wallpapers</h3>
+              <h3>HD Ocean Wallpapers</h3>
+              <h3>Sea</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <footer>
+    <script src="script.js"></script>
+  </footer>
+</html>
