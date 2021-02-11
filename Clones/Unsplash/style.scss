@@ -1,4 +1,4 @@
-/* Javascript: On-click interactions */
+// Remember: z-index is relative
 
 * {
   padding: 0;
@@ -489,6 +489,7 @@ h3,
 h4,
 .profile-name {
   font-family: Helvetica, Arial, sans-serif;
+  z-index: 1;
   opacity: 0.45;
   font-size: 14px;
   font-weight: normal;
@@ -735,6 +736,7 @@ button:hover {
 
 .headshot-tooltip {
   position: relative;
+  z-index: 1;
   cursor: pointer;
 }
 
@@ -743,7 +745,7 @@ button:hover {
   visibility: hidden; /* display will not cause the transition for some reason */
   padding: 20px;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   bottom: 45px;
   background-color: white;
   width: 350px;

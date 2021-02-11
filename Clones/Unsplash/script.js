@@ -3,7 +3,7 @@
 // Javascript
 // On click dropdowns - done
 // Arrow carousel - done
-// Check why z-index is weird on tooltips
+// Check why z-index is weird on tooltips – done
 
 // ON CLICK DROPDOWNS
 // reveal their respective content event propagation

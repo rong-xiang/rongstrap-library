@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.content {
+  padding: 100px;
+  width: 400px;
+  background-color: blue;
+  z-index: 0;
+}
+
+.hover-parent {
+  position: relative;
+}
+
+.hover-parent .hover-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 400px;
+}
+
+.hover-parent .hover-overlay .top {
+  position: absolute;
+  top: 10px;
+  padding: 20px;
+}
+
+.hover-parent .hover-overlay .top .dropdown {
+  padding: 30px;
+  margin: 0 10px;
+  background-color: green;
+  position: relative;
+  z-index: 1;
+}
+
+.hover-parent .hover-overlay .top .dropdown .dropdown-content {
+  display: none;
+  z-index: 1;
+  background-color: red;
+  padding-bottom: 20px;
+}
+
+.hover-parent .hover-overlay .top .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.hover-parent .hover-overlay .bottom {
+  position: absolute;
+  bottom: 10px;
+  padding: 20px;
+}
+
+.hover-parent:hover .hover-overlay {
+  display: block;
+}
+/*# sourceMappingURL=test.css.map */
