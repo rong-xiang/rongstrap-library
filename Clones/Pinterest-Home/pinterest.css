@@ -1,5 +1,6 @@
 /*
 - Refactor dropdowns / dropdown content
+- Check cursors
 
 Notes:
 - Z-index is relative to the parent!
@@ -39,6 +40,21 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.purple-button {
+  padding: 12px;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  background-color: #a305ff;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.purple-button:hover {
+  opacity: 1;
 }
 
 .thumbnail-description {
@@ -240,14 +256,14 @@ nav .messages .title {
   margin-top: 3px;
 }
 
+nav .messages .search-bar {
+  margin: 0 10px 10px 10px;
+}
+
 nav .messages .suggested-breadcrumb {
   padding: 10px;
   font-weight: normal;
   font-size: 14px;
-}
-
-nav .messages .search-bar {
-  margin: 0 10px 10px 10px;
 }
 
 nav .thumbnail {
@@ -587,6 +603,10 @@ nav .headshot {
   height: 200px;
 }
 
+.share-container {
+  height: 200px;
+}
+
 .updates-container {
   height: 70vh;
 }
@@ -746,20 +766,6 @@ nav .headshot {
   color: #6d6d6d;
 }
 
-.hover-parent .top-flex .dropdown .dropdown-content .save-button {
-  padding: 12px;
-  border-radius: 20px;
-  color: white;
-  background-color: #a305ff;
-  opacity: 0.7;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
-}
-
-.hover-parent .top-flex .dropdown .dropdown-content .save-button:hover {
-  opacity: 1;
-}
-
 .hover-parent .top-flex .dropdown .dropdown-content .bi-plus {
   font-size: 10px;
   background-color: #ededed;
@@ -785,10 +791,9 @@ nav .headshot {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
-  opacity: 0.7;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .hover-parent .top-flex .save-to .flex-container {
@@ -796,7 +801,7 @@ nav .headshot {
 }
 
 .hover-parent .top-flex .save-to:hover {
-  opacity: 1;
+  background-color: white;
 }
 
 .hover-parent .top-flex .save {
@@ -806,14 +811,13 @@ nav .headshot {
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
   color: white;
-  background-color: #a305ff;
-  opacity: 0.7;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
+  background-color: rgba(163, 5, 255, 0.8);
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .hover-parent .top-flex .save:hover {
-  opacity: 1;
+  background-color: #a305ff;
 }
 
 .hover-parent .bottom-flex {
@@ -835,15 +839,14 @@ nav .headshot {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 20px;
-  background-color: white;
-  opacity: 0.7;
   padding: 8px;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .hover-parent .bottom-flex .source:hover {
-  opacity: 1;
+  background-color: white;
 }
 
 .hover-parent .bottom-flex .source svg {
@@ -856,21 +859,175 @@ nav .headshot {
 }
 
 .hover-parent .bottom-flex .icon {
-  background-color: white;
-  opacity: 0.7;
   border-radius: 100%;
   padding: 8px;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .hover-parent .bottom-flex .icon:hover {
-  opacity: 1;
+  background-color: white;
 }
 
 .hover-parent .bottom-flex .icon svg {
   display: block;
   font-size: 18px;
+}
+
+.hover-parent .bottom-flex .share-dropdown {
+  position: relative;
+  z-index: 1;
+}
+
+.hover-parent .bottom-flex .share-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: -250px;
+  left: 50px;
+  width: 350px;
+  z-index: 1;
+  background-color: white;
+  padding: 10px;
+  border-radius: 16px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.hover-parent .bottom-flex .share-dropdown .dropdown-content .dropdown-item {
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 10px;
+  background-color: transparent;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.hover-parent .bottom-flex .share-dropdown .dropdown-content .dropdown-item:hover {
+  background-color: #ededed;
+}
+
+.hover-parent .bottom-flex .share-dropdown .dropdown-content .profile-thumbnail {
+  display: block;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+}
+
+.hover-parent .bottom-flex .share-dropdown .dropdown-content .breadcrumb {
+  padding: 0 10px;
+  margin-bottom: 5px;
+  font-weight: normal;
+  font-size: 12px;
+  color: #6d6d6d;
+}
+
+.hover-parent .bottom-flex .share-dropdown .dropdown-content .bi-plus {
+  font-size: 10px;
+  background-color: #ededed;
+}
+
+.hover-parent .bottom-flex .share-dropdown .dropdown-content .icon-x {
+  background-color: transparent;
+  border-radius: 50%;
+  margin: 0 10px;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.hover-parent .bottom-flex .share-dropdown .dropdown-content .icon-x .bi-x {
+  display: block;
+  font-size: 30px;
+}
+
+.hover-parent .bottom-flex .share-dropdown .dropdown-content .icon-x:hover {
+  background-color: #dad8d8;
+}
+
+.hover-parent .bottom-flex .share-dropdown .dropdown-content .title {
+  font-weight: normal;
+  font-size: 13px;
+  color: #6d6d6d;
+  margin-top: 3px;
+}
+
+.hover-parent .bottom-flex .share-dropdown .dropdown-content .search-bar {
+  margin: 0 10px 10px 10px;
+}
+
+.hover-parent .bottom-flex .share-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.hover-parent .bottom-flex .share-dropdown .send-button {
+  padding: 12px;
+  text-align: center;
+  border-radius: 22px;
+  color: white;
+  background-color: #a305ff;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.hover-parent .bottom-flex .share-dropdown .send-button:hover {
+  opacity: 1;
+}
+
+.hover-parent .bottom-flex .share-dropdown .share-grid {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  padding: 0 10px 10px 10px;
+  margin-bottom: 5px;
+  grid-gap: 15px 0;
+}
+
+.hover-parent .bottom-flex .share-dropdown .share-grid-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hover-parent .bottom-flex .share-dropdown .share-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #ededed;
+}
+
+.hover-parent .bottom-flex .share-dropdown .share-icon .icon-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hover-parent .bottom-flex .share-dropdown .share-icon .bi {
+  display: block;
+  font-size: 24px;
+  margin: 0 auto;
+}
+
+.hover-parent .bottom-flex .share-dropdown .share-name {
+  font-weight: normal;
+  font-size: 13px;
+  color: #1c1c1c;
+  margin-top: 3px;
 }
 
 .hover-parent .bottom-flex .more-dropdown {
