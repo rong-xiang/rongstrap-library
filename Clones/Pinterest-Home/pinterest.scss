@@ -1,6 +1,7 @@
 /*
 - Refactor dropdowns / dropdown content
 - Check cursors
+- Upload icons showing up on top of board dropdown
 
 Notes:
 - Z-index is relative to the parent!
@@ -22,16 +23,58 @@ a {
   text-decoration: inherit;
 }
 
+img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+svg {
+  display: block;
+}
+
 $black: #1c1c1c;
 $light-grey: #ededed;
 $dark-grey: #6d6d6d;
 $purple: #a305ff;
 $purple-transparent: rgba(163, 5, 255, 0.8);
+$white-transparent: rgba(255, 255, 255, 0.9);
 
 $width: 350px;
 $offset-width: 28px;
-$hover: background-color 0.2s ease;
+$border-radius: 16px;
+
+//  TRANSITIONS
+$bg: background-color 0.2s ease;
 $opacity: opacity 0.2s ease;
+
+// HOVERS
+%hover-white {
+  background-color: $white-transparent;
+  transition: $bg;
+  &:hover {
+    background-color: white;
+  }
+}
+
+%hover-lg {
+  background-color: transparent;
+  transition: $bg;
+  &:hover {
+    background-color: $light-grey;
+  }
+}
+
+%hover-purple {
+  background-color: $purple-transparent;
+  transition: $bg;
+  &:hover {
+    background-color: $purple;
+  }
+}
+
+// TEXT STYLING
 
 .dropdown-header {
   display: block;
@@ -39,26 +82,6 @@ $opacity: opacity 0.2s ease;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 20px;
-}
-
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.purple-button {
-  padding: 12px;
-  text-align: center;
-  border-radius: 20px;
-  color: white;
-  background-color: $purple;
-  opacity: 0.7;
-  transition: $opacity;
-
-  &:hover {
-    opacity: 1;
-  }
 }
 
 .thumbnail-description {
@@ -75,336 +98,73 @@ $opacity: opacity 0.2s ease;
   opacity: 0.5;
 }
 
-.item-hover-parent {
-  .item-hover-content {
-    visibility: hidden;
+.breadcrumb {
+  padding: 0 10px;
+  margin-bottom: 5px;
+  font-weight: normal;
+  font-size: 12px;
+  color: $dark-grey;
+}
+
+// FLEX CONTAINER STYLING
+
+%flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex {
+  @extend %flex;
+  justify-content: space-between;
+}
+
+.flex-left {
+  @extend %flex;
+  justify-content: left;
+}
+
+.flex-right {
+  @extend %flex;
+  justify-content: right;
+}
+
+//  ELEMENT STYLING
+
+.purple-button {
+  padding: 12px;
+  text-align: center;
+  border-radius: 22px;
+  color: white;
+  background-color: $purple;
+  opacity: 0.7;
+  transition: $opacity;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.icon-x {
+  background-color: transparent;
+  border-radius: 100%;
+  margin: 0 10px;
+  transition: $bg;
+
+  .bi-x {
+    display: block;
+    font-size: 30px;
   }
 
   &:hover {
-    .item-hover-content {
-      visibility: visible;
-    }
-  }
-
-  .icon-dots {
-    background-color: white;
-    padding: 10px;
-    border-radius: 50%;
-    margin: 0 10px;
-    transition: $hover;
-
-    .bi-three-dots {
-      display: block;
-      font-size: 20px;
-    }
-
-    &:hover {
-      background-color: $black;
-      .bi-three-dots {
-        color: white;
-      }
-    }
-  }
-
-  .icon-x {
-    background-color: transparent;
-    border-radius: 50%;
-    margin: 0 10px;
-    transition: $hover;
-
-    .bi-x {
-      display: block;
-      font-size: 30px;
-    }
-
-    &:hover {
-      background-color: #dad8d8;
-    }
-  }
-}
-
-.board-item-flex-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mini-flex-container-left {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-
-.mini-flex-container-right {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-}
-
-img {
-  object-fit: cover;
-  display: block;
-}
-
-/* Nav styling */
-nav {
-  background-color: white;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  width: 100%;
-
-  .nav-item {
-    margin-right: 5px;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  %icon {
-    border-radius: 100%;
-    transition: $hover;
-
-    &:hover {
-      background-color: $light-grey;
-    }
-  }
-
-  .nav-search-bar {
-    min-width: 400px;
-  }
-
-  .icon {
-    @extend %icon;
-    padding: 13px;
-
-    svg {
-      display: block;
-      font-size: 20px;
-      margin: 0 auto;
-    }
-  }
-
-  .chevron-icon {
-    @extend %icon;
-    padding: 5px;
-
-    .chevron-down {
-      display: block;
-      font-size: 14px;
-    }
-  }
-
-  .more-options-dropdown-content {
-    display: none;
-    right: 0;
-  }
-
-  // UPDATES DROPDOWN
-  .updates-dropdown-content {
-    z-index: 1;
-    display: none;
-    left: -175px + $offset-width;
-    width: $width;
-  }
-
-  .messages {
-    position: relative;
-    .messages-dropdown-content {
-      display: none;
-      width: $width;
-      left: -200px;
-    }
-
-    .inbox-header {
-      position: relative;
-      .messages-options {
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 10px;
-      }
-    }
-
-    .big-header {
-      font-size: 30px;
-      margin: 0 10px 20px;
-      line-height: 1.2;
-    }
-
-    .title {
-      font-weight: normal;
-      font-size: 13px;
-      color: $dark-grey;
-      margin-top: 3px;
-    }
-
-    .search-bar {
-      margin: 0 10px 10px 10px;
-    }
-
-    .suggested-breadcrumb {
-      padding: 10px;
-      font-weight: normal;
-      font-size: 14px;
-    }
-  }
-
-  .thumbnail {
-    display: block;
-    width: 40px;
-    height: 50px;
-    border-radius: 7px;
-    margin: 0;
-  }
-
-  .profile-thumbnail {
-    display: block;
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
-    margin: 0;
-  }
-
-  .suggestions-flex-container {
-    margin-top: 20px;
-
-    .suggestions-tile {
-      position: relative;
-      width: calc(50% - 1px);
-
-      .tile-image {
-        display: block;
-        object-fit: cover;
-        width: 100%;
-        height: 150px;
-      }
-
-      .tile-overlay {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.3);
-        .overlay-text {
-          color: white;
-          margin: 0 auto;
-        }
-      }
-    }
-
-    $tile-border: 15px;
-
-    .tile-right {
-      .tile-image,
-      .tile-overlay {
-        border-top-right-radius: $tile-border;
-        border-bottom-right-radius: $tile-border;
-      }
-    }
-
-    .tile-left {
-      .tile-image,
-      .tile-overlay {
-        border-top-left-radius: $tile-border;
-        border-bottom-left-radius: $tile-border;
-      }
-    }
-  }
-
-  .dropdown {
-    .dropdown-content {
-      position: absolute;
-      top: 60px;
-      z-index: 1;
-      background-color: white;
-      padding: 10px;
-      border-radius: 16px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-
-      section:not(:last-child) {
-        margin-bottom: 15px;
-      }
-
-      .breadcrumb {
-        font-weight: normal;
-        font-size: 12px;
-        color: $dark-grey;
-      }
-
-      .flex-container {
-        .text {
-          max-width: 80%;
-        }
-
-        svg {
-          display: block;
-          font-size: 18px;
-        }
-      }
-
-      :not(:last-child).text {
-        margin-bottom: 2px;
-      }
-
-      .breadcrumb,
-      .dropdown-item {
-        padding: 10px;
-      }
-
-      .dropdown-item {
-        border-radius: 10px;
-        background-color: transparent;
-        transition: $hover;
-
-        &:hover {
-          background-color: $light-grey;
-        }
-      }
-    }
-
-    &:hover .dropdown-content {
-      display: block;
-    }
-  }
-
-  .headshot {
-    display: block;
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    margin: 0 auto;
-  }
-}
-
-.notifications {
-  position: relative;
-
-  .notif-number {
-    font-size: 12px;
-    position: absolute;
-    text-align: center;
-    right: 0;
-    top: 0;
-    color: white;
-    background-color: $purple;
-    padding: 3px;
-    border-radius: 50%;
+    background-color: #dad8d8;
   }
 }
 
 .search-bar {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  @extend %flex;
+  justify-content: left;
   flex-grow: 2;
-  transition: $hover;
+  transition: $bg;
   background-color: $light-grey;
   border-radius: 30px;
 
@@ -432,9 +192,254 @@ nav {
   }
 }
 
+%thumbnail {
+  display: block;
+  height: 50px;
+  margin: 0;
+}
+
+.profile-thumbnail {
+  @extend %thumbnail;
+  border-radius: 100%;
+  width: 50px;
+}
+
+%drop-shadow {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+%icon {
+  border-radius: 100%;
+  @extend %hover-lg;
+}
+
+// DROPDOWN
+
+.dropdown {
+  z-index: 1;
+  position: relative;
+  .dropdown-content {
+    @extend %dropdown-box;
+    display: none;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &:hover {
+    .dropdown-content {
+      display: block;
+    }
+  }
+}
+
+%dropdown-box {
+  background-color: white;
+  border-radius: $border-radius;
+  @extend %shadow;
+}
+
+.dropdown-item {
+  border: 10px;
+  padding: 10px;
+  @extend %hover-lg;
+}
+
+.item-hover-parent {
+  .item-hover-content {
+    visibility: hidden;
+  }
+
+  &:hover {
+    .item-hover-content {
+      visibility: visible;
+    }
+  }
+}
+
+/* Nav styling */
+nav {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+
+  .nav-item {
+    margin-right: 5px;
+  }
+
+  .nav-search-bar {
+    min-width: 400px;
+  }
+
+  .icon {
+    @extend %icon;
+    padding: 13px;
+
+    svg {
+      font-size: 20px;
+      margin: 0 auto;
+    }
+  }
+
+  .chevron-icon {
+    @extend %icon;
+    padding: 5px;
+  }
+
+  .chevron-down {
+    display: block;
+    font-size: 14px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  // NAV DROPDOWN CONTENTS
+
+  .updates-dropdown-content {
+    left: -175px + $offset-width;
+    width: $width;
+
+    .suggestions-flex {
+      margin-top: 20px;
+    }
+
+    .suggestions-tile {
+      position: relative;
+      width: calc(50% - 1px);
+    }
+
+    $tile-border: 15px;
+    .tile-right .tile-image,
+    .tile-overlay {
+      border-top-right-radius: $tile-border;
+      border-bottom-right-radius: $tile-border;
+    }
+
+    .tile-left .tile-image,
+    .tile-overlay {
+      border-top-left-radius: $tile-border;
+      border-bottom-left-radius: $tile-border;
+    }
+
+    .tile-overlay {
+      @extend %flex;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .tile-overlay-text {
+      color: white;
+      margin: 0 auto;
+    }
+  }
+
+  .messages-dropdown-content {
+    width: $width;
+    left: -200px;
+
+    .messages {
+      .inbox-header {
+        position: relative;
+        .messages-options {
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 10px;
+        }
+      }
+
+      .big-header {
+        font-size: 30px;
+        margin: 0 10px 20px;
+        line-height: 1.2;
+      }
+
+      .title {
+        font-weight: normal;
+        font-size: 13px;
+        color: $dark-grey;
+        margin-top: 3px;
+      }
+
+      .search-bar {
+        margin: 0 10px 10px 10px;
+      }
+
+      .suggested-breadcrumb {
+        padding: 10px;
+        font-weight: normal;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .more-options-dropdown-content {
+    :not(:last-child).text {
+      margin-bottom: 2px;
+    }
+
+    .text {
+      max-width: 80%;
+    }
+
+    .breadcrumb {
+      padding: 10px;
+    }
+  }
+
+  .thumbnail {
+    @extend %thumbnail;
+    width: 40px;
+    border-radius: 7px;
+  }
+
+  .dropdown {
+    .dropdown-content {
+      top: 60px;
+      padding: 10px;
+
+      section:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .headshot {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin: 0 auto;
+  }
+}
+
+.notifications {
+  position: relative;
+
+  .notif-number {
+    font-size: 12px;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    top: 0;
+    color: white;
+    background-color: $purple;
+    padding: 3px;
+    border-radius: 50%;
+  }
+}
+
 .nav-text {
   color: $black;
-  transition: $hover;
+  transition: $bg;
   border-radius: 30px;
   padding: 15px 20px;
 
@@ -450,28 +455,34 @@ nav {
 }
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 20px;
 }
 
 /* Main styling */
 
 .fixed-icons {
-  z-index: 2;
+  z-index: 1;
   position: fixed;
   bottom: 15px;
   right: 8px;
 
-  .dropdown {
-    position: relative;
+  .option {
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
 
-    &:hover {
-      .dropdown-content {
-        display: block;
-      }
-    }
+  .highlight {
+    @extend %hover-lg;
+  }
+
+  .line {
+    box-shadow: 0px 1px 0px $light-grey;
+  }
+
+  .fixed-plus-icon {
+    font-size: 20px;
+    display: block;
   }
 
   .plus-content {
@@ -485,22 +496,16 @@ nav {
   }
 
   .dropdown-content {
-    display: none;
-    position: absolute;
     right: 65px;
-    z-index: 1;
-    border-radius: 16px;
-    background-color: white;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 
     .top-content {
-      border-top-right-radius: 16px;
-      border-top-left-radius: 16px;
+      border-top-right-radius: $border-radius;
+      border-top-left-radius: $border-radius;
     }
 
     .bottom-content {
-      border-bottom-right-radius: 16px;
-      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
     }
 
     .flex-wrap {
@@ -518,70 +523,21 @@ nav {
         color: $black;
       }
     }
-
-    .line {
-      box-shadow: 0px 1px 0px $light-grey;
-    }
-
-    .fixed-plus-icon {
-      font-size: 20px;
-      display: block;
-    }
-
-    .option {
-      padding: 15px;
-      font-size: 14px;
-      line-height: 1.3;
-    }
-
-    .highlight {
-      background-color: transparent;
-      transition: $hover;
-
-      &:hover {
-        background-color: $light-grey;
-      }
-    }
-  }
-
-  %icon {
-    border-radius: 100%;
-    transition: $hover;
-
-    &:hover {
-      background-color: $light-grey;
-    }
   }
 
   .icon {
     @extend %icon;
+    @extend %shadow;
     padding: 10px;
     margin: 10px;
-    background-color: white;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 
     svg {
-      display: block;
       font-size: 24px;
     }
   }
 }
 
-.save-to-container {
-  height: 200px;
-}
-
-.share-container {
-  height: 200px;
-}
-
-.updates-container {
-  height: 70vh; // need to figure out how to scale according to window
-}
-
-.message-container {
-  height: 53vh;
-}
+// DROPDOWN CONTAINERS
 
 .container {
   margin-right: -8px;
@@ -595,6 +551,44 @@ nav {
     }
   }
 }
+
+.message-container {
+  height: 53vh;
+}
+
+.save-to-container {
+  height: 200px;
+}
+
+.share-container {
+  height: 200px;
+}
+
+.updates-container {
+  height: 70vh; // need to figure out how to scale according to window
+
+  .icon-dots {
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: $bg;
+
+    .bi-three-dots {
+      display: block;
+      font-size: 20px;
+    }
+
+    &:hover {
+      background-color: $black;
+      .bi-three-dots {
+        color: white;
+      }
+    }
+  }
+}
+
+// GALLERY STYLING
 
 .gallery {
   display: flex;
@@ -614,9 +608,6 @@ nav {
     }
 
     img {
-      display: block;
-      width: 100%;
-      height: auto;
       border-radius: 20px;
       margin-bottom: 10px;
     }
@@ -631,15 +622,16 @@ nav {
 .hover-parent {
   position: relative;
   cursor: zoom-in;
+
   .hover-overlay {
     display: none;
+    position: absolute;
+    top: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    position: absolute;
-    top: 0;
     background-color: rgba(28, 28, 28, 0.15);
-    z-index: 1;
   }
 
   &:hover .hover-overlay {
@@ -648,143 +640,96 @@ nav {
 
   .top-flex,
   .bottom-flex {
-    display: flex;
+    @extend %flex;
+    position: absolute;
     width: 100%;
-    align-items: center;
     padding: 0 15px;
   }
 
   .top-flex {
-    position: absolute;
     top: 15px;
     font-size: 15px;
 
-    .dropdown {
-      z-index: 1;
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        top: 50px;
-        left: -40px;
-        right: -40px; // absolutely center to closest parent with position assigned
-        z-index: 1;
-        background-color: white;
-        padding: 10px;
-        border-radius: 16px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-
-        .create-board {
-          padding: 20px;
-          margin: 0 -10px -10px -10px;
-          border-bottom-right-radius: 10px;
-          border-bottom-left-radius: 10px;
-          background-color: transparent;
-          transition: $hover;
-
-          &:hover {
-            background-color: $light-grey;
-          }
-        }
-
-        .dropdown-item {
-          padding: 10px;
-          margin-right: 5px;
-          border-radius: 10px;
-          background-color: transparent;
-          transition: $hover;
-
-          &:hover {
-            background-color: $light-grey;
-          }
-        }
-
-        .thumbnail {
-          display: block;
-          width: 50px;
-          height: 50px;
-          border-radius: 5px;
-          margin: 0;
-        }
-
-        .breadcrumb {
-          padding: 0 10px;
-          margin-bottom: 5px;
-          font-weight: normal;
-          font-size: 12px;
-          color: $dark-grey;
-        }
-
-        .bi-plus {
-          font-size: 10px;
-          background-color: $light-grey;
-        }
-
-        .search-bar {
-          padding: 0 20px;
-          margin: 0 10px 20px;
-        }
-      }
-
-      &:hover {
-        .dropdown-content {
-          display: block;
-        }
-      }
+    .dropdown-text {
+      padding: 12px;
     }
 
+    .dropdown-content {
+      top: 50px;
+      left: -40px;
+      right: -40px; // absolutely center to closest parent with position assigned
+      padding: 10px;
+    }
+
+    .dropdown-item {
+      margin-right: 5px;
+    }
+
+    .search-bar {
+      padding: 0 20px;
+      margin: 0 10px 20px;
+    }
+
+    .create-board {
+      padding: 20px;
+      margin: 0 -10px -10px -10px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      @extend %hover-lg;
+    }
+
+    .thumbnail {
+      @extend %thumbnail;
+      width: 50px;
+      border-radius: 5px;
+    }
+
+    .bi-plus {
+      font-size: 10px;
+      background-color: $light-grey;
+    }
+
+    $save-border: 15px;
+
     .save-to {
-      border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
+      border-top-left-radius: $save-border;
+      border-bottom-left-radius: $save-border;
       flex-basis: 80%;
-      justify-content: space-between;
-      align-items: center;
-      background-color: rgba(255, 255, 255, 0.9);
-      transition: $hover;
-
-      .flex-container {
-        padding: 12px;
-      }
-
-      &:hover {
-        background-color: white;
-      }
+      @extend %hover-white;
     }
 
     .save {
-      padding: 12px;
-      border-top-right-radius: 15px;
-      border-bottom-right-radius: 15px;
-      flex-basis: 20%;
       color: white;
-      background-color: $purple-transparent;
-      transition: $hover;
-
-      &:hover {
-        background-color: $purple;
-      }
+      flex-basis: 20%;
+      padding: 12px;
+      border-top-right-radius: $save-border;
+      border-bottom-right-radius: $save-border;
+      @extend %hover-purple;
     }
   }
 
   .bottom-flex {
-    position: absolute;
-    justify-content: space-between;
     bottom: 15px;
 
+    .bottom-icon {
+      display: block;
+      font-size: 18px;
+    }
+
+    .icon {
+      border-radius: 100%;
+      padding: 8px;
+      @extend %hover-white;
+    }
+
     .source {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      @extend %flex;
+      justify-content: left;
       border-radius: 20px;
       padding: 8px;
-      background-color: rgba(255, 255, 255, 0.9);
-      transition: $hover;
+      @extend %hover-white;
 
-      &:hover {
-        background-color: white;
-      }
-
-      svg {
-        font-size: 18px;
+      .bi-arrow-up-right {
         margin-right: 5px;
       }
 
@@ -793,116 +738,15 @@ nav {
       }
     }
 
-    .icon {
-      border-radius: 100%;
-      padding: 8px;
-      background-color: rgba(255, 255, 255, 0.9);
-      transition: $hover;
+    .share-dropdown .dropdown-content {
+      top: -250px;
+      left: 50px;
+      width: $width; // absolutely center to closest parent with position assigned
+      padding: 10px;
 
-      &:hover {
-        background-color: white;
+      .dropdown-item {
+        margin-right: 5px;
       }
-
-      svg {
-        display: block;
-        font-size: 18px;
-      }
-    }
-
-    .share-dropdown {
-      position: relative;
-      z-index: 1;
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        top: -250px;
-        left: 50px;
-        width: $width; // absolutely center to closest parent with position assigned
-        z-index: 1;
-        background-color: white;
-        padding: 10px;
-        border-radius: 16px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-
-        .dropdown-item {
-          padding: 10px;
-          margin-right: 5px;
-          border-radius: 10px;
-          background-color: transparent;
-          transition: $hover;
-
-          &:hover {
-            background-color: $light-grey;
-          }
-        }
-
-        .profile-thumbnail {
-          display: block;
-          border-radius: 100%;
-          width: 50px;
-          height: 50px;
-          margin: 0;
-        }
-
-        .breadcrumb {
-          padding: 0 10px;
-          margin-bottom: 5px;
-          font-weight: normal;
-          font-size: 12px;
-          color: $dark-grey;
-        }
-
-        .bi-plus {
-          font-size: 10px;
-          background-color: $light-grey;
-        }
-
-        .icon-x {
-          background-color: transparent;
-          border-radius: 50%;
-          margin: 0 10px;
-          transition: $hover;
-
-          .bi-x {
-            display: block;
-            font-size: 30px;
-          }
-
-          &:hover {
-            background-color: #dad8d8;
-          }
-        }
-
-        .title {
-          font-weight: normal;
-          font-size: 13px;
-          color: $dark-grey;
-          margin-top: 3px;
-        }
-        .search-bar {
-          margin: 0 10px 10px 10px;
-        }
-      }
-
-      &:hover {
-        .dropdown-content {
-          display: block;
-        }
-      }
-      .send-button {
-        padding: 12px;
-        text-align: center;
-        border-radius: 22px;
-        color: white;
-        background-color: $purple;
-        opacity: 0.7;
-        transition: $opacity;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-
       .share-grid {
         display: grid;
         justify-items: center;
@@ -913,9 +757,8 @@ nav {
       }
 
       .share-grid-item {
-        display: flex;
+        @extend %flex;
         flex-direction: column;
-        align-items: center;
       }
 
       .share-icon {
@@ -925,10 +768,9 @@ nav {
         background-color: $light-grey;
 
         .icon-wrapper {
-          display: flex;
+          @extend % flex;
           width: 100%;
           height: 100%;
-          align-items: center;
         }
 
         .bi {
@@ -937,56 +779,51 @@ nav {
           margin: 0 auto;
         }
       }
+
       .share-name {
         font-weight: normal;
         font-size: 13px;
         color: $black;
         margin-top: 3px;
       }
-    }
 
-    .more-dropdown {
-      position: relative;
-      z-index: 0;
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        left: 40px;
-        top: -100px;
-        width: 250px;
-        z-index: 1;
-        border-radius: 16px;
-        background-color: white;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-
-        .top-content {
-          padding: 15px;
-          font-weight: normal;
-          font-size: 14px;
-          line-height: 1.3;
-          box-shadow: 0px 1px 0px $light-grey;
-        }
-
-        .bottom-content {
-          padding: 10px 0;
-        }
-
-        .option {
-          font-size: 12px;
-          padding: 15px;
-          background-color: transparent;
-          transition: $hover;
-
-          &:hover {
-            background-color: $light-grey;
-          }
-        }
+      .bi-plus {
+        font-size: 10px;
+        background-color: $light-grey;
       }
 
-      &:hover {
-        .dropdown-content {
-          display: block;
-        }
+      .title {
+        font-weight: normal;
+        font-size: 13px;
+        color: $dark-grey;
+        margin-top: 3px;
+      }
+      .search-bar {
+        margin: 0 10px 10px 10px;
+      }
+    }
+
+    .more-dropdown .dropdown-content {
+      left: 40px;
+      top: -100px;
+      width: 250px;
+
+      .top-content {
+        padding: 15px;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.3;
+        box-shadow: 0px 1px 0px $light-grey;
+      }
+
+      .bottom-content {
+        padding: 10px 0;
+      }
+
+      .option {
+        font-size: 12px;
+        padding: 15px;
+        @extend %hover-lg;
       }
     }
   }
