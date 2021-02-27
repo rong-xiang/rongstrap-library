@@ -1,13 +1,17 @@
 /*
-- Refactor dropdowns / dropdown content
+- Refactor - done
+- Better naming - done
 - Check cursors
-- Upload icons showing up on top of board dropdown
+- Check z-index
+- Fix notifications
 
 Notes:
 - Z-index is relative to the parent!
 - Change svg width and height to 1em in html, then change font size in css
-
+- Don't use repeat(1fr, 4) for grids b/c Live Sass Compiler isn't updated (errors in css)
 */
+
+////////////* UNIVERSAL STYLING *////////////
 
 * {
   padding: 0;
@@ -27,29 +31,35 @@ img {
   display: block;
   object-fit: cover;
   width: 100%;
-  height: auto;
 }
 
 svg {
   display: block;
+  margin: 0;
 }
 
+////////////* VARIABLES *////////////
+
+// Colors
 $black: #1c1c1c;
 $light-grey: #ededed;
 $dark-grey: #6d6d6d;
 $purple: #a305ff;
 $purple-transparent: rgba(163, 5, 255, 0.8);
 $white-transparent: rgba(255, 255, 255, 0.9);
+%shadow {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
 
-$width: 350px;
-$offset-width: 28px;
-$border-radius: 16px;
+// Lengths
+$width: 350px; // dropdown content width
+$border-radius: 16px; // dropdown content border radius
 
-//  TRANSITIONS
+// Transitions
 $bg: background-color 0.2s ease;
 $opacity: opacity 0.2s ease;
 
-// HOVERS
+// Hover interactions
 %hover-white {
   background-color: $white-transparent;
   transition: $bg;
@@ -74,9 +84,9 @@ $opacity: opacity 0.2s ease;
   }
 }
 
-// TEXT STYLING
+////////////* TEXT STYLING *////////////
 
-.dropdown-header {
+.text-heading {
   display: block;
   color: $black;
   text-align: center;
@@ -84,29 +94,22 @@ $opacity: opacity 0.2s ease;
   padding-bottom: 20px;
 }
 
-.thumbnail-description {
-  color: $black;
-  margin-left: 10px;
-}
-
-.font-weight-normal {
+.text-normal {
   font-weight: 400;
 }
 
-.description-time {
+.text-time {
   font-weight: 400;
   opacity: 0.5;
 }
 
-.breadcrumb {
-  padding: 0 10px;
-  margin-bottom: 5px;
+.text-eyebrow {
   font-weight: normal;
   font-size: 12px;
   color: $dark-grey;
 }
 
-// FLEX CONTAINER STYLING
+////////////* FLEX CONTAINER STYLING *////////////
 
 %flex {
   display: flex;
@@ -128,12 +131,12 @@ $opacity: opacity 0.2s ease;
   justify-content: right;
 }
 
-//  ELEMENT STYLING
+////////////* ELEMENT STYLING *////////////
 
-.purple-button {
+.cta {
   padding: 12px;
   text-align: center;
-  border-radius: 22px;
+  border-radius: 20px;
   color: white;
   background-color: $purple;
   opacity: 0.7;
@@ -146,7 +149,7 @@ $opacity: opacity 0.2s ease;
 
 .icon-x {
   background-color: transparent;
-  border-radius: 100%;
+  border-radius: 50%;
   margin: 0 10px;
   transition: $bg;
 
@@ -160,13 +163,13 @@ $opacity: opacity 0.2s ease;
   }
 }
 
-.search-bar {
+.search-field {
   @extend %flex;
   justify-content: left;
   flex-grow: 2;
-  transition: $bg;
-  background-color: $light-grey;
   border-radius: 30px;
+  background-color: $light-grey;
+  transition: $bg;
 
   &:hover {
     background-color: #d9d9d9;
@@ -192,28 +195,64 @@ $opacity: opacity 0.2s ease;
   }
 }
 
+// Thumbnails
 %thumbnail {
-  display: block;
   height: 50px;
   margin: 0;
 }
 
-.profile-thumbnail {
+.thumbnail {
+  height: 50px;
+  margin: 0;
+}
+
+.avatar {
   @extend %thumbnail;
   border-radius: 100%;
   width: 50px;
 }
 
-%drop-shadow {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+.avatar-headshot {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin: 0 auto;
 }
 
-%icon {
+.label {
+  color: $black;
+  margin-left: 10px;
+}
+
+.icon {
   border-radius: 100%;
+}
+
+.hover-parent {
+  .hover-content {
+    visibility: hidden;
+  }
+
+  &:hover {
+    .hover-content {
+      visibility: visible;
+    }
+  }
+}
+
+////////////* DROPDOWN STYLING *////////////
+
+%dropdown-box {
+  background-color: white;
+  border-radius: $border-radius;
+  @extend %shadow;
+}
+
+.dropdown-item {
+  border-radius: 10px;
+  padding: 10px;
   @extend %hover-lg;
 }
-
-// DROPDOWN
 
 .dropdown {
   z-index: 1;
@@ -232,96 +271,31 @@ $opacity: opacity 0.2s ease;
   }
 }
 
-%dropdown-box {
-  background-color: white;
-  border-radius: $border-radius;
-  @extend %shadow;
-}
+// DROPDOWN CONTENTS
 
-.dropdown-item {
-  border: 10px;
-  padding: 10px;
-  @extend %hover-lg;
-}
+$top: 60px; // top value for big nav dropdowns
+$offset-width: 28px;
 
-.item-hover-parent {
-  .item-hover-content {
-    visibility: hidden;
+.dropdown-content-updates {
+  top: $top;
+  left: -175px + $offset-width;
+  width: $width;
+
+  .thumbnail {
+    width: 40px;
+    border-radius: 7px;
   }
 
-  &:hover {
-    .item-hover-content {
-      visibility: visible;
-    }
-  }
-}
+  .flex-suggestions {
+    margin-top: 20px;
 
-/* Nav styling */
-nav {
-  background-color: white;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  width: 100%;
-
-  .nav-item {
-    margin-right: 5px;
-  }
-
-  .nav-search-bar {
-    min-width: 400px;
-  }
-
-  .icon {
-    @extend %icon;
-    padding: 13px;
-
-    svg {
-      font-size: 20px;
-      margin: 0 auto;
-    }
-  }
-
-  .chevron-icon {
-    @extend %icon;
-    padding: 5px;
-  }
-
-  .chevron-down {
-    display: block;
-    font-size: 14px;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  // NAV DROPDOWN CONTENTS
-
-  .updates-dropdown-content {
-    left: -175px + $offset-width;
-    width: $width;
-
-    .suggestions-flex {
-      margin-top: 20px;
-    }
-
-    .suggestions-tile {
+    .tile {
       position: relative;
       width: calc(50% - 1px);
     }
 
-    $tile-border: 15px;
-    .tile-right .tile-image,
-    .tile-overlay {
-      border-top-right-radius: $tile-border;
-      border-bottom-right-radius: $tile-border;
-    }
-
-    .tile-left .tile-image,
-    .tile-overlay {
-      border-top-left-radius: $tile-border;
-      border-bottom-left-radius: $tile-border;
+    .tile-img {
+      height: 150px;
     }
 
     .tile-overlay {
@@ -336,144 +310,119 @@ nav {
       background-color: rgba(0, 0, 0, 0.3);
     }
 
-    .tile-overlay-text {
+    .overlay-text {
       color: white;
       margin: 0 auto;
     }
-  }
 
-  .messages-dropdown-content {
-    width: $width;
-    left: -200px;
+    $tile-border: 15px;
 
-    .messages {
-      .inbox-header {
-        position: relative;
-        .messages-options {
-          position: absolute;
-          right: 0;
-          top: 0;
-          bottom: 10px;
-        }
-      }
-
-      .big-header {
-        font-size: 30px;
-        margin: 0 10px 20px;
-        line-height: 1.2;
-      }
-
-      .title {
-        font-weight: normal;
-        font-size: 13px;
-        color: $dark-grey;
-        margin-top: 3px;
-      }
-
-      .search-bar {
-        margin: 0 10px 10px 10px;
-      }
-
-      .suggested-breadcrumb {
-        padding: 10px;
-        font-weight: normal;
-        font-size: 14px;
+    .tile-right {
+      .tile-img,
+      .tile-overlay {
+        border-top-right-radius: $tile-border;
+        border-bottom-right-radius: $tile-border;
       }
     }
-  }
 
-  .more-options-dropdown-content {
-    :not(:last-child).text {
-      margin-bottom: 2px;
-    }
-
-    .text {
-      max-width: 80%;
-    }
-
-    .breadcrumb {
-      padding: 10px;
-    }
-  }
-
-  .thumbnail {
-    @extend %thumbnail;
-    width: 40px;
-    border-radius: 7px;
-  }
-
-  .dropdown {
-    .dropdown-content {
-      top: 60px;
-      padding: 10px;
-
-      section:not(:last-child) {
-        margin-bottom: 15px;
+    .tile-left {
+      .tile-img,
+      .tile-overlay {
+        border-top-left-radius: $tile-border;
+        border-bottom-left-radius: $tile-border;
       }
     }
-  }
-
-  .headshot {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    margin: 0 auto;
   }
 }
 
-.notifications {
-  position: relative;
+.dropdown-content-messages {
+  top: $top;
+  width: $width;
+  left: -200px;
 
-  .notif-number {
-    font-size: 12px;
-    position: absolute;
-    text-align: center;
-    right: 0;
-    top: 0;
-    color: white;
-    background-color: $purple;
-    padding: 3px;
-    border-radius: 50%;
-  }
-}
-
-.nav-text {
-  color: $black;
-  transition: $bg;
-  border-radius: 30px;
-  padding: 15px 20px;
-
-  &.current {
-    color: white;
-    background-color: $black;
+  .text-heading-inbox {
+    position: relative;
+    .messages-options {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 10px;
+    }
   }
 
-  /* Applies when you hover on classes that are not the current page */
-  &:not(.current):hover {
-    background-color: $light-grey;
+  .text-heading-big {
+    font-size: 30px;
+    margin: 0 10px 20px;
+    line-height: 1.2;
   }
-}
 
-.nav-container {
-  padding: 20px;
-}
+  .text-title {
+    font-weight: normal;
+    font-size: 13px;
+    color: $dark-grey;
+    margin-top: 3px;
+  }
 
-/* Main styling */
+  .search-field {
+    margin: 0 10px 10px 10px;
+  }
 
-.fixed-icons {
-  z-index: 1;
-  position: fixed;
-  bottom: 15px;
-  right: 8px;
-
-  .option {
-    padding: 15px;
+  .text-eyebrow-suggested {
+    padding: 10px;
+    font-weight: normal;
     font-size: 14px;
-    line-height: 1.3;
+  }
+}
+
+.dropdown-content-options {
+  top: $top - 12px;
+  width: 225px;
+  right: 0;
+
+  .flex-text {
+    max-width: 80%;
   }
 
-  .highlight {
-    @extend %hover-lg;
+  :not(:last-child).text {
+    margin-bottom: 2px;
+  }
+
+  .text-eyebrow {
+    padding: 10px;
+  }
+
+  .bi-arrow-up-right {
+    font-size: 18px;
+  }
+}
+
+.dropdown-content-icons-fixed {
+  right: 65px;
+
+  .content-top {
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+  }
+
+  .content-bottom {
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  .flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .extra-options {
+    color: $dark-grey;
+    margin-right: 10px;
+    line-height: 2;
+
+    &:hover {
+      text-decoration: underline;
+      color: $black;
+    }
   }
 
   .line {
@@ -485,55 +434,258 @@ nav {
     display: block;
   }
 
-  .plus-content {
+  .option {
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .highlight {
+    @extend %hover-lg;
+  }
+}
+
+.dropdown-content-save-to {
+  top: 50px;
+  left: -40px;
+  right: -40px; // absolutely center to closest parent with position assigned
+  padding: 10px;
+  width: $width;
+
+  .dropdown-item {
+    margin-right: 5px;
+  }
+
+  .create-board {
+    padding: 20px;
+    margin: 0 -10px -10px -10px;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    @extend %hover-lg;
+  }
+
+  .thumbnail {
+    width: 50px;
+    border-radius: 5px;
+  }
+
+  .text-eyebrow {
+    padding: 0 10px;
+    margin-bottom: 5px;
+  }
+
+  .bi-plus {
+    font-size: 10px;
+    background-color: $light-grey;
+  }
+
+  .search-field {
+    padding: 0 20px;
+    margin: 0 10px 20px;
+  }
+}
+
+.dropdown-content-share {
+  top: -250px;
+  left: 50px;
+  width: $width; // absolutely center to closest parent with position assigned
+  padding: 10px;
+
+  .dropdown-item {
+    margin-right: 5px;
+  }
+
+  .text-eyebrow {
+    padding: 0 10px;
+    margin-bottom: 5px;
+  }
+
+  .bi-plus {
+    font-size: 10px;
+    background-color: $light-grey;
+  }
+
+  .title {
+    font-weight: normal;
+    font-size: 13px;
+    color: $dark-grey;
+    margin-top: 3px;
+  }
+
+  .search-field {
+    margin: 0 10px 10px 10px;
+  }
+
+  .share-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0 10px 10px 10px;
+    margin-bottom: 5px;
+    grid-gap: 15px 0;
+  }
+
+  .share-grid-item {
+    @extend %flex;
+    flex-direction: column;
+  }
+
+  .share-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: $light-grey;
+
+    .share-icon-wrapper {
+      @extend %flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bi {
+      font-size: 24px;
+      margin: 0 auto;
+    }
+  }
+
+  .share-label {
+    font-weight: normal;
+    font-size: 13px;
+    color: $black;
+    margin-top: 3px;
+  }
+}
+
+.dropdown-content-more {
+  left: 40px;
+  top: -100px;
+  width: 250px;
+
+  .content-top {
+    padding: 15px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.3;
+    box-shadow: 0px 1px 0px $light-grey;
+  }
+
+  .content-bottom {
+    padding: 10px 0;
+  }
+
+  .option {
+    font-size: 12px;
+    padding: 15px;
+    @extend %hover-lg;
+  }
+}
+
+////////////* NAV STYLING *////////////
+
+nav {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+
+  .nav-item {
+    margin-right: 5px;
+  }
+
+  .nav-search-field {
+    min-width: 400px;
+  }
+
+  .nav-text {
+    color: $black;
+    transition: $bg;
+    border-radius: 30px;
+    padding: 15px 20px;
+
+    &.current {
+      color: white;
+      background-color: $black;
+    }
+
+    /* Applies when you hover on classes that are not the current page */
+    &:not(.current):hover {
+      background-color: $light-grey;
+    }
+  }
+
+  .nav-container {
+    padding: 20px;
+  }
+
+  .icon {
+    @extend %hover-lg;
+  }
+
+  .nav-item-icon {
+    padding: 13px;
+    font-size: 20px;
+  }
+
+  .chevron-icon {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .notifications {
+    position: relative;
+
+    .notif-number {
+      font-size: 12px;
+      position: absolute;
+      text-align: center;
+      right: 0;
+      top: 0;
+      color: white;
+      background-color: $purple;
+      padding: 3px;
+      border-radius: 50%;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .dropdown-content {
+    padding: 10px;
+
+    section:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+/* Main styling */
+
+.icons-fixed {
+  z-index: 2;
+  position: fixed;
+  bottom: 15px;
+  right: 8px;
+
+  .content-plus {
     top: -40px;
     width: 250px;
   }
 
-  .question-content {
+  .content-question {
     top: -160px;
     width: 300px;
   }
 
-  .dropdown-content {
-    right: 65px;
-
-    .top-content {
-      border-top-right-radius: $border-radius;
-      border-top-left-radius: $border-radius;
-    }
-
-    .bottom-content {
-      border-bottom-right-radius: $border-radius;
-      border-bottom-left-radius: $border-radius;
-    }
-
-    .flex-wrap {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .extra-options {
-      color: $dark-grey;
-      margin-right: 10px;
-      line-height: 2;
-
-      &:hover {
-        text-decoration: underline;
-        color: $black;
-      }
-    }
-  }
-
   .icon {
-    @extend %icon;
-    @extend %shadow;
+    @extend %hover-lg;
     padding: 10px;
     margin: 10px;
-
-    svg {
-      font-size: 24px;
-    }
+    background-color: white;
+    @extend %shadow;
+    font-size: 24px;
   }
 }
 
@@ -543,7 +695,7 @@ nav {
   margin-right: -8px;
   overflow-y: scroll;
 
-  .container-category {
+  .container-section {
     margin-bottom: 15px;
     cursor: pointer;
     &:last-child {
@@ -552,25 +704,20 @@ nav {
   }
 }
 
-.message-container {
-  height: 53vh;
-}
-
-.save-to-container {
+.container-save-to {
   height: 200px;
 }
 
-.share-container {
+.container-share {
   height: 200px;
 }
 
-.updates-container {
+.container-updates {
   height: 70vh; // need to figure out how to scale according to window
 
-  .icon-dots {
+  .icon {
     background-color: white;
     padding: 10px;
-    border-radius: 50%;
     margin: 0 10px;
     transition: $bg;
 
@@ -588,42 +735,42 @@ nav {
   }
 }
 
-// GALLERY STYLING
+.container-msg {
+  height: 53vh;
+}
+
+////////////* GALLERY STYLING *////////////
 
 .gallery {
   display: flex;
   justify-content: space-between;
   margin: 100px 70px 20px 70px;
-
-  .header-text {
-    color: $black;
-  }
-
   .column {
     flex-basis: 28%;
     padding: 0 10px;
 
-    .gallery-item {
+    .pin {
       margin-bottom: 40px;
     }
 
-    img {
+    .pin-img {
       border-radius: 20px;
       margin-bottom: 10px;
     }
 
-    .description {
+    .pin-label {
       font-weight: bold;
       font-size: 14px;
     }
   }
 }
 
-.hover-parent {
+////////////* PIN OVERLAY STYLING *////////////
+
+.pin-parent {
   position: relative;
   cursor: zoom-in;
-
-  .hover-overlay {
+  .pin-overlay {
     display: none;
     position: absolute;
     top: 0;
@@ -634,19 +781,19 @@ nav {
     background-color: rgba(28, 28, 28, 0.15);
   }
 
-  &:hover .hover-overlay {
+  &:hover .pin-overlay {
     display: block;
   }
 
-  .top-flex,
-  .bottom-flex {
+  .flex-top,
+  .flex-bottom {
     @extend %flex;
     position: absolute;
     width: 100%;
     padding: 0 15px;
   }
 
-  .top-flex {
+  .flex-top {
     top: 15px;
     font-size: 15px;
 
@@ -654,73 +801,27 @@ nav {
       padding: 12px;
     }
 
-    .dropdown-content {
-      top: 50px;
-      left: -40px;
-      right: -40px; // absolutely center to closest parent with position assigned
-      padding: 10px;
-    }
-
-    .dropdown-item {
-      margin-right: 5px;
-    }
-
-    .search-bar {
-      padding: 0 20px;
-      margin: 0 10px 20px;
-    }
-
-    .create-board {
-      padding: 20px;
-      margin: 0 -10px -10px -10px;
-      border-bottom-right-radius: 10px;
-      border-bottom-left-radius: 10px;
-      @extend %hover-lg;
-    }
-
-    .thumbnail {
-      @extend %thumbnail;
-      width: 50px;
-      border-radius: 5px;
-    }
-
-    .bi-plus {
-      font-size: 10px;
-      background-color: $light-grey;
-    }
-
-    $save-border: 15px;
-
+    $save-radius: 15px;
     .save-to {
-      border-top-left-radius: $save-border;
-      border-bottom-left-radius: $save-border;
       flex-basis: 80%;
+      border-top-left-radius: $save-radius;
+      border-bottom-left-radius: $save-radius;
       @extend %hover-white;
     }
 
     .save {
-      color: white;
-      flex-basis: 20%;
       padding: 12px;
-      border-top-right-radius: $save-border;
-      border-bottom-right-radius: $save-border;
+      flex-basis: 20%;
+      color: white;
+      border-top-right-radius: $save-radius;
+      border-bottom-right-radius: $save-radius;
       @extend %hover-purple;
     }
   }
 
-  .bottom-flex {
+  .flex-bottom {
+    justify-content: space-between; // not evenly dist for some reason
     bottom: 15px;
-
-    .bottom-icon {
-      display: block;
-      font-size: 18px;
-    }
-
-    .icon {
-      border-radius: 100%;
-      padding: 8px;
-      @extend %hover-white;
-    }
 
     .source {
       @extend %flex;
@@ -738,93 +839,13 @@ nav {
       }
     }
 
-    .share-dropdown .dropdown-content {
-      top: -250px;
-      left: 50px;
-      width: $width; // absolutely center to closest parent with position assigned
-      padding: 10px;
-
-      .dropdown-item {
-        margin-right: 5px;
-      }
-      .share-grid {
-        display: grid;
-        justify-items: center;
-        grid-template-columns: repeat(4, 1fr);
-        padding: 0 10px 10px 10px;
-        margin-bottom: 5px;
-        grid-gap: 15px 0;
-      }
-
-      .share-grid-item {
-        @extend %flex;
-        flex-direction: column;
-      }
-
-      .share-icon {
-        width: 50px;
-        height: 50px;
-        border-radius: 100%;
-        background-color: $light-grey;
-
-        .icon-wrapper {
-          @extend % flex;
-          width: 100%;
-          height: 100%;
-        }
-
-        .bi {
-          display: block;
-          font-size: 24px;
-          margin: 0 auto;
-        }
-      }
-
-      .share-name {
-        font-weight: normal;
-        font-size: 13px;
-        color: $black;
-        margin-top: 3px;
-      }
-
-      .bi-plus {
-        font-size: 10px;
-        background-color: $light-grey;
-      }
-
-      .title {
-        font-weight: normal;
-        font-size: 13px;
-        color: $dark-grey;
-        margin-top: 3px;
-      }
-      .search-bar {
-        margin: 0 10px 10px 10px;
-      }
+    .bottom-icon {
+      font-size: 18px;
     }
 
-    .more-dropdown .dropdown-content {
-      left: 40px;
-      top: -100px;
-      width: 250px;
-
-      .top-content {
-        padding: 15px;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 1.3;
-        box-shadow: 0px 1px 0px $light-grey;
-      }
-
-      .bottom-content {
-        padding: 10px 0;
-      }
-
-      .option {
-        font-size: 12px;
-        padding: 15px;
-        @extend %hover-lg;
-      }
+    .icon {
+      padding: 8px;
+      @extend %hover-white;
     }
   }
 }
