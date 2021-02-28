@@ -2,8 +2,8 @@
 - Refactor - done
 - Better naming - done
 - Check cursors
-- Check z-index
-- Fix notifications
+- Check z-index – done
+- Fix notifications - done
 
 Notes:
 - Z-index is relative to the parent!
@@ -255,7 +255,6 @@ $opacity: opacity 0.2s ease;
 }
 
 .dropdown {
-  z-index: 1;
   position: relative;
   .dropdown-content {
     @extend %dropdown-box;
@@ -635,16 +634,23 @@ nav {
   .notifications {
     position: relative;
 
-    .notif-number {
+    .notif-number-padding {
+      @extend %flex;
+      width: 20px;
+      height: 20px;
       font-size: 12px;
       position: absolute;
       text-align: center;
       right: 0;
       top: 0;
-      color: white;
       background-color: $purple;
-      padding: 3px;
-      border-radius: 50%;
+      border-radius: 100%;
+    }
+
+    .notif-number {
+      text-align: center;
+      color: white;
+      margin: 0 auto;
     }
   }
 
@@ -664,7 +670,7 @@ nav {
 /* Main styling */
 
 .icons-fixed {
-  z-index: 2;
+  z-index: 1;
   position: fixed;
   bottom: 15px;
   right: 8px;

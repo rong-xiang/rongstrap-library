@@ -1,8 +1,10 @@
+@charset "UTF-8";
 /*
 - Refactor - done
+- Better naming - done
 - Check cursors
-- Check z-index
-- Better naming
+- Check z-index – done
+- Fix notifications - done
 
 Notes:
 - Z-index is relative to the parent!
@@ -94,7 +96,7 @@ svg {
   color: #6d6d6d;
 }
 
-.flex, .flex-left, .flex-right, .search-field, .dropdown-content-updates .flex-suggestions .tile-overlay, .dropdown-content-share .share-grid-item, .dropdown-content-share .share-icon .share-icon-wrapper, .pin-parent .flex-top,
+.flex, .flex-left, .flex-right, .search-field, .dropdown-content-updates .flex-suggestions .tile-overlay, .dropdown-content-share .share-grid-item, .dropdown-content-share .share-icon .share-icon-wrapper, nav .notifications .notif-number-padding, .pin-parent .flex-top,
 .pin-parent .flex-bottom, .pin-parent .flex-bottom .source {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -240,7 +242,6 @@ svg {
 }
 
 .dropdown {
-  z-index: 1;
   position: relative;
 }
 
@@ -606,16 +607,22 @@ nav .notifications {
   position: relative;
 }
 
-nav .notifications .notif-number {
+nav .notifications .notif-number-padding {
+  width: 20px;
+  height: 20px;
   font-size: 12px;
   position: absolute;
   text-align: center;
   right: 0;
   top: 0;
-  color: white;
   background-color: #a305ff;
-  padding: 3px;
-  border-radius: 50%;
+  border-radius: 100%;
+}
+
+nav .notifications .notif-number {
+  text-align: center;
+  color: white;
+  margin: 0 auto;
 }
 
 nav:last-child {
@@ -632,7 +639,7 @@ nav .dropdown-content section:not(:last-child) {
 
 /* Main styling */
 .icons-fixed {
-  z-index: 2;
+  z-index: 1;
   position: fixed;
   bottom: 15px;
   right: 8px;
