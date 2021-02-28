@@ -645,6 +645,11 @@ nav .dropdown-content section:not(:last-child) {
   margin-bottom: 15px;
 }
 
+.nav-shadow {
+  -webkit-box-shadow: 0px 1px 2px #ededed;
+          box-shadow: 0px 1px 2px #ededed;
+}
+
 /* Main styling */
 .icons-fixed {
   z-index: 1;

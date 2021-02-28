@@ -12,7 +12,7 @@ To implement:
     - If you click on one of overlay elements, the overlay stays on until you click off (like with dropdowns) – done
     - Save button toggles display when you click save-to dropdown
 - Plus and question dropdowns - done
-- On scroll, nav gets a shadow
+- On scroll, nav gets a shadow - done
 
 You can either:
 #1 add an event listener on the parent and use event delegation, OR
@@ -75,35 +75,52 @@ dropdown();
 // 3. If you click on overlay elements, show elements
 // 4. If you click outside the selected overlay elements
 
-const overlays = document.querySelectorAll('.pin-overlay'); // need this for forEach method
-const overlayElements = document.querySelectorAll('.pin-overlay-elements');
-const overlayParent = document.querySelector('.gallery'); // need this for parent event del
-let target;
+function hoverOverlay() {
+  const overlays = document.querySelectorAll('.pin-overlay'); // need this for forEach method
+  const overlayElements = document.querySelectorAll('.pin-overlay-elements');
+  const overlayParent = document.querySelector('.gallery'); // need this for parent event del
+  let target;
 
-function hideAll() {
-  overlayElements.forEach(elements => elements.classList.remove('show'));
-}
-function show(elements) {
-  hideAll();
-  elements.classList.add('show');
-}
-
-// If you click on overlay elements show elements
-overlayParent.addEventListener('click', function (e) {
-  e.preventDefault();
-  const selectedOverlay = e.target.closest('.pin-overlay');
-  if (!selectedOverlay) return; // guard clause
-  const selectedOverlayElements = selectedOverlay.querySelector(
-    '.pin-overlay-elements'
-  );
-  show(selectedOverlayElements);
-  target = selectedOverlay;
-});
-
-// If you click outside the dropdown, take show off elements
-window.addEventListener('click', function (e) {
-  e.preventDefault();
-  if (!target?.contains(e.target)) {
-    hideAll();
+  function hideAll() {
+    overlayElements.forEach(elements => elements.classList.remove('show'));
   }
+  function show(elements) {
+    hideAll();
+    elements.classList.add('show');
+  }
+
+  // If you click on overlay elements show elements
+  overlayParent.addEventListener('click', function (e) {
+    e.preventDefault();
+    const selectedOverlay = e.target.closest('.pin-overlay');
+    if (!selectedOverlay) return; // guard clause
+    const selectedOverlayElements = selectedOverlay.querySelector(
+      '.pin-overlay-elements'
+    );
+    show(selectedOverlayElements);
+    target = selectedOverlay;
+  });
+
+  // If you click outside the dropdown, take show off elements
+  window.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (!target?.contains(e.target)) {
+      hideAll();
+    }
+  });
+}
+
+hoverOverlay();
+
+//////////* NAV SHADOW ON SCROLL *//////////
+
+// 1. Can listen for a scroll event, OR
+// 2. Use Intersection Observer API (can't be bothered here)
+
+const nav = document.querySelector('nav');
+
+// Listen to window, if we have scrolled (window.scrollY > 0), the add nav shadow
+window.addEventListener('scroll', function (e) {
+  e.preventDefault();
+  nav.classList.toggle('nav-shadow', window.scrollY);
 });
