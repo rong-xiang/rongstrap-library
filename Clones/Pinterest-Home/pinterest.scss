@@ -104,6 +104,13 @@ $opacity: opacity 0.2s ease;
   opacity: 0.5;
 }
 
+.text-title {
+  font-weight: normal;
+  font-size: 13px;
+  color: $dark-grey;
+  margin-top: 3px;
+}
+
 .text-eyebrow {
   font-weight: normal;
   font-size: 12px;
@@ -264,12 +271,17 @@ $opacity: opacity 0.2s ease;
     position: absolute;
     z-index: 1;
   }
+  .show {
+    display: block;
+  }
 
+  /*
   &:hover {
     .dropdown-content {
       display: block;
     }
   }
+  */
 }
 
 // DROPDOWN CONTENTS
@@ -356,14 +368,6 @@ $offset-width: 28px;
     margin: 0 10px 20px;
     line-height: 1.2;
   }
-
-  .text-title {
-    font-weight: normal;
-    font-size: 13px;
-    color: $dark-grey;
-    margin-top: 3px;
-  }
-
   .search-field {
     margin: 0 10px 10px 10px;
   }

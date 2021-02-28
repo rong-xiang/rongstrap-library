@@ -91,6 +91,13 @@ svg {
   opacity: 0.5;
 }
 
+.text-title {
+  font-weight: normal;
+  font-size: 13px;
+  color: #6d6d6d;
+  margin-top: 3px;
+}
+
 .text-eyebrow {
   font-weight: normal;
   font-size: 12px;
@@ -244,6 +251,13 @@ svg {
 
 .dropdown {
   position: relative;
+  /*
+  &:hover {
+    .dropdown-content {
+      display: block;
+    }
+  }
+  */
 }
 
 .dropdown .dropdown-content {
@@ -253,7 +267,7 @@ svg {
   z-index: 1;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown .show {
   display: block;
 }
 
@@ -330,13 +344,6 @@ svg {
   font-size: 30px;
   margin: 0 10px 20px;
   line-height: 1.2;
-}
-
-.dropdown-content-messages .text-title {
-  font-weight: normal;
-  font-size: 13px;
-  color: #6d6d6d;
-  margin-top: 3px;
 }
 
 .dropdown-content-messages .search-field {
