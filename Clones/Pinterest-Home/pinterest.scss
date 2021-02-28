@@ -265,7 +265,7 @@ $opacity: opacity 0.2s ease;
 .dropdown {
   position: relative;
   .dropdown-content {
-    cursor: auto;
+    // cursor: auto;
     @extend %dropdown-box;
     display: none;
     position: absolute;

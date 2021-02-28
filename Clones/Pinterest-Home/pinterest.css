@@ -261,7 +261,6 @@ svg {
 }
 
 .dropdown .dropdown-content {
-  cursor: auto;
   display: none;
   position: absolute;
   z-index: 1;
