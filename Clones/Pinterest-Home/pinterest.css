@@ -758,18 +758,41 @@ nav .dropdown-content section:not(:last-child) {
 }
 
 .pin-parent .pin-overlay {
-  display: none;
   position: absolute;
   top: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
   border-radius: 20px;
-  background-color: rgba(28, 28, 28, 0.15);
 }
 
-.pin-parent:hover .pin-overlay {
+.pin-parent .pin-overlay .pin-overlay-elements {
+  display: none;
+  z-index: 1;
+}
+
+.pin-parent .pin-overlay .pin-overlay-bg {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: rgba(28, 28, 28, 0.15);
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.pin-parent .pin-overlay .show {
   display: block;
+}
+
+.pin-parent:hover .pin-overlay-elements {
+  display: block;
+}
+
+.pin-parent:hover .pin-overlay-bg {
+  opacity: 1;
 }
 
 .pin-parent .flex-top,
@@ -833,5 +856,9 @@ nav .dropdown-content section:not(:last-child) {
 
 .pin-parent .flex-bottom .icon {
   padding: 8px;
+}
+
+.pin-parent .dropdown-content {
+  z-index: 3;
 }
 /*# sourceMappingURL=pinterest.css.map */
