@@ -760,7 +760,6 @@ nav .dropdown-content section:not(:last-child) {
 .pin-parent .pin-overlay {
   position: absolute;
   top: 0;
-  z-index: 1;
   width: 100%;
   height: 100%;
   border-radius: 20px;
@@ -768,7 +767,6 @@ nav .dropdown-content section:not(:last-child) {
 
 .pin-parent .pin-overlay .pin-overlay-elements {
   display: none;
-  z-index: 1;
 }
 
 .pin-parent .pin-overlay .pin-overlay-bg {
@@ -856,9 +854,5 @@ nav .dropdown-content section:not(:last-child) {
 
 .pin-parent .flex-bottom .icon {
   padding: 8px;
-}
-
-.pin-parent .dropdown-content {
-  z-index: 3;
 }
 /*# sourceMappingURL=pinterest.css.map */
