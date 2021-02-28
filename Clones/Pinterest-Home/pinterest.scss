@@ -1,7 +1,7 @@
 /*
 - Refactor - done
 - Better naming - done
-- Check cursors
+- Check cursors – done (check how anchors are wrapping in html)
 - Check z-index – done
 - Fix notifications - done
 
@@ -9,6 +9,7 @@ Notes:
 - Z-index is relative to the parent!
 - Change svg width and height to 1em in html, then change font size in css
 - Don't use repeat(1fr, 4) for grids b/c Live Sass Compiler isn't updated (errors in css)
+- In scss, use 1fr 1fr 1fr 1fr instead
 */
 
 ////////////* UNIVERSAL STYLING *////////////
@@ -257,6 +258,7 @@ $opacity: opacity 0.2s ease;
 .dropdown {
   position: relative;
   .dropdown-content {
+    cursor: auto;
     @extend %dropdown-box;
     display: none;
     position: absolute;
