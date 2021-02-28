@@ -5,8 +5,6 @@
 // Arrow carousel - done
 // Check why z-index is weird on tooltips – done
 
-// Toggle class instead of manipulating styles in JS!
-
 // ON CLICK DROPDOWNS
 // reveal their respective content event propagation
 
