@@ -790,8 +790,12 @@ nav .dropdown-content section:not(:last-child) {
   display: block;
 }
 
-.pin-parent:hover .pin-overlay-elements {
-  display: block;
+.pin-parent:hover {
+  /*
+    .pin-overlay-elements {
+      display: block;
+    }
+    */
 }
 
 .pin-parent:hover .pin-overlay-bg {

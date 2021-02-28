@@ -78,8 +78,8 @@ dropdown();
 function hoverOverlay() {
   const overlays = document.querySelectorAll('.pin-overlay'); // need this for forEach method
   const overlayElements = document.querySelectorAll('.pin-overlay-elements');
-  const overlayParent = document.querySelector('.gallery'); // need this for parent event del
-  let target;
+  const gallery = document.querySelector('.gallery'); // need this for parent event del
+  let targetContent;
 
   function hideAll() {
     overlayElements.forEach(elements => elements.classList.remove('show'));
@@ -90,23 +90,54 @@ function hoverOverlay() {
   }
 
   // If you click on overlay elements show elements
-  overlayParent.addEventListener('click', function (e) {
+  gallery.addEventListener('click', function (e) {
     e.preventDefault();
-    const selectedOverlay = e.target.closest('.pin-overlay');
-    if (!selectedOverlay) return; // guard clause
-    const selectedOverlayElements = selectedOverlay.querySelector(
-      '.pin-overlay-elements'
-    );
-    show(selectedOverlayElements);
-    target = selectedOverlay;
+    const selectedElements = e.target.closest('.pin-overlay-elements');
+    const selectedDropdown = e.target.closest('.dropdown');
+    const selectedContent = selectedDropdown.querySelector('.dropdown-content');
+
+    if (!selectedElements || !selectedDropdown) return; // guard clause
+    show(selectedElements);
+    targetContent = selectedContent;
   });
 
-  // If you click outside the dropdown, take show off elements
+  // If you click outside the dropdown-content, take show off elements
   window.addEventListener('click', function (e) {
     e.preventDefault();
-    if (!target?.contains(e.target)) {
+
+    //If we did not click on the dropdown content of the selected target, take 'show' off of the selected target
+    // If the targetContent DOES NOT contain what we clicked on, hide everything
+    if (!targetContent?.contains(e.target)) {
       hideAll();
     }
+  });
+
+  // Need to do a hover on and hover off listeners so that one doesn't override the other event listeners
+  // If the show class is on for the elements, do not fire hover off
+  // Listen to each pin parent
+  // On mouseover, show pin overlay : on mouseout, hide pin overlay
+
+  gallery.addEventListener('mouseover', function (e) {
+    e.preventDefault();
+    const selected = e.target.closest('.pin-overlay');
+    if (!selected) return; // guard clause
+    const selectedElements = selected.querySelector('.pin-overlay-elements');
+
+    // set display to block on mouseover
+    selectedElements.style.display = 'block';
+  });
+
+  gallery.addEventListener('mouseout', function (e) {
+    e.preventDefault();
+    const selected = e.target.closest('.pin-overlay');
+    if (!selected) return;
+    const selectedElements = selected?.querySelector('.pin-overlay-elements');
+    console.log(selectedElements.classList);
+
+    // if elements DO NOT contain show class, set display to none on mouseout
+    if (!selectedElements.classList.contains('show'))
+      // for some reason it's making it past this condition
+      selectedElements.style.display = 'none';
   });
 }
 
@@ -117,10 +148,14 @@ hoverOverlay();
 // 1. Can listen for a scroll event, OR
 // 2. Use Intersection Observer API (can't be bothered here)
 
-const nav = document.querySelector('nav');
+function navScroll() {
+  const nav = document.querySelector('nav');
 
-// Listen to window, if we have scrolled (window.scrollY > 0), the add nav shadow
-window.addEventListener('scroll', function (e) {
-  e.preventDefault();
-  nav.classList.toggle('nav-shadow', window.scrollY);
-});
+  // Listen to window, if we have scrolled (window.scrollY > 0), the add nav shadow
+  window.addEventListener('scroll', function (e) {
+    e.preventDefault();
+    nav.classList.toggle('nav-shadow', window.scrollY);
+  });
+}
+
+navScroll();
