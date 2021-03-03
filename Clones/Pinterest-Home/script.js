@@ -7,10 +7,10 @@ To implement:
 - Nav dropdowns - done
 - Pin dropdowns - done
     - Cursor so that it's only zoom-in when on hover overlay but not on the dropdown content - done (fixed in CSs)
-    - when you click, the search bar is already focused (ehh, optional)
+    - when you click, the search bar is already focused (do later)
     - Hover only triggers black background / opacity overlay, and elements – done
     - If you click on one of overlay elements, the overlay stays on until you click off (like with dropdowns) – done
-    - Save button toggles display when you click save-to dropdown
+    - Save button toggles display when you click save-to dropdown (do later)
 - Plus and question dropdowns - done
 - On scroll, nav gets a shadow - done
 
